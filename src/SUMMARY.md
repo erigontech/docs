@@ -1,0 +1,41 @@
+- [Welcome to Erigon 3](./Welcome.md)
+- [Getting Started](./getting_started.md)
+    - [Hardware Requirements](hw-requirements.md)
+    - [Software Requirements](sw-requirements.md)
+
+- [Installation](installation.md)
+    - [Linux and MacOS](nested/linux.md)
+    - [Windows](nested/windows.md)
+    - [Docker](nested/docker.md)
+    - [Upgrading from a previous version](./upgrading-md)
+
+- [Basic Usage](./usage.md)
+    - [Type of Node](./node.md)
+        - [Disk space](./disk-space.md)
+        - [Optimizing Storage](./optimizing-storage.md)
+    - [Configuring Erigon](./configure.md)
+    - [Supported Networks](./networks.md)
+    - [Default Ports and Firewalls](./ports.md)
+    - [Otterscan](./otterscan.md)
+    - [Web3 Wallet](./wallet)
+
+- [Advanced Usage](./advanced.md)
+    - [Consensus Layer](./advanced/consensus_layer.md)
+    - [Options](./advanced/options.md)
+    - [RPC Daemon](./advanced/rpc_daemon.md)
+    - [TxPool](./advanced/txpool.md)
+    - [Sentry](./advanced/sentry.md)
+    - [Downloader](./advanced/downloader.md)
+    - [TLS Authentication](./advanced/tls-authentication.md)
+
+- [Diagnostic Tool](./diagnostic/introduction.md)
+    - [Installation](./diagnostic/installation.md)
+    - [Setup](./diagnostic/setup.md)
+    - [User Interface](./diagnostic/user_interface.md)
+
+
+- [Frequently Asked Questions](./faq.md)
+
+- [About](about.md)
+    - [Contributing](./contributing.md)
+    - [How to reach us](./reachus.md)
