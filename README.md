@@ -1,6 +1,6 @@
-# Erigon 3 public documentation
+# The Erigon 3 Book
 
-This is the official Erigon 3 documentation. Soon online at <https://docs.erigon.tech/>.
+This is the official The Erigon 3 Book, soon online at <https://docs.erigon.tech/>.
 
 It is built on [mdbook](https://rust-lang.github.io/mdBook/). Please take a look at its install instructions first.
 

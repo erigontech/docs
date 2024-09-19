@@ -36,6 +36,6 @@
 
 - [Frequently Asked Questions](./faq.md)
 
-- [About](about.md)
+- [About & License](about.md)
     - [Contributing](./contributing.md)
     - [How to reach us](./reachus.md)
