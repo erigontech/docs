@@ -11,7 +11,7 @@
 
 - [Basic Usage](./usage.md)
     - [Type of Node](./node.md)
-        - [Disk space](./disk-space.md)
+        - [Disk Space Required](./disk-space.md)
         - [Optimizing Storage](./optimizing-storage.md)
     - [Configuring Erigon](./configure.md)
     - [Supported Networks](./networks.md)

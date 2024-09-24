@@ -54,6 +54,6 @@ git clone --depth=1 https://github.com/llvm/llvm-project.git
     cmake -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../llvm
 ```
 
-- For GCC (version 10 or newer): [https://gcc.gnu.org/install/index.html](https://gcc.gnu.org/install/index.html)
+- For **GCC** (version 10 or newer): [https://gcc.gnu.org/install/index.html](https://gcc.gnu.org/install/index.html)
 
 You can now proceed with Erigon installation.

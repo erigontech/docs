@@ -1,5 +1,7 @@
 # Welcome to Erigon 3!
 
+![The Erigon Logo](images/logo.svg) 
+
 Erigon is an efficiency frontier implementation of Ethereum, designed to provide a faster, more modular and optimised experience. An archive node by default, Erigon uses edge technologies such as staged sync, efficient state storage and database compression, combined with high modularity.
 
 Born as a GETH fork, Erigon has been completely rewritten to focus on speed and storage savings. The Erigon client can complete a full archive node synchronisation in less than three days and with less than 2TB of storage, and supports several popular EVM-compatible blockchains and testnets.
@@ -31,5 +33,5 @@ Erigon 3 also introduces changes to the release process, including:
 
 While Erigon 3 offers many improvements over its predecessor, there are still some known issues and limitations:
 - `Trace_callMany` support for multiple transactions: #11798
-- [Windows](windows.md) binaries are not yet published, but will be available once the necessary work is completed.
+- Windows binaries are not yet published, but will be available once the necessary work is completed.
 - Users may encounter performance issues on chain-tip; `rm -rf chaindata` can help resolve these issues.

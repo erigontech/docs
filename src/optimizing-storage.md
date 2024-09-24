@@ -3,7 +3,7 @@
 
 For optimal performance, it's recommended to store the datadir on a fast NVMe-RAID disk. However, if this is not feasible, you can store the history on a cheaper disk and still achieve good performance.
 
-## Step 1: Store datadir on the Slow Disk
+## Step 1: Store datadir on the slow disk
 
 Place the datadir on the slower disk. Then, create symbolic links (using `ln -s`) to the **fast disk** for the following sub-folders:
 

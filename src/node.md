@@ -11,9 +11,9 @@ If you want to run a validator and produce blocks, **staking** is achievable alr
 
 | Usage    | Minimal Node | Full Node | Archive Node |
 |----------|--------------|-----------|--------------|
-| Privacy  |    Yes       |    Yes    |    Yes       |
-| Research |    -         |    -      |    Yes       |
-| Staking  |    -         |    Yes    |    Yes       |
+| Privacy  |    **Yes**       |    **Yes**    |    **Yes**       |
+| Research |    No        |    No     |    **Yes**       |
+| Staking  |    No        |    **Yes**    |    **Yes**       |
 
 ## Archive node
 The traditional Archive Node remains the default, providing complete historical data.
