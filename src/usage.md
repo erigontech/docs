@@ -20,7 +20,14 @@ If you would like to give Erigon a try, but do not have spare 2TB on your drive,
 
 # Help
 
-Running `make help` will list and describe the convenience commands available in the Makefile.
+To learn about the available commands, open your terminal in your Erigon 3 installation directory and run:
+
+```bash
+make help
+```
+ 
+This command will display a list of convenience commands available in the Makefile, along with their descriptions.
+
 
 ```
  go-version:                        print and verify go version
@@ -51,7 +58,7 @@ Running `make help` will list and describe the convenience commands available in
  prometheus:                        run prometheus and grafana with docker-compose
  escape:                            run escape path={path} to check for memory leaks e.g. run escape path=cmd/erigon
  git-submodules:                    update git submodules
- install:                            copies binaries and libraries to DIST
+ install:                           copies binaries and libraries to DIST
  user_linux:                        create "erigon" user (Linux)
  user_macos:                        create "erigon" user (MacOS)
  hive:                              run hive test suite locally using docker e.g. OUTPUT_DIR=~/results/hive SIM=ethereum/engine make hive
@@ -60,3 +67,10 @@ Running `make help` will list and describe the convenience commands available in
 
 ```
 
+For example, from your Erigon 3 installation directory, run:
+
+```bash
+make clean
+```
+
+This will execute the clean target in the Makefile, which cleans the go cache, build directory, and libmdbx db directory.
