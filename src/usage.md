@@ -6,13 +6,17 @@
 Hint: Before running Erigon you should decide which type of node you want to run.
 </div>
 
-The all-in-one client is the preferred option for most users. The following CLI command allows you to run an Ethereum archive node where every process is integrated and no special configuration is needed (all-in-one client):
+The all-in-one client is the preferred option for most users:
 
+```bash
 ./build/bin/erigon
+```
+
+This CLI command allows you to run an Ethereum archive node where every process is integrated and no special configuration is needed.
 
 # Testnets
 
-If you would like to give Erigon a try, but do not have spare 2TB on your drive, a good option is to start syncing one of the public testnets, Holesky, adding the option `--chain=holesky` and using the default Consensus Layer, Caplin. You can also had the flag `--prune.mode=minimal` to have a node that is syncing fast while taking not so much disk space:
+If you would like to give Erigon a try, but do not have spare 2TB on your drive, a good option is to start syncing one of the public [testnets](/networks.md), Holesky, adding the option `--chain=holesky` and using the default Consensus Layer, Caplin. You can also had the flag `--prune.mode=minimal` to have a node that is syncing fast while taking not so much disk space:
 
 ```bash
 ./build/bin/erigon --chain=holesky --prune.mode=minimal
