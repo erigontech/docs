@@ -2,7 +2,7 @@
 
 ## Disk type
 
-A locally mounted SSD or NVMe disk is recommended for storage. HDD is not recommended because it will cause Erigon to always stay N blocks behind the chain tip, but not fall behind. In addition, SSD performance degrades when close to full capacity.
+A locally mounted SSD or NVMe disk is recommended for storage. HDD is not recommended because it will cause Erigon to always stay 'n' blocks behind the chain tip, but not fall behind. In addition, SSD performance degrades when close to full capacity.
 
 When using multiple hard drives, a RAID0 configuration is recommended as it offers high performance and efficient use of space. Raid ZFS is not recommended.
 
