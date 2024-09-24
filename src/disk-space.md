@@ -8,7 +8,7 @@ Mainnets
 |----------|--------------|-----------|--------------|
 | Ethereum |    1.7 TB    |    900 GB |  310 GB      |
 | Gnosis   |    511 GB    |    354 GB |  200 GB      |
-| Polygon  |    4.3 TB    |    ... GB |  873 GB      |
+| Polygon  |    4.3 TB    |    2 TB |  873 GB      |
 
 Testnets
 
