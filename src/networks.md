@@ -17,16 +17,14 @@ The default flag is `chain=mainnet`.
 |Gnosis|	gnosis|	100|
 
 
-
 # Testnets
 
 ## Ethereum testnets
 
 |Chain |	Tag|	ChainId|
 |----------|-------|-----------|
-|Holesky   |holesky|   	17000|
+|Holesky   |holesky|   	17000  |
 |Sepolia |	sepolia|	11155111|
-|Goerli |	goerli|	5|
 
 ## Polygon testnets
 
