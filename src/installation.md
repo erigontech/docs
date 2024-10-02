@@ -12,13 +12,13 @@ Always check the [list of releases](https://github.com/erigontech/erigon/release
 
 _____________________________
 
-[Linux and MacOS](/nested/linux.md)
+[Linux and MacOS](/installation/linux.md)
 
-[Windows](/nested/windows.md)
+[Windows](/installation/windows.md)
 
-[Docker](/nested/docker.md)
+[Docker](/installation/docker.md)
 
-[Upgrading from a previous version](/upgrading.md)
+[Upgrading from a previous version](/installation/upgrading.md)
 
 ___________________________
 

@@ -39,4 +39,4 @@ Visit also Erigon's [Wiki](https://github.com/ledgerwatch/erigon/wiki) to gain m
 
 # Documentation
 
-To contribute to this documentation, commit your change to Github. You might want to [run it locally](/about.md/#run-it-locally) to verify the output before committing.
+To contribute to this documentation, commit your change to Github. You might want to run it locally to verify the output before committing.

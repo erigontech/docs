@@ -47,4 +47,4 @@ The default flag is `chain=mainnet`.
 |----------|-------|-----------|
 |Dev|	dev|	null|
 
-Refer also to [Chainlist](https://chainlist.org/) for other useful information.
+
