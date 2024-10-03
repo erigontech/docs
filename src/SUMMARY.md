@@ -16,12 +16,12 @@
     - [Type of Node](./basic/node.md)
         - [Disk Space Required](./basic/disk-space.md)
         - [Optimizing Storage](./basic/optimizing-storage.md)
-    - [Configuring Erigon](./basic/configure.md)
     - [Supported Networks](./basic/networks.md)
     - [Default Ports and Firewalls](./basic/ports.md)
     - [Web3 Wallet](./basic/wallet)
 
 - [Advanced Usage](./advanced.md)
+    - [Configuring Erigon](./advanced/configuring.md)
     - [Consensus Layer](./advanced/consensus_layer.md)
     - [Options](./advanced/options.md)
     - [Caplin]()(./advanced/caplin.md)
@@ -40,7 +40,7 @@
 
 - [Frequently Asked Questions](./faq.md)
 
-- [About & License](about.md)
+- [About](about.md)
     - [License](./about/license.md)
     - [Contributing](./about/contributing.md)
     - [How to reach us](./about/reachus.md)

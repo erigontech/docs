@@ -16,7 +16,9 @@ sudo apt install build-essential cmake -y
 
 ### Git
 
-Git is a tool that helps download and manage the Erigon source code. To install Git, visit [https://git-scm.com/downloads](https://git-scm.com/downloads).
+Git is a tool that helps download and manage the Erigon source code. To install Git, visit:
+
+[https://git-scm.com/downloads](https://git-scm.com/downloads).
 
 
 ### Go Programming Language

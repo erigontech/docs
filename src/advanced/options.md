@@ -21,7 +21,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-alpha3-92d8c174
+   3.00.0-alpha4-c0d9a2b9
 
 COMMANDS:
    init            Bootstrap and initialize a new genesis block
@@ -235,7 +235,6 @@ GLOBAL OPTIONS:
    --txpool.gossip.disable                                                          Disabling p2p gossip of txs. Any txs received by p2p - will be dropped. Some networks like 'Optimism execution engine'/'Optimistic Rollup' - using it to protect against MEV attacks (default: false)
    --sync.loop.block.limit value                                                    Sets the maximum number of blocks to process per loop iteration (default: 5000)
    --sync.loop.break.after value                                                    Sets the last stage of the sync loop to run
-   --sync.loop.prune.limit value                                                    Sets the maximum number of block to prune per loop iteration (default: 100)
    --sync.parallel-state-flushing                                                   Enables parallel state flushing (default: true)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
    --pprof.addr value                                                               pprof HTTP server listening interface (default: "127.0.0.1")
@@ -244,10 +243,10 @@ GLOBAL OPTIONS:
    --trace value                                                                    Write execution trace to the given file
    --metrics                                                                        Enable metrics collection and reporting (default: false)
    --metrics.addr value                                                             Enable stand-alone metrics HTTP server listening interface (default: "127.0.0.1")
-   --metrics.port value                                                             Metrics HTTP server listening port (default: 6060)
+   --metrics.port value                                                             Metrics HTTP server listening port (default: 6061)
    --diagnostics.disabled                                                           Disable diagnostics (default: false)
    --diagnostics.endpoint.addr value                                                Diagnostics HTTP server listening interface (default: "127.0.0.1")
-   --diagnostics.endpoint.port value                                                Diagnostics HTTP server listening port (default: 6060)
+   --diagnostics.endpoint.port value                                                Diagnostics HTTP server listening port (default: 6062)
    --diagnostics.speedtest                                                          Enable speed test (default: false)
    --log.json                                                                       Format console logs with JSON (default: false)
    --log.console.json                                                               Format console logs with JSON (default: false)
