@@ -4,6 +4,7 @@
 
 - [Getting Started](./getting_started.md)
     - [Hardware Requirements](./getting-started/hw-requirements.md)
+        - [Tips for faster syncing](./getting-started/tips.md)
     - [Software Requirements](./getting-started/sw-requirements.md)
 
 - [Installation](installation.md)
@@ -23,13 +24,14 @@
 - [Advanced Usage](./advanced.md)
     - [Configuring Erigon](./advanced/configuring.md)
     - [Consensus Layer](./advanced/consensus_layer.md)
+    - [Caplin](./advanced/caplin.md)
     - [Options](./advanced/options.md)
-    - [Caplin]()(./advanced/caplin.md)
     - [RPC Daemon](./advanced/rpc_daemon.md)
     - [TxPool](./advanced/txpool.md)
     - [Sentry](./advanced/sentry.md)
     - [Downloader](./advanced/downloader.md)
     - [TLS Authentication](./advanced/tls-authentication.md)
+    - [Perfomance Tricks](./advanced/performance.md)
 
 - [Diagnostic Tool](./diagnostic/introduction.md)
     - [Installation](./diagnostic/installation.md)

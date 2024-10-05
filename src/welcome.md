@@ -14,18 +14,31 @@ Erigon is an efficiency frontier implementation of Ethereum, designed to provide
 
 Erigon offers several features that make it a good option for a node application such as efficient state storage through the use of a key-value database and faster initial synchronisation.
 
-It also offers a separate JSON RPC daemon, that can connect to both local and remote databases. For read-only calls, this RPC daemon does not need to run on the same system as the main Erigon binary, and can even run from a database snapshot.
+Built with modularity in mind, it also offers separate components such as the JSON RPC daemon, that can connect to both local and remote databases. For read-only calls, this RPC daemon does not need to run on the same system as the main Erigon binary, and can even run from a database snapshot.
 
 Erigon 3 is a major update that introduces several significant changes, improvements, and optimizations. Some of the key features and differences include:
+
+**Sync Improvements**
+
+* **Sync from scratch** doesn't require re-executing **all history**. Instead, it leverages **snapshots** to download the latest state and its history.
+* **ExecutionStage** now includes multiple E2 stages, such as ``stage_hash_state``, ``stage_trie``, ``stage_log_index``, ``stage_history_index``, and ``stage_trace_index``, for faster execution.
+* **E3 can execute a single historical transaction** without executing its corresponding block, thanks to its **transaction-granularity indexing system**, which differs from a block-granularity approach.
+* **E3 doesn't store Logs** (aka Receipts) - it always re-executes historical transactions (but it's cheaper than in E2 - see point above). Known performance issues: #10747
+* **--sync.loop.block.limit** is enabled by default, with a default value of 5,000. To increase sync speed on good hardware, set ``--sync.loop.block.limit=10_000 --batchSize=2g``.
+
+**Storage and Performance**
+
+* **datadir/chaindata is small now** - to prevent its growth: we recommend setting ``--batchSize <= 2G``. It's also fine to remove the chaindata directory.
+* Symlink or mount the latest state to a fast drive and history to a cheaper drive.
+
+**Node Configuration**
+
+* **Archive Node is default**. Full Node: ``--prune.mode=full``, Minimal Node (EIP-4444): ``--prune.mode=minimal``
+
+**Other Features**
+
 * **New User Guide**: A dedicated user guide for Erigon 3 provides detailed information on how to set up and configure your node.
-* **Higher RAM Requirement**: Erigon 3 requires at least 64GB of RAM (which may be reduced in future releases).
-* **Golang 1.21**: The new version is built with Golang 1.21, which brings various improvements and enhancements.
-* **Sync from Scratch**: Syncing from scratch doesn't require re-executing all history; instead, it uses snapshots to download the latest state and its history.
-* **ExecutionStage**: Erigon 3 includes multiple stages in ExecutionStage (e.g., stage_hash_state, stage_trie) for faster execution.
-* **Transaction-Level Execution**: Erigon 3 can execute individual historical transactions without executing their entire block, thanks to transaction-granularity indices.
-Log Storage Removal: Logs (Receipts) are no longer stored in the datadir; instead, they are re-executed when needed.
-* **Default Archive Node**: Erigon 3 is now an archive node by default, with pruning options for [Full Nodes](./basic/node.md#full-node) and [Minimal Nodes (EIP-4444)](./basic/node.md#minimal-node).
-* **Improved Performance**: The new version offers faster performance, reduced startup time, and lower read-IO.
+* **Higher RAM Requirement**: Erigon 3 requires at least 64GB of RAM (which may be
 
 ## Release Process
 
@@ -37,6 +50,4 @@ Erigon 3 also introduces changes to the release process, including:
 ## Known Issues
 
 While Erigon 3 offers many improvements over its predecessor, there are still some known issues and limitations:
-- `Trace_callMany` support for multiple transactions: #11798
-- Windows binaries are not yet published, but will be available once the necessary work is completed.
-- Users may encounter performance issues on chain-tip; `rm -rf chaindata` can help resolve these issues.
+- don't [rm -rf] downloader - it will cause re-downloading of files: #10976
