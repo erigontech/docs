@@ -5,7 +5,7 @@ For optimal performance, it's recommended to store the datadir on a fast NVMe-RA
 
 ## Step 1: Store datadir on the slow disk
 
-Place the datadir on the slower disk. Then, create symbolic links (using `ln -s`) to the **fast disk** for the following sub-folders:
+Place the `datadir` on the slower disk. Then, create symbolic links (using `ln -s`) to the **fast disk** for the following sub-folders:
 
 - chaindata
 - domain

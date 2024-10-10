@@ -13,7 +13,7 @@
     - [Docker](./installation/docker.md)
     - [Upgrading from a previous version](./installation/upgrading-md)
 
-- [Basic Usage](./usage.md)
+- [Basic Usage](./basic-usage.md)
     - [Type of Node](./basic/node.md)
         - [Disk Space Required](./basic/disk-space.md)
         - [Optimizing Storage](./basic/optimizing-storage.md)

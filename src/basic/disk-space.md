@@ -17,7 +17,6 @@
 | Holesky  |    170 GB    |    110 GB |  53 GB      |
 | Sepolia  |    ... GB    |    ... GB |  ... GB      |
 | Chiado   |    ... GB    |    ... GB |  ... GB      |
-| Mumbai   |    ... GB    |    ... GB |  ... GB      |
 | Amoy     |    ... GB    |    ... GB |  ... GB      |
                         
 
