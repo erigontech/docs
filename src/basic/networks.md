@@ -1,13 +1,13 @@
 # Supported Networks
 
-
-Utilize the flag `--chain=<tag>` to synchronize with one of the supported networks,  for example:
+The default flag is `--chain=mainnet`, which enables Erigon 3 to operate on the Ethereum mainnet.
+Utilize the flag `--chain=<tag>` to synchronize with one of the supported networks, for example:
 
 ```bash
 ./build/bin/erigon --chain=holesky
 ```
 
-The default flag is `--chain=mainnet`, which enables Erigon 3 to operate on the Ethereum mainnet.
+
 
 
 # Mainnets

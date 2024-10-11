@@ -22,7 +22,7 @@ The traditional Archive Node remains the default, providing complete historical 
 For users seeking a balance between storage efficiency and functionality, the Full Node option can be activated with the flag `--prune.mode=full`. For example:
 
 ```bash
-./build/bin erigon --prune.mode=full
+./build/bin/erigon --prune.mode=full
 ```
 
 This setup maintains essential data while reducing storage requirements.
@@ -31,7 +31,7 @@ This setup maintains essential data while reducing storage requirements.
 Erigon 3 implements support for [EIP-4444](https://eips.ethereum.org/EIPS/eip-4444) through its *Minimal Node configuration*, enabled by the flag `--prune.mode=minimal`. For example:
 
 ```bash
-./build/bin erigon --prune.mode=minimal
+./build/bin/erigon --prune.mode=minimal
 ```
 
 This lightweight option aligns with the Ethereum Improvement Proposal's goal of reducing long-term storage burden on nodes, potentially improving network scalability and participation.
