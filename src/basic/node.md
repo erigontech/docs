@@ -15,6 +15,9 @@ If you want to run a validator and produce blocks, **staking** is achievable alr
 | Research |    No        |    No     |    **Yes**   |
 | Staking  |    No        |  **Yes**  |    **Yes**   |
 
+
+To switch type of node, you must first delete the ```/chaindata``` folder in the chosen ```--datadir``` directory.
+
 ## Archive node
 The traditional Archive Node remains the default, providing complete historical data.
 

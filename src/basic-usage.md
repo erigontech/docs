@@ -24,7 +24,7 @@ The default node is archive node.
 
 * ```--chain=mainnet```, add the flag --chain=goerli for Goerli testnet, --chain=sepolia for Sepolia testnet or --chain=holesky for Holesky testnet.
 
-* --http.addr="0.0.0.0" --http.api=eth,web3,net,debug,trace,txpool to use RPC and e.g. be able to connect your [wallet](basic/wallet.md).
+* ```--http.addr="0.0.0.0" --http.api=eth,web3,net,debug,trace,txpool``` to use RPC and e.g. be able to connect your [wallet](basic/wallet.md).
 
 * To increase download speed add ```--torrent.download.rate=512mb``` (default is 16mb)
 

@@ -7,9 +7,6 @@ Utilize the flag `--chain=<tag>` to synchronize with one of the supported networ
 ./build/bin/erigon --chain=holesky
 ```
 
-
-
-
 # Mainnets
 
 |Chain   |	Tag|	ChainId|
