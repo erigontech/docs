@@ -117,4 +117,4 @@ If your docker installation requires the docker daemon to run as root (which is 
 
 <div class="warning">
 Windows support for docker-compose is not ready yet.
-<div>
+</div>

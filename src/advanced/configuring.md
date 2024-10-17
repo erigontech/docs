@@ -1,34 +1,52 @@
 # Configuring Erigon
 
-The Erigon 3 CLI has a wide range of flags that can be used to customize its behavior. Here's a breakdown of each flag:
+The Erigon 3 CLI has a wide range of flags that can be used to customize its behavior. Here's a breakdown of some of the flags, see [Options](/advanced/options.md) for the full list:
+
+[Supported Networks](/basic/networks.md)
 
 ## Data Storage
 
 * `--datadir`: Set the data directory for the databases (default: `/home/admin/.local/share/erigon`)
 * `--ethash.dagdir`: Set the directory to store the ethash mining DAGs (default: `/home/admin/.local/share/erigon-ethash`)
-* `--prune`: Manage snapshots, historical data partitions, and pruning presets (see below for details)
+* `--database.verbosity` Enabling internal db logs. Very high verbosity levels may require recompile db. Default: 2, means warning. (default: `2`)
+
+## Logging
+
+* `--log.json`: Format console logs with JSON (default: `false`)
+* `--log.console.json`: Format console logs with JSON (default: `false`)
+* `--log.dir.json`: Format file logs with JSON (default: `false`)
+* `--verbosity`: Set the log level for console logs (default: `info`)
+* `--log.console.verbosity`: Set the log level for console logs (default: `info`)
+* `--log.dir.disable`: Disable disk logging (default: `false`)
+* `--log.dir.path`: Set the path to store user and error logs to disk
+* `--log.dir.prefix`: Set the file name prefix for logs stored to disk
+* `--log.dir.verbosity`: Set the log verbosity for logs stored to disk (default: `info`)
+* `--log.delays`: Enable block delay logging (default: `false`)
 
 ## Pruning Presets
 
-* `--prune.mode`: Choose a pruning preset: "archive", "full", or "minimal" (default: "archive")
-* ` --prune.distance`: Keep state history for the latest N blocks (default: everything)
-(default: 0)
+* `--prune.mode`: Choose a pruning preset: `archive`, `full`, or `minimal` (default: `archive`)
+* `--prune.distance`: Keep state history for the latest N blocks (default: everything) (default: `0`)
 * `--prune.distance.blocks`: Keep block history for the latest N blocks (default: everything) (default: 0)
 
 ## Performance Optimization
 
 * `--batchSize`: Set the batch size for the execution stage (default: "512M")
 * `--bodies.cache`: Limit the cache for block bodies (default: "268435456")
-* `--database.verbosity`: Enable internal db logs (default: 2)
 * `--private.api.addr`: Set the internal grpc API address (default: "127.0.0.1:9090")
 * `--private.api.ratelimit`: Set the amount of requests the server can handle simultaneously (default: 31872)
 
 ## Txpool
 
 * `--txpool.api.addr`: Set the txPool api network address (default: use value of --private.api.addr)
+* `--txpool.disable` Experimental external pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
+* `--txpool.pricebump` Price bump percentage to replace an already existing transaction (default: 10)
+* `--txpool.pricelimit` Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
+* `--txpool.locals`: Comma separated accounts to treat as locals (no flush, priority inclusion)
 * `--txpool.nolocals`: Disables price exemptions for locally submitted transactions (default: false)
 * `--txpool.accountslots`: Set the minimum number of executable transaction slots guaranteed per account (default: 16)
 * `--txpool.blobslots`: Set the max allowed total number of blobs (within type-3 txs) per account (default: 48)
+* `--txpool.blobpricebump`: Price bump percentage to replace existing (type-3) blob transaction (default: 100)
 * `--txpool.totalblobpoollimit`: Set the total limit of number of all blobs in txs within the txpool (default: 480)
 * `--txpool.globalslots`: Set the maximum number of executable transaction slots for all accounts (default: 10000)
 * `--txpool.globalbasefeeslots`: Set the maximum number of non-executable transactions where only not enough baseFee (default: 30000)
@@ -40,6 +58,8 @@ The Erigon 3 CLI has a wide range of flags that can be used to customize its beh
 
  ## Remote Procedure Call (RPC)
 
+* `--rpc.accessList`: Specify granular (method-by-method) API allowlist
+* `--rpc.allow-unprotected-txs`: Allow for unprotected (non-EIP155 signed) transactions to be submitted via RPC (default: false)
 * `--rpc.batch.concurrency`: Limit the amount of goroutines to process 1 batch request (default: 2)
 * `--rpc.streaming.disable`: Disable json streaming for some heavy endpoints
 * `--rpc.accessList`: Specify granular (method-by-method) API allowlist
@@ -66,16 +86,6 @@ The Erigon 3 CLI has a wide range of flags that can be used to customize its beh
 * `--pprof`: Enable the pprof HTTP server (default: false)
 * `--metrics`: Enable metrics collection and reporting (default: false)
 * `--diagnostics`: Disable diagnostics (default: false)
-* `--log.json`: Format console logs with JSON (default: false)
-* `--log.console.json`: Format console logs with JSON (default: false)
-* `--log.dir.json`: Format file logs with JSON (default: false)
-* `--verbosity`: Set the log level for console logs (default: "info")
-* `--log.console.verbosity`: Set the log level for console logs (default: "info")
-* `--log.dir.disable`: Disable disk logging (default: false)
-* `--log.dir.path`: Set the path to store user and error logs to disk
-* `--log.dir.prefix`: Set the file name prefix for logs stored to disk
-* `--log.dir.verbosity`: Set the log verbosity for logs stored to disk (default: "info")
-* `--log.delays`: Enable block delay logging (default: false)
 * `--config`: Set erigon flags from YAML/TOML file
 * `--help`: Show help
 * `--version`: Print the version
