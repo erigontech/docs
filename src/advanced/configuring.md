@@ -2,8 +2,6 @@
 
 The Erigon 3 CLI has a wide range of flags that can be used to customize its behavior. Here's a breakdown of some of the flags, see [Options](/advanced/options.md) for the full list:
 
-[Supported Networks](/basic/networks.md)
-
 ## Data Storage
 
 * `--datadir`: Set the data directory for the databases (default: `/home/admin/.local/share/erigon`)
