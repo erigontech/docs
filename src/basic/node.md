@@ -9,11 +9,11 @@ If you want to do extensive **research**, like for example searching for old sta
 If you want to run a validator and produce blocks, **staking** is achievable already with a [full node](#full-node).
 
 
-| Usage    | Minimal Node | Full Node | Archive Node |
-|----------|--------------|-----------|--------------|
-| Privacy  |    **Yes**   |   **Yes** |    **Yes**   |
-| Research |    No        |    No     |    **Yes**   |
-| Staking  |    No        |  **Yes**  |    **Yes**   |
+| Usage        | Minimal Node | Full Node | Archive Node |
+|--------------|--------------|-----------|--------------|
+| Privacy, RPC |    **Yes**   |   **Yes** |    **Yes**   |
+| Research     |    No        |    No     |    **Yes**   |
+| Staking      |    No        |  **Yes**  |    **Yes**   |
 
 
 To switch type of node, you must first delete the ```/chaindata``` folder in the chosen ```--datadir``` directory.

@@ -12,6 +12,14 @@
 
 Erigon is an efficiency frontier implementation of Ethereum, designed to provide a faster, more modular and optimised experience. An archive node by default, Erigon uses edge technologies such as staged sync, efficient state storage and database compression, combined with high modularity.
 
+<div class="warning">
+
+If you wanto to test Erigon in minutes, go straight to the [quick nodes](quick_nodes.md) section.
+
+</div>
+
+# Features
+
 Erigon offers several features that make it a good option for a node application such as efficient state storage through the use of a key-value database and faster initial synchronisation.
 
 Built with modularity in mind, it also offers separate components such as the JSON RPC daemon, that can connect to both local and remote databases. For read-only calls, this RPC daemon does not need to run on the same system as the main Erigon binary, and can even run from a database snapshot.
@@ -33,21 +41,21 @@ Erigon 3 is a major update that introduces several significant changes, improvem
 
 **Node Configuration**
 
-* **Archive Node is default**. Full Node: ``--prune.mode=full``, Minimal Node (EIP-4444): ``--prune.mode=minimal``
+- Archive Node is default. For full node and minimal node see [type of node](/basic/node.md).
 
 **Other Features**
 
 * **New User Guide**: A dedicated user guide for Erigon 3 provides detailed information on how to set up and configure your node.
-* **Higher RAM Requirement**: Erigon 3 requires at least 64GB of RAM (which may be
+* **Higher RAM Requirement**: Erigon 3 requires at least 64GB of RAM.
 
-## Release Process
+# Release Process
 
 Erigon 3 also introduces changes to the release process, including:
 * New Docker Image Repository: Erigon images are now available on Dockerhub repository "erigontech/erigon".
 * Multi-Platform Support: The docker image is built for linux/amd64/v2 and linux/arm64 platforms using Alpine 3.20.2.
 * Release Workflow Changes: Build flags are now passed to the release workflow, allowing users to view previously missed build information in released binaries.
 
-## Known Issues
+# Known Issues
 
 While Erigon 3 offers many improvements over its predecessor, there are still some known issues and limitations:
-- don't [rm -rf] downloader - it will cause re-downloading of files: #10976
+- don't `rm -rf` downloader, it will cause re-downloading of files (#10976).
