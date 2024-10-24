@@ -12,6 +12,7 @@ General Info
 * The Docker image is now compatible with multiple platforms: Linux (amd64, v2) and arm64. It's built on top of Alpine 3.20.2;
 * All build flags now passed to the release workflow — so, user can see previously missed build info in our released binaries (as well as in docker images) and also better build optimization expected;
 * With recent updates, all build configurations are now included in the release process. This provides users with more comprehensive build information for both binaries and Docker images, along with enhanced build optimizations..
+* Images are stored at <https://hub.docker.com/r/erigontech/erigon>
 
 ## Download and start Erigon in Docker
 
