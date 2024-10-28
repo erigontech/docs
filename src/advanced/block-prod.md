@@ -36,7 +36,7 @@ Enabling the Beacon API will lead to a 6 GB higher RAM usage.
 For example, if you want to run Erigon + Caplin as a validator here following is the Erigon command:
 
 ```bash
-./build/bin/erigon --internalcl --chain=holesky --prune=hrtc --beacon.api=beacon,builder,config,debug,node,validator,lighthouse
+./build/bin/erigon --chain=holesky --prune.mode=full --beacon.api=beacon,builder,config,debug,node,validator,lighthouse
 ```
 
 While here the command for Lighthouse would look like*:

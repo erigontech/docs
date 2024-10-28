@@ -9,6 +9,9 @@ The execution client listens to new transactions, executes them in the Ethereum 
 The consensus client, also known as the *Beacon Node* or *CL client*, implements the Proof-of-Stake consensus algorithm, which enables the network to achieve agreement based on validated data from the execution client. Both clients work together to keep track of the head of the Ethereum chain and allow users to interact with the Ethereum network.
 
 <div class="warning">
+
+**Information**
+
 By default, Erigon is configured to run with Caplin, the embedded Consensus Layer.
 </div>
 
