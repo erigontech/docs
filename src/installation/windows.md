@@ -3,16 +3,16 @@
 
 There are 3 options for running Erigon 3 on Windows, listed from easiest to most difficult installation:
 
--   [Build executable binaries natively for Windows](https://erigon.gitbook.io/erigon/basic-usage/getting-started/windows#build-executable-binaries-natively-for-windows): Use the pre-built Windows executables that can be natively run on Windows without any emulation or containers required.
+-   [Build executable binaries natively for Windows](#build-executable-binaries-natively-for-windows): Use the pre-built Windows executables that can be natively run on Windows without any emulation or containers required.
     
--   [Use Docker](https://erigon.gitbook.io/erigon/basic-usage/getting-started/windows#use-docker): Run Erigon in a Docker container for isolation from the host Windows system. This avoids dependencies on Windows but requires installing Docker.
+-   [Use Docker](/installation/docker.md): Run Erigon in a Docker container for isolation from the host Windows system. This avoids dependencies on Windows but requires installing Docker.
     
--   [Use Windows Subsystem for Linux (WSL)](https://erigon.gitbook.io/erigon/basic-usage/getting-started/windows#use-windows-subsystem-for-linux-wsl): Install the Windows Subsystem for Linux (WSL) to create a Linux environment within Windows. Erigon can then be installed in WSL by following the Linux build instructions. This provides compatibility with Linux builds but involves more setup overhead.
+-   [Use Windows Subsystem for Linux (WSL)](#use-windows-subsystem-for-linux-wsl): Install the Windows Subsystem for Linux (WSL) to create a Linux environment within Windows. Erigon can then be installed in WSL by following the Linux build instructions. This provides compatibility with Linux builds but involves more setup overhead.
     
 
 ## Build executable binaries natively for Windows
 
-Before proceeding, ensure that the general [requirements](https://erigon.gitbook.io/erigon/basic-usage/getting-started#hardware-requirements) are met.
+Before proceeding, ensure that the [hardware](/getting-started/hw-requirements.md) and [software](/getting-started/sw-requirements.md) requirements are met.
 
 ### Installing Chocolatey
 
@@ -56,8 +56,6 @@ Then click on the "**New**" button and paste the path here:
 
 ### Clone the Erigon repository
 
-Make sure you have Git installed, see [https://git-scm.com/downloads](https://git-scm.com/downloads).
-
 Open the Command Prompt and type the following:
 
 ```bash
@@ -68,9 +66,9 @@ git clone --branch 3.0.0 --single-branch https://github.com/ledgerwatch/erigon.g
 
 To compile Erigon there are two alternative methods:
 
--   [Compiling from the wmake.ps1 file in the File Explorer](https://erigon.gitbook.io/erigon/basic-usage/getting-started/windows#compiling-from-the-wmake.ps1-file-in-the-file-explorer)
+-   [Compiling from the wmake.ps1 file in the File Explorer](#compiling-from-the-wmakeps1-file-in-the-file-explorer)
     
--   [Using the PowerShell CLI](https://erigon.gitbook.io/erigon/basic-usage/getting-started/windows#using-the-powershell-cli)
+-   [Using the PowerShell CLI](#using-the-powershell-cli)
     
 
 #### Compiling from the wmake.ps1 file in the File Explorer
@@ -113,26 +111,35 @@ For example, to build the Erigon executable write:
 
 ![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252Fwaw42ktWXUvjGGlpXMES%252Fimage.png%3Falt%3Dmedia%26token%3Dc09b3df7-521a-4dd6-ac69-f5592f544cb8&width=768&dpr=4&quality=100&sign=21fcbbb5&sv=1)
 
-You can also build other binaries as [RPCDaemon](https://erigon.gitbook.io/erigon/advanced-usage/rpc-daemon), [TxPool](https://erigon.gitbook.io/erigon/advanced-usage/txpool), [Sentry](https://erigon.gitbook.io/erigon/advanced-usage/sentry) and [Downloader](https://erigon.gitbook.io/erigon/advanced-usage/downloader).
+You can use the same command to build other binaries as RPCDaemon, TxPool, Sentry and Downloader.
 
 All binaries are placed in the `.\build\bin\` subfolder.
-
-## Use Docker
-
-See [docker instructions](https://erigon.gitbook.io/erigon/basic-usage/getting-started/docker).
 
 ## Use Windows Subsystem for Linux (WSL)
 
 WSL enables running a complete GNU/Linux environment natively within Windows 10, providing Linux compatibility without the performance overhead of traditional virtualization.
 
-To install WSL, follow these instructions: [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install).
+To install WSL, follow these instructions: <https://learn.microsoft.com/en-us/windows/wsl/install>.
 
-**Information:** WSL Version 2 is the only version supported.
+<div class="warning">
 
-Under this option you can build Erigon as you would on a regular Linux distribution (see detailed instructions [here](https://erigon.gitbook.io/erigon/basic-usage/getting-started/linux-and-macos)).
+**Information**
+
+WSL Version 2 is the only version supported.
+
+</div>
+
+Under this option you can build Erigon as you would on a regular Linux distribution (see detailed instructions [here](/installation/linux.md).
 
 You can also point your data to any of the mounted Windows partitions ( e.g. `/mnt/c/[...]`, `/mnt/d/[...]` etc..) but be aware that performance will be affected: this is due to the fact that these mount points use `DrvFS`, which is a network file system, and additionally MDBX locks the db for exclusive access, meaning that only one process at a time can access the data.
 
-**Warning**: the remote db RPCdaemon is an experimental feature and is **not recommended**, it is extremely slow. It is highly preferable to use the embedded RPCdaemon.
+<div class="warning">
+
+**Warning**
+
+the remote db RPCdaemon is an experimental feature and is **not recommended**, it is extremely slow. It is highly preferable to use the embedded RPCdaemon.
+
+</div>
+
 
 This has implications for running `rpcdaemon`, which must be configured as a remote DB, even if it is running on the same machine. If your data is hosted on the native Linux filesystem instead, there are no restrictions. Also note that the default WSL2 environment has its own IP address, which does not match the network interface of the Windows host: take this into account when configuring NAT on port 30303 on your router.
