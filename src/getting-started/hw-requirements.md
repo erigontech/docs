@@ -31,4 +31,4 @@ Please refer to [disk space required](/basic/disk-space.md) for details. To ensu
 
 ## Bandwith
 
-A stable and reliable internet connection is crucial for running a node, especially if you intend to run a validator node, a downtime can result in missed rewards or penalties. A minimum download speed of 25Mbps is recommended, and it's best to use an ISP with an uncapped data allowance.
+A stable and reliable internet connection is crucial for running a node, especially if you intend to run a validator node: a downtime can result in missed rewards or penalties. A minimum download speed of 25Mbps is recommended, and it's best to use an ISP with an uncapped data allowance.
