@@ -1,8 +1,10 @@
-name: Pages Deployment
+name: Erigon Docs Deployment
 
 on:
   push:
     branches:
+      - development
+      - main
       - testmichele
 
 env:
@@ -14,6 +16,7 @@ jobs:
     permissions:
       contents: read
       deployments: write
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
