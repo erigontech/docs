@@ -10,10 +10,18 @@
 	                       d####P                               
 
 
+<div class="warning">
+
+**WARNING**
+
+*The Erigon 3 book is under construction: you may find broken links, empty pages and inexact informations.*
+</div>
+
 Erigon is an efficiency frontier implementation of Ethereum, designed to provide a faster, more modular and optimised experience. An archive node by default, Erigon uses edge technologies such as staged sync, efficient state storage and database compression, combined with high modularity.
 
 <div class="warning">
 
+**Information**
 If you wanto to test Erigon in minutes, go straight to the [quick nodes](quick_nodes.md) section.
 
 </div>
