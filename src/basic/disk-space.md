@@ -17,17 +17,18 @@
 
 | Network  | Archive Node | Full Node | Minimal Node |
 |----------|--------------|-----------|--------------|
-| Ethereum |    1.7 TB    |    900 GB |  310 GB      |
-| Gnosis   |    511 GB    |    354 GB |  200 GB      |
-| Polygon  |    4.3 TB    |    2 TB |  873 GB        |
+| Ethereum |    --- TB    |    --- GB |  --- GB      |
+| Gnosis   |    --- GB    |    --- GB |  --- GB      |
+| Polygon  |    --- TB    |    --- TB |  --- GB      |
 
 
 # Testnets
+## Erigon with Caplin
 
 | Network  | Archive Node | Full Node | Minimal Node |
 |----------|--------------|-----------|--------------|
-| Holesky  |    170 GB    |    110 GB |  53 GB      |
-| Sepolia  |    ... GB    |    ... GB |  ... GB      |
+| Holesky  |    170 GB    |    110 GB |  53 GB       |
+| Sepolia  |    186 GB    |    116 GB |  ... GB      |
 | Chiado   |    ... GB    |    ... GB |  ... GB      |
 | Amoy     |    ... GB    |    ... GB |  ... GB      |
                         

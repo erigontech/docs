@@ -59,7 +59,7 @@ Then click on the "**New**" button and paste the path here:
 Open the Command Prompt and type the following:
 
 ```bash
-git clone --branch 3.0.0 --single-branch https://github.com/ledgerwatch/erigon.git
+git clone --branch v3.0.0-alpha5 --single-branch https://github.com/erigontech/erigon.git
 ```
 
 ### Compiling Erigon

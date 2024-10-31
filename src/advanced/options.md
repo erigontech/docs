@@ -13,7 +13,7 @@ The `--help` flag listing is reproduced below for your convenience.
 
 # Commands
 
-```pre
+```
 NAME:
    erigon - erigon
 
@@ -21,7 +21,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-alpha4-c0d9a2b9
+   3.00.0-alpha5-78f3647d
 
 COMMANDS:
    init            Bootstrap and initialize a new genesis block
@@ -52,7 +52,7 @@ GLOBAL OPTIONS:
    --txpool.commit.every value                                                      How often transactions should be committed to the storage (default: 15s)
    --prune.distance value                                                           Keep state history for the latest N blocks (default: everything) (default: 0)
    --prune.distance.blocks value                                                    Keep block history for the latest N blocks (default: everything) (default: 0)
-   --prune.mode value                                                               Choose a pruning preset to run onto. Avaiable values: "archive","full","minimal".
+   --prune.mode value                                                               Choose a pruning preset to run onto. Available values: "archive","full","minimal".
                                                                                           Archive: Keep the entire indexed database, aka. no pruning. (Pruning is flexible),
                                                                                           Full: Keep only blocks and latest state (Pruning is not flexible)
                                                                                           Minimal: Keep only latest state (Pruning is not flexible) (default: "archive")
@@ -196,6 +196,8 @@ GLOBAL OPTIONS:
    --caplin.discovery.port value                                                    Port for Caplin DISCV5 protocol (default: 4000)
    --caplin.discovery.tcpport value                                                 TCP Port for Caplin DISCV5 protocol (default: 4001)
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
+   --caplin.subscibe-all-topics                                                     Subscribe to all gossip topics (default: false)
+   --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
    --sentinel.addr value                                                            Address for sentinel (default: "localhost")
    --sentinel.port value                                                            Port for sentinel (default: 7777)
    --sentinel.bootnodes value [ --sentinel.bootnodes value ]                        Comma separated enode URLs for P2P discovery bootstrap
@@ -211,7 +213,7 @@ GLOBAL OPTIONS:
    --silkworm.rpc.log.response                                                      Dump responses in interface logs for embedded Silkworm RPC service (default: false)
    --silkworm.rpc.workers value                                                     Number of worker threads used in embedded Silkworm RPC service (zero means use default in Silkworm) (default: 0)
    --silkworm.rpc.compatibility                                                     Preserve JSON-RPC compatibility using embedded Silkworm RPC service (default: true)
-   --beacon.api value [ --beacon.api value ]                                        Enable beacon API (avaiable endpoints: beacon, builder, config, debug, events, node, validator, lighthouse)
+   --beacon.api value [ --beacon.api value ]                                        Enable beacon API (available endpoints: beacon, builder, config, debug, events, node, validator, lighthouse)
    --beacon.api.addr value                                                          sets the host to listen for beacon api requests (default: "localhost")
    --beacon.api.cors.allow-methods value [ --beacon.api.cors.allow-methods value ]  set the cors' allow methods (default: "GET", "POST", "PUT", "DELETE", "OPTIONS")
    --beacon.api.cors.allow-origins value [ --beacon.api.cors.allow-origins value ]  set the cors' allow origins
@@ -226,6 +228,7 @@ GLOBAL OPTIONS:
    --caplin.backfilling.blob.no-pruning                                             disable blob pruning in caplin (default: false)
    --caplin.checkpoint-sync.disable                                                 disable checkpoint sync in caplin (default: false)
    --caplin.archive                                                                 enables archival node in caplin (default: false)
+   --caplin.snapgen                                                                 enables snapshot generation in caplin (default: false)
    --caplin.mev-relay-url value                                                     MEV relay endpoint. Caplin runs in builder mode if this is set
    --caplin.validator-monitor                                                       Enable caplin validator monitoring metrics (default: false)
    --caplin.custom-config value                                                     set the custom config for caplin

@@ -15,9 +15,9 @@ The default Consensus Layer utilized is [Caplin](./advanced/caplin.md), the Erig
 # Basic Configuration​
 
 * Default data directory is `/home/admin/.local/share/erigon`. If you want to store Erigon files in a non-default location, add flag:
-```bash
---datadir=<your_data_dir>
-```
+    ```bash
+    --datadir=<your_data_dir>
+    ```
 
 * Based on the [type of node](basic/node.md) you want to run you can add ```--prune.mode=full``` to run a full node or ```--prune.mode=minimal``` to run a minimal node.
 The default node is archive node.
