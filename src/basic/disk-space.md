@@ -1,5 +1,5 @@
 # Disk Space Required
-*How much space your Erigon node is taking*
+*How much space your Erigon node will take*
 
 
 # Mainnets
