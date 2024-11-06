@@ -23,7 +23,7 @@ Please refer to [disk space required](/basic/disk-space.md) for details. To ensu
 
 ## RAM Requirements
     
-* **Minimum**: 32GB
+* **Minimum**: 64GB
 
 ## Kernel Requirements
 
