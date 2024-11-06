@@ -11,7 +11,7 @@
 
 
 >
-> **NOTE**:The Erigon 3 book is under construction and you may find broken links, empty pages and inexact information.
+> **NOTE**: The Erigon 3 book is under construction and you may find broken links, empty pages and inexact information.
 > For instructions regarding Erigon 2 please refer to <https://erigon.gitbook.io>
 
 > **DISCLAIMER**: Erigon 3 is still in alpha phase and it is not recommended to be used in production environments. The Erigon team does not take any responsibility for losses or damages occurred through the use of Erigon. While we employ a seasoned in-house security team, we have not subjected our systems to independent third-party security assessments, leaving potential vulnerabilities to bugs or malicious activity unaddressed. It is essential for validators to be aware that unforeseen events, including software glitches, may result in lost rewards.
