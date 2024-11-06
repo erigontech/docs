@@ -2,7 +2,7 @@
 
 Erigon 3 introduces a flexible approach to node configuration, offering three distinct types to suit various user needs. Depending on your need, you can choose from three different node types.
 
-If you are looking for more **privacy** during your interaction with EVM, like for example sending transactions with your node, you can use a [minimal node](#minimal-node), which is fast to set up and uses a minimal amount of [disk space](disk-space.md).
+If you are looking for more **privacy** during your interaction with EVM, like for example sending transactions with your node, you can use a [minimal node](#minimal-node), which is fast to set up and uses a minimal amount of [disk space](disk-space.md). Minimal node is also suitable for staking.
 
 If you want to do extensive **research**, like for example searching for old states of the EVM, or implementing Otterscan, you will need an [archive node](#archive-node).
 
@@ -13,7 +13,7 @@ If you want to run a validator and produce blocks, **staking** is achievable alr
 |--------------|--------------|-----------|--------------|
 | Privacy, RPC |    **Yes**   |   **Yes** |    **Yes**   |
 | Research     |    No        |    No     |    **Yes**   |
-| Staking      |    No        |  **Yes**  |    **Yes**   |
+| Staking      |    **Yes**   |  **Yes**  |    **Yes**   |
 
 
 To switch type of node, you must first delete the ```/chaindata``` folder in the chosen ```--datadir``` directory.
