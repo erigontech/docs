@@ -60,14 +60,14 @@ The basic command to run Erigon with Caplin on Gnosis Chain is:
 
 3. Now compile Lighthouse in order to run Gnosis Chain using the feature flags :
 
-```bash
-cd lighthouse
-env FEATURES=gnosis make
-```
+    ```bash
+    cd lighthouse
+    env FEATURES=gnosis make
+    ```
 
 4. Because Erigon needs a target head in order to sync, Lighthouse must be synced before Erigon may synchronize. The fastest way to synchronize Lighthouse is to use one of the many public checkpoint synchronization endpoints:
-    - https://checkpoint.gnosischain.com for Gnosis Chain
-    - https://checkpoint.chiadochain.net for Chiado Testnet
+    - `https://checkpoint.gnosischain.com` for Gnosis Chain
+    - `https://checkpoint.chiadochain.net` for Chiado Testnet
 
 
 5. To communicate with Erigon, the **execution endpoint** must be specified as <erigon address>:8551, where <erigon address> is either `//localhost` or the IP address of the device running Erigon.
