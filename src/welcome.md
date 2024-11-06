@@ -11,14 +11,10 @@
 
 
 >
-> The Erigon 3 book is under construction: you may find broken links, empty pages and inexact  information.
+> **NOTE**:The Erigon 3 book is under construction: you may find broken links, empty pages and inexact  information.
 > For instructions regarding Erigon 2 please refer to <https://erigon.gitbook.io>
 
-
-
-
-> **Erigon 3 is still in alpha phase and it is not recommended to be used in production environments.**
-The Erigon team does not take any responsibility for losses or damages occurred through the use of Erigon. While we employ a seasoned in-house security team, we have not subjected our systems to independent third-party security assessments, leaving potential vulnerabilities to bugs or malicious activity unaddressed. It is essential for validators to be aware that unforeseen events, including software glitches, may result in lost rewards.
+> **DISCLAIMER**: Erigon 3 is still in alpha phase and it is not recommended to be used in production environments. The Erigon team does not take any responsibility for losses or damages occurred through the use of Erigon. While we employ a seasoned in-house security team, we have not subjected our systems to independent third-party security assessments, leaving potential vulnerabilities to bugs or malicious activity unaddressed. It is essential for validators to be aware that unforeseen events, including software glitches, may result in lost rewards.
 
 Erigon is an efficiency frontier implementation of Ethereum, designed to provide a faster, more modular and optimised experience. An archive node by default, Erigon uses edge technologies such as staged sync, efficient state storage and database compression, combined with high modularity.
 
