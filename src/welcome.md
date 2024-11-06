@@ -38,27 +38,7 @@ Built with modularity in mind, it also offers separate components such as the JS
 
 Erigon 3 is a major update that introduces several significant changes, improvements, and optimizations. Some of the key features and differences include:
 
-**Sync Improvements**
-
-* **Sync from scratch** doesn't require re-executing **all history**. Instead, it leverages **snapshots** to download the latest state and its history.
-* **ExecutionStage** now includes multiple E2 stages, such as ``stage_hash_state``, ``stage_trie``, ``stage_log_index``, ``stage_history_index``, and ``stage_trace_index``, for faster execution.
-* **E3 can execute a single historical transaction** without executing its corresponding block, thanks to its **transaction-granularity indexing system**, which differs from a block-granularity approach.
-* **E3 doesn't store Logs** (aka Receipts) - it always re-executes historical transactions (but it's cheaper than in E2 - see point above). Known performance issues: #10747
-* **--sync.loop.block.limit** is enabled by default, with a default value of 5,000. To increase sync speed on good hardware, set ``--sync.loop.block.limit=10_000 --batchSize=2g``.
-
-**Storage and Performance**
-
-* **datadir/chaindata is small now** - to prevent its growth: we recommend setting ``--batchSize <= 2G``. It's also fine to remove the chaindata directory.
-* Symlink or mount the latest state to a fast drive and history to a cheaper drive.
-
-**Node Configuration**
-
-- Archive Node is default. For full node and minimal node see [type of node](/basic/node.md).
-
-**Other Features**
-
-* **New User Guide**: A dedicated user guide for Erigon 3 provides detailed information on how to set up and configure your node.
-* **Higher RAM Requirement**: Erigon 3 requires at least 64GB of RAM.
+The main changes from Erigon 2 are listed [here](https://github.com/erigontech/erigon?tab=readme-ov-file#erigon3-changes-from-erigon2).
 
 # Release Process
 
