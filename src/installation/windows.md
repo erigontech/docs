@@ -24,7 +24,7 @@ Once your Windows machine has the above installed, open the **Command Prompt** b
 choco -v
 ```
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FAqRNiSe3JRMH48RnpU4M%252Fimage.png%3Falt%3Dmedia%26token%3Dd4bf4d87-59cd-4e49-b1d2-73b0f7343e79&width=768&dpr=4&quality=100&sign=1819d0c1&sv=1)
+<img src="/images/choco-v.png" alt="" style="display: block; margin: 0 auto;">
 
 Now you need to install the following components: `cmake`, `make`, `mingw` by:
 
@@ -32,27 +32,34 @@ Now you need to install the following components: `cmake`, `make`, `mingw` by:
 choco install cmake make mingw
 ```
 
-**Important note about Anti-Virus:** During the compiler detection phase of MinGW, some temporary executable files are generated to test the compiler capabilities. It's been reported that some anti-virus programs detect these files as possibly infected with the `Win64/Kryptic.CIS` Trojan horse (or a variant of it). Although these are false positives, we have no control over the 100+ vendors of security products for Windows and their respective detection algorithms and we understand that this may make your experience with Windows builds uncomfortable. To work around this, you can either set exclusions for your antivirus software specifically for the`build\bin\mdbx\CMakeFiles` subfolder of the cloned repo, or you can run Erigon using the other two options below.
+<div class="warning">
+
+**Important note about Anti-Virus:**
+
+During the compiler detection phase of **MinGW**, some temporary executable files are generated to test the compiler capabilities. It's been reported that some anti-virus programs detect these files as possibly infected with the `Win64/Kryptic.CIS` Trojan horse (or a variant of it). Although these are false positives, we have no control over the 100+ vendors of security products for Windows and their respective detection algorithms and we understand that this may make your experience with Windows builds uncomfortable. To work around this, you can either set exclusions for your antivirus software specifically for the`build\bin\mdbx\CMakeFiles` subfolder of the cloned repo, or you can run Erigon using the other two options below.
+
+</div>
 
 Make sure that the Windows System Path variable is set correctly. Use the search bar on your computer to search for “**Edit the system environment variable**”.
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FuIzFzKRHIJea46qAGYyK%252Fimage.png%3Falt%3Dmedia%26token%3D6941fac4-f496-4c99-a8f2-06e28a276132&width=768&dpr=4&quality=100&sign=6724aff&sv=1)
+<img src="/images/Edit_sys_env.png" alt="" style="display: block; margin: 0 auto;">
 
 Click the “**Environment Variables...**” button.
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FFJQDBBaCqwxlu74Rj7Gk%252Fimage.png%3Falt%3Dmedia%26token%3D721c97df-5f99-4057-88de-6d86f1ccc827&width=768&dpr=4&quality=100&sign=358f342b&sv=1)
+<img src="/images/Edit_sys_env2.png" alt="" style="display: block; margin: 0 auto;">
 
 Look down at the "**System variables**" box and double click on "**Path**" to add a new path.
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252F8J83HtpBXEbK8JlCaQ57%252Fimage.png%3Falt%3Dmedia%26token%3Dd1914858-11e6-43cd-bd78-51825a4c8e62&width=768&dpr=4&quality=100&sign=a87846e9&sv=1)
+<img src="/images/System_var.png" alt="" style="display: block; margin: 0 auto;">
 
-Then click on the "**New**" button and paste the path here:
+Then click on the "**New**" button and paste the following path:
 
 ```bash
  C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin
 ```
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FcxwhuppIN2sOfYg3HUcT%252Fpath2.png%3Falt%3Dmedia%26token%3D090c5597-2359-4bba-8f0b-009d8c82a92d&width=768&dpr=4&quality=100&sign=91f964&sv=1)
+<img src="/images/new_sys_var.png" alt="" style="display: block; margin: 0 auto;">
+
 
 ### Clone the Erigon repository
 
@@ -75,17 +82,17 @@ To compile Erigon there are two alternative methods:
 
 This is the fastest way which normally works for everyone. Open the File Explorer and go to the Erigon folder, then right click the `wmake` file and choose "**Run with PowerShell**".
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FfcOUUMOW0CBtqd7WxEHM%252FImmagine%25202023-09-25%2520162444.png%3Falt%3Dmedia%26token%3D7875e451-f979-424f-9e64-a4ab4ffa0afc&width=768&dpr=4&quality=100&sign=c7b8d74e&sv=1)
+<img src="/images/powershell.png" alt="" style="display: block; margin: 0 auto;">
 
-PowerShell will compile Erigon and all of its modules. All binaries are placed in the `.\build\bin\` subfolder.
+PowerShell will compile Erigon and all of its modules. All binaries will be placed in the `.\build\bin\` subfolder.
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FK58q89hk9IXqScpJzhkG%252Fimage.png%3Falt%3Dmedia%26token%3D29a9e074-789a-4000-b581-094e212e4660&width=768&dpr=4&quality=100&sign=165ad893&sv=1)
+<img src="/images/powershell2.png" alt="" style="display: block; margin: 0 auto;">
 
 #### Using the PowerShell CLI
 
 In the search bar on your computer, search for “**Windows PowerShell**” and open it.
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252FEmMVQg8OI9d0Wm0wxzrG%252Fimage.png%3Falt%3Dmedia%26token%3D822abe0e-3ecb-4e29-8a98-ae4306cf37f8&width=768&dpr=4&quality=100&sign=20a0e02f&sv=1)
+<img src="/images/powershell3.png" alt="" style="display: block; margin: 0 auto;">
 
 Change the working directory to "**erigon**"
 
@@ -93,9 +100,10 @@ Change the working directory to "**erigon**"
 cd erigon
 ```
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252F3lMY5KBR6nnYpOOL0XtN%252Fimage.png%3Falt%3Dmedia%26token%3D51c370f0-1582-4062-b84e-7deecfce5319&width=768&dpr=4&quality=100&sign=38e16017&sv=1)
+<img src="/images/powershell4.png" alt="" style="display: block; margin: 0 auto;">
 
-Before proceeding make sure that the [Set-Execution Policy](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3) PowerShell execution running policies are correct for your Windows account.
+Before proceeding make sure that the [Set-Execution Policy]
+(https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3) - PowerShell execution running policies are correct for your Windows account.
 
 Now you can compile Erigon and/or any of its component:
 
@@ -109,7 +117,7 @@ For example, to build the Erigon executable write:
 .\wmake.ps1 erigon
 ```
 
-![](https://erigon.gitbook.io/~gitbook/image?url=https%3A%2F%2F2414554083-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Feeqc6D5KqkgOsOW7j4k6%252Fuploads%252Fwaw42ktWXUvjGGlpXMES%252Fimage.png%3Falt%3Dmedia%26token%3Dc09b3df7-521a-4dd6-ac69-f5592f544cb8&width=768&dpr=4&quality=100&sign=21fcbbb5&sv=1)
+<img src="/images/powershell5.png" alt="" style="display: block; margin: 0 auto;">
 
 You can use the same command to build other binaries as RPCDaemon, TxPool, Sentry and Downloader.
 
@@ -129,7 +137,7 @@ WSL Version 2 is the only version supported.
 
 </div>
 
-Under this option you can build Erigon as you would on a regular Linux distribution (see detailed instructions [here](/installation/linux.md).
+Under this option you can build Erigon as you would on a regular Linux distribution (see detailed instructions [here](/installation/linux.md)).
 
 You can also point your data to any of the mounted Windows partitions ( e.g. `/mnt/c/[...]`, `/mnt/d/[...]` etc..) but be aware that performance will be affected: this is due to the fact that these mount points use `DrvFS`, which is a network file system, and additionally MDBX locks the db for exclusive access, meaning that only one process at a time can access the data.
 
@@ -137,7 +145,7 @@ You can also point your data to any of the mounted Windows partitions ( e.g. `/m
 
 **Warning**
 
-the remote db RPCdaemon is an experimental feature and is **not recommended**, it is extremely slow. It is highly preferable to use the embedded RPCdaemon.
+The remote db RPCdaemon is an experimental feature and is **not recommended**, it is extremely slow. It is highly preferable to use the embedded RPCdaemon.
 
 </div>
 

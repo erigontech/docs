@@ -3,7 +3,7 @@
 
 ## Optimize for Low Latency
 
-Use a machine with low latency (not throughput) disk and RAM for faster initial sync.
+Use a machine with low latency storage (not throughput) and high RAM for faster initial sync.
 
 ## Memory Optimized Nodes
 

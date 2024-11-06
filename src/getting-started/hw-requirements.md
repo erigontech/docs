@@ -2,7 +2,7 @@
 
 ## Disk type
 
-A locally mounted **SSD** (Solid-State Drive) or **NVMe** (Non-Volatile Memory Express) disk is recommended for storage. Hard Disk Drives (HDD) are not recommended, as they can cause Erigon to lag behind the blockchain tip, albeit not fall behind.
+A locally mounted **SSD** (Solid-State Drive) or **NVMe** (Non-Volatile Memory Express) disk is recommended for storage. **Avoid Hard Disk Drives (HDD)**, as they can cause Erigon to lag behind the blockchain tip, albeit not fall behind.
 
 Additionally, SSDs may experience performance degradation when nearing full capacity.
 

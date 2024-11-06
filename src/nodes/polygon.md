@@ -1,3 +1,3 @@
 # Polygon
 
-<img class="center" src="/images/WIP.png" alt="work in progress">
+<img src="/images/WIP.png" alt="" style="display: block; margin: 0 auto;">

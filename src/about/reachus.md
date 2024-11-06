@@ -1,13 +1,14 @@
 # How to reach us
 
-Erigon office is located in the CV Labs in Zug
+The Erigon Technologies AG office is located in the CV Labs in Zug:
 
 
-Erigon Ag / Damstrasse 16
-
+```
+Erigon Technologies AG 
+Damstrasse 16
 6300 Zug
-
 Switzerland
+```
 
 ## Erigon Discord Server
 

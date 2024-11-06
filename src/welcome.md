@@ -14,7 +14,12 @@
 
 **WARNING**
 
+<img src="/images/WIP.png" alt="" style="display: block; margin: 0 auto;">
+
 *The Erigon 3 book is under construction: you may find broken links, empty pages and inexact informations.*
+
+*For instructions regarding Erigon 2 please refer to <https://erigon.gitbook.io>*
+
 </div>
 
 Erigon is an efficiency frontier implementation of Ethereum, designed to provide a faster, more modular and optimised experience. An archive node by default, Erigon uses edge technologies such as staged sync, efficient state storage and database compression, combined with high modularity.
