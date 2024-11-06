@@ -15,6 +15,7 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 
 <div class="hidden">
 
+<div class="hidden">
 ## Erigon with an external Consensus Layer client
 
 *(Values obtained with [Lighthouse](https://lighthouse-book.sigmaprime.io/))*
@@ -33,7 +34,7 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 | Network  | Archive Node | Full Node | Minimal Node |
 |----------|--------------|-----------|--------------|
 | Holesky  |    170 GB    |    110 GB |  53 GB       |
-| Sepolia  |    186 GB    |    116 GB |  ... GB      |
+| Sepolia  |    186 GB    |    116 GB |  63 GB      |
 | Chiado   |    ... GB    |    ... GB |  ... GB      |
 | Amoy     |    ... GB    |    ... GB |  ... GB      |
                         

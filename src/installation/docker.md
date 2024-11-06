@@ -119,13 +119,13 @@ ERIGON_USER=erigon
 sudo -u ${ERIGON_USER} DOCKER_UID=$(id -u ${ERIGON_USER}) DOCKER_GID=$(id -g ${ERIGON_USER}) XDG_DATA_HOME=~${ERIGON_USER}/.ethereum DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 make docker-compose
 ```
 
-`Makefile` creates the initial directories for Erigon, Prometheus and Grafana. The PID namespace is shared between erigon and rpcdaemon which is required to open Erigon's DB from another process (RPCDaemon local-mode). See: [https://github.com/ledgerwatch/erigon/pull/2392/files](https://github.com/ledgerwatch/erigon/pull/2392/files)
+`Makefile` creates the initial directories for Erigon, Prometheus and Grafana. The PID namespace is shared between erigon and rpcdaemon which is required to open Erigon's DB from another process (RPCDaemon local-mode), see <https://github.com/ledgerwatch/erigon/pull/2392/files>.
 
-If your docker installation requires the docker daemon to run as root (which is by default), you will need to prefix the command above with `sudo`. However, it is sometimes recommended running docker (and therefore its containers) as a non-root user for security reasons. For more information about how to do this, refer to this [article](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
+If your Docker installation requires the Docker daemon to run as root (which is the default), you will need to prefix the above command with `sudo`. However, it is sometimes recommended to run Docker (and therefore its containers) as a non-root user for security reasons. For more information on how to do this, see this [article](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
 
 <div class="warning">
 
 **Information**
 
-Windows support for docker-compose is not ready yet.
+Windows support for `docker-compose` is not ready yet.
 </div>
