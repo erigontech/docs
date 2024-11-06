@@ -23,7 +23,7 @@ Git is a tool that helps download and manage the Erigon source code. To install 
 
 ### Go Programming Language
 
-Erigon utilizes Go (also known as Golang) version 1.22 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the `/usr/local/go` folder (you may need to use `sudo`) and re-extract the new version in its place.
+Erigon utilizes Go (also known as Golang) version 1.23 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the `/usr/local/go` folder (you may need to use `sudo`) and re-extract the new version in its place.
 
 To install the latest Go version, visit the official documentation at [https://golang.org/doc/install](https://golang.org/doc/install).
 
