@@ -1,5 +1,5 @@
 # Optimizing Storage
-*Using fast disk and cheap disks*
+*Using fast disks and cheap disks*
 
 For optimal performance, it's recommended to store the datadir on a fast NVMe-RAID disk. However, if this is not feasible, you can store the history on a cheaper disk and still achieve good performance.
 
@@ -24,10 +24,10 @@ On the **slow disk** place `datadir` folder with the following structure:
 
 ## Step 2: Speed Up History Access (Optional)
 
-If you need to further improve performance, follow these steps:
+If you need to further improve performance:
 
-1. Store the `accessors` folder on the fast disk. This should provide a noticeable speed boost.
-2. If the speed is still not satisfactory, move the `idx` folder to the fast disk.
-3. If performance is still an issue, consider moving the entire history folder to the fast disk.
+- Store the `accessors` folder on the fast disk. This should provide a noticeable speed boost.
+- If the speed is still not satisfactory, move the `idx` folder to the fast disk.
+- If performance is still an issue, consider moving the entire history folder to the fast disk.
 
 By following these steps, you can optimize your Erigon 3 storage setup to achieve a good balance between performance and cost.

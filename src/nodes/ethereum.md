@@ -36,9 +36,9 @@ If you are using [Windows](/installation/windows.md) follow the dedicated instal
 
 ## Start Erigon​
 
-If you want to be able to send transactions with your wallet and access the Ethereum network directly, contribute to the network decentralization it is advised to run Erigon with [Caplin](/advanced/caplin.md), the internal Consensus Layer (CL).
+If you want to be able to send transactions with your wallet and access the Ethereum network directly, contribute to the network decentralization it is advised to run [Erigon with Caplin](#erigon-with-caplin), the internal Consensus Layer (CL).
 
-Alternatively you can also run Prysm, Lighthouse or any other Consensus Layer client alongside with Erigon by adding the `--externalcl` flag. This will also allow you to access the Ethereum blockchain directly and give you the possibility to stake your ETH and do block production.
+Alternatively you can also run [Prysm](#erigon-with-prysm-as-the-external-consensus-layer), [Lighthouse](#erigon-with-lighthouse-as-the-external-consensus-layer) or any other Consensus Layer client alongside with Erigon by adding the `--externalcl` flag. This will also allow you to access the Ethereum blockchain directly and give you the possibility to stake your ETH and do block production.
 
 ### Erigon with Caplin
 
@@ -70,7 +70,7 @@ The basic command to run Erigon with Caplin on Ethereum mainnet is:
 
     If your Prysm is on a different device, add `--authrpc.addr 0.0.0.0` (Engine API listens on localhost by default) as well as `--authrpc.vhosts <CL host>` to your Prysm configuration.
 
-### Erigon with Lighthouse
+### Erigon with Lighthouse as the external consensus layer
 
 1. Start Erigon:
 
