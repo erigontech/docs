@@ -19,6 +19,6 @@ By default, Erigon is configured to run with Caplin, the embedded Consensus Laye
 
 A Consensus Layer (CL) client needs to run alongside Erigon to run a full Ethereum node, a Gnosis Chain node and a Polygon node and its respective testnets. Basically, without a CL client the EL will never get in sync. See below which Beacon node for which chain you can run along with Erigon
 
-- Ethereum
-- Gnosis Chain
-- Polygon
+- [Ethereum](./src/nodes/ethereum.md)
+- [Gnosis Chain](/nodes/gnosis.md)
+- [Polygon](/nodes/polygon.md)
