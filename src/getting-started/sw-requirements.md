@@ -6,22 +6,20 @@ Erigon works only from command line interface (CLI), so it is advisable to have 
 
 Please ensure that the following prerequisites are met.
 
-### Build essential (only for Linux)
+## Install Build essential and CMake (Linux systems)
 
-Install **Build-essential** and **Cmake**:
+**Build-essential** and **Cmake** are software packages that are required for building and compiling software. Install them using the following command:
 
 ```bash
 sudo apt install build-essential cmake -y
 ```
 
-### Git
+## Git
 
-Git is a tool that helps download and manage the Erigon source code. To install Git, visit:
-
-<https://git-scm.com/downloads>
+Git is a tool that helps download and manage the Erigon source code. To install Git, visit <https://git-scm.com/downloads>.
 
 
-### Go Programming Language
+## Go Programming Language
 
 Erigon utilizes Go (also known as Golang) version 1.23 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the `/usr/local/go` folder (you may need to use `sudo`) and re-extract the new version in its place.
 
