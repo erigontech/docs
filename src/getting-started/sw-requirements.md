@@ -6,22 +6,20 @@ Erigon works only from command line interface (CLI), so it is advisable to have 
 
 Please ensure that the following prerequisites are met.
 
-### Build essential (only for Linux)
+## Install Build essential and CMake (Linux systems)
 
-Install **Build-essential** and **Cmake**:
+**Build-essential** and **Cmake** are software packages that are required for building and compiling software. Install them using the following command:
 
 ```bash
 sudo apt install build-essential cmake -y
 ```
 
-### Git
+## Git
 
-Git is a tool that helps download and manage the Erigon source code. To install Git, visit:
-
-<https://git-scm.com/downloads>
+Git is a tool that helps download and manage the Erigon source code. To install Git, visit <https://git-scm.com/downloads>.
 
 
-### Go Programming Language
+## Go Programming Language
 
 Erigon utilizes Go (also known as Golang) version 1.23 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the `/usr/local/go` folder (you may need to use `sudo`) and re-extract the new version in its place.
 
@@ -40,19 +38,19 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 source ~/.profile
 ```
 
-### C++ Compiler
+## C++ Compiler
 
 This turns the C++ part of Erigon's code into a program your computer can run. You can use either **Clang** or **GCC**.
 
-- For **Clang** follow the instructions at <https://clang.llvm.org/get_started.html>. Only in Linux, place your terminal to directory where you want to install Clang and copy-paste this code:
+- For **Clang** follow the instructions at <https://clang.llvm.org/get_started.html>. In Linux, open your terminal in the directory where you want to install Clang and copy-paste the following code:
 
-```bash
-git clone --depth=1 https://github.com/llvm/llvm-project.git
+    ```bash
+    git clone --depth=1 https://github.com/llvm/llvm-project.git
     cd llvm-project
     mkdir build
     cd build
     cmake -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../llvm
-```
+    ```
 
 - For **GCC** (version 10 or newer): <https://gcc.gnu.org/install/index.html>
 
