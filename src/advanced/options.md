@@ -10,6 +10,9 @@ The `--help` flag listing is reproduced below for your convenience.
 ```bash
 ./build/bin/erigon --help
 ```
+# Commands
+
+
 
 ## Commands
 
