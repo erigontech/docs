@@ -50,22 +50,26 @@ Then click on the "**New**" button and paste the following path:
 <img src="/images/new_sys_var.png" alt="" style="display: block; margin: 0 auto;">
 
 
-### Clone the Erigon repository
+## Clone the Erigon repository
 
 Open the Command Prompt and type the following:
 
 ```bash
 git clone --branch v3.0.0-alpha5 --single-branch https://github.com/erigontech/erigon.git
 ```
+You might need to change the `ExecutionPolicy` to allow scripts created locally or signed by a trusted publisher to run:
 
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
 ## Compiling Erigon
 
 To compile Erigon there are two alternative methods:
 
--   [Compiling from the wmake.ps1 file in the File Explorer](#compiling-from-the-wmakeps1-file-in-the-file-explorer) 
--   [Using the PowerShell CLI](#using-the-powershell-cli)
+1. [Compiling from the wmake.ps1 file in the File Explorer](#1-compiling-from-the-wmakeps1-file-in-the-file-explorer) 
+2. [Using the PowerShell CLI](#2-using-the-powershell-cli)
     
-### Compiling from the wmake.ps1 file in the File Explorer
+### 1. Compiling from the wmake.ps1 file in the File Explorer
 
 This is the fastest way which normally works for everyone. Open the File Explorer and go to the Erigon folder, then right click the `wmake` file and choose "**Run with PowerShell**".
 
@@ -75,7 +79,7 @@ PowerShell will compile Erigon and all of its modules. All binaries will be plac
 
 <img src="/images/powershell2.png" alt="" style="display: block; margin: 0 auto;">
 
-### Using the PowerShell CLI
+### 2. Using the PowerShell CLI
 
 In the search bar on your computer, search for “**Windows PowerShell**” and open it.
 
@@ -94,6 +98,7 @@ Before modifying security settings, ensure PowerShell script execution is allowe
 ```powershell
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 ```
+
 This change allows script execution, but use caution to avoid security risks. Remember to only make these adjustments if you trust the scripts you intend to run. Unauthorized changes can impact system security. For more info read [Set-Execution Policy](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3) documentation.
 
 Now you can compile Erigon and/or any of its component:
@@ -112,9 +117,9 @@ For example, to build the Erigon executable write:
 
 The executable binary `erigon.exe` should have been created in the `.\build\bin\` subfolder.
 
-You can use the same command to build other binaries as `RPCDaemon`, `TxPool`, `Sentry` and `Downloader`.
+You can use the same command to build other binaries such as `RPCDaemon`, `TxPool`, `Sentry` and `Downloader`.
 
-## How to start Erigon 
+## Running Erigon 
 
 To start Erigon place your command prompt in the `.\build\bin\` subfolder and use:
 
@@ -122,7 +127,7 @@ To start Erigon place your command prompt in the `.\build\bin\` subfolder and us
 start erigon.exe.
 ``` 
 
-or from any place use the full executable address:
+or from any place use the full address of the executable:
 
 ```powershell
 start C:\Users\username\AppData\Local\erigon.exe
