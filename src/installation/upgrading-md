@@ -15,7 +15,7 @@ git checkout <new_version_tag>
 Replace `<new_version_tag>` with the version tag of the new release, for example:
 
 ```bash
-git checkout v3.0.0-alpha4
+git checkout v3.0.0-alpha5
 ```
 
 * **Rebuild Erigon**: Since the codebase has changed, you need to compile the new version. Run:
@@ -29,7 +29,7 @@ This process updates your installation to the latest version you specify, while 
 # Docker
 If you're using Docker to run Erigon, the process to upgrade to a newer version of the software is straightforward and revolves around pulling the latest Docker image and then running it. Here's how you can upgrade Erigon using Docker:
 
-* **Pull the Latest Docker Image**: First, find out the tag of the new release from the Erigon Docker Hub page. Once you know the tag, pull the new image:
+* **Pull the Latest Docker Image**: First, find out the tag of the new release from the [Erigon Docker Hub](https://hub.docker.com/r/erigontech/erigon/tags) page. Once you know the tag, pull the new image:
 
 ```bash
 docker pull erigontech/erigon:<new_version_tag>
