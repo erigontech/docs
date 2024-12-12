@@ -12,7 +12,7 @@ The consensus client, also known as the *Beacon Node* or *CL client*, implements
 
 **Information**
 
-By default, Erigon is configured to run with Caplin, the embedded Consensus Layer.
+By default, Erigon is configured to run with [Caplin](/advanced/caplin.md), the embedded Consensus Layer.
 </div>
 
 ## Choosing the Consensus Layer client

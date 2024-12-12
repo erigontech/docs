@@ -19,7 +19,7 @@ Please refer to [disk space required](/basic/disk-space.md) for details. To ensu
 ## CPU Requirements
 
 * **Architecture**: 64-bit architecture.
-* **Number of core and threads**: while a powerful CPU can help, it's not essential for running Erigon. A moderate number of cores and threads should suffice.
+* **Number of core and threads**: While a powerful CPU can be beneficial, it's not essential for running Erigon. A moderate number of cores and threads should be sufficient. However, we recommend at least 4 cores, or 8 cores for high performance.
 
 ## RAM Requirements
     
@@ -31,4 +31,4 @@ Please refer to [disk space required](/basic/disk-space.md) for details. To ensu
 
 ## Bandwith
 
-A stable and reliable internet connection is crucial for running a node, especially if you intend to run a validator node: a downtime can result in missed rewards or penalties. A minimum download speed of 25Mbps is recommended, and it's best to use an ISP with an uncapped data allowance.
+A stable and reliable internet connection is crucial for running a node, especially if you're running a validator node, as downtime can lead to missed rewards or penalties. We recommend a minimum inbound and outbound bandwidth of 20 Mbps, with a stable connection and low latency. For optimal performance, it's best to use an ISP with an uncapped data allowance.

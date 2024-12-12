@@ -16,4 +16,4 @@ Caplin is enabled by default, at which point an external consensus layer is no l
 
 Caplin also has an archive mode for historical states and blocks, which can be enabled with the `--caplin.archive` flag.
 
-Caplin can also be used for [block production](/advanced/block-prod.md).
+Caplin can also be used for [block production](/advanced/block-prod.md#using-caplin-as-validator), aka **staking**.

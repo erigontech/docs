@@ -18,7 +18,7 @@ Check which [type of node](/basic/node.md) you might want torun and the [disk sp
 For MacOS and Linux, run the following commands to build from source the latest Erigon version:
 
 ```bash
-git clone --branch v3.0.0-alpha5 --single-branch https://github.com/erigontech/erigon.git
+git clone --branch v3.0.0-alpha6 --single-branch https://github.com/erigontech/erigon.git
 cd erigon
 make erigon
 ```
@@ -98,7 +98,7 @@ The basic command to run Erigon with Caplin on Ethereum mainnet is:
 ## Basic Configuration​
 
 - If you want to store Erigon files in a non-default location, add flag `--datadir=<your_data_dir>`. Default data directory is `/home/admin/.local/share/`.erigon.
-- Erigon is archive node by default, use `--prune.mode=full` to run a full node (latest 90'000 blocks) or `--prune.mode=minimal` (EIP-4444). If you want to change [type of node](/basic/node.md) delete the `--datadir` folder content and restart Erigon with the appropriate flags.
+- Erigon is full node by default, use `--prune.mode=archive` to run a archive node or `--prune.mode=minimal` (EIP-4444). If you want to change [type of node](/basic/node.md) delete the `--datadir` folder content and restart Erigon with the appropriate flags.
 - Default chain is `--chain=mainnet` for Ethereum mainnet:
     - add the flag `--chain=holesky` for Holesky testnet;
     - `--chain=sepolia` for Sepolia testnet.

@@ -22,6 +22,9 @@
 | Gnosis   |    --- GB    |    --- GB |  --- GB      |
 | Polygon  |    --- TB    |    --- TB |  --- GB      |
 
+| Chiado   |    ... GB    |    ... GB |  ... GB      |
+| Amoy     |    ... GB    |    ... GB |  ... GB      |
+
 </div>
 
 # Testnets
@@ -30,8 +33,7 @@
 | Network  | Archive Node | Full Node | Minimal Node |
 |----------|--------------|-----------|--------------|
 | Holesky  |    170 GB    |    110 GB |  53 GB       |
-| Sepolia  |    186 GB    |    116 GB |  63 GB      |
-| Chiado   |    ... GB    |    ... GB |  ... GB      |
-| Amoy     |    ... GB    |    ... GB |  ... GB      |
-                        
+| Sepolia  |    186 GB    |    116 GB |  63 GB       |
 
+                        
+See also hints on [optimizing storage](/basic/optimizing-storage.md).

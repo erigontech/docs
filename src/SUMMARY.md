@@ -49,7 +49,7 @@
  ---
 
 - [Tools](tools.md)
-    - [Diagnostic Tool](tools/introduction.md)
+    - [Dagnostic Tools](tools/introduction.md)
         - [Installation](tools/installation.md)
         - [Setup](tools/setup.md)
         - [User Interface](tools/user_interface.md)
