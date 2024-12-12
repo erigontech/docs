@@ -2,6 +2,7 @@
              
 >
 > **NOTE**: The Erigon 3 book is under construction and you may find broken links, empty pages and inexact information.
+> 
 > For instructions regarding Erigon 2 please refer to <https://erigon.gitbook.io>.
 
 
@@ -18,7 +19,9 @@
 
 > **DISCLAIMER**: Erigon 3 is in alpha phase and it is not recommended to be used in production environments. The Erigon team does not take any responsibility for losses or damages occurred through the use of Erigon. While we employ a seasoned in-house security team, we have not subjected our systems to independent third-party security assessments, leaving potential vulnerabilities to bugs or malicious activity unaddressed. It is essential for validators to be aware that unforeseen events, including software glitches, may result in lost rewards.
 
-Erigon is an efficiency frontier implementation of Ethereum, designed to provide a faster, more modular and optimised experience. An archive node by default, Erigon uses edge technologies such as staged sync, efficient state storage and database compression, combined with high modularity.
+Erigon is an efficient Ethereum implementation designed for speed, modularity, and optimization. By default, it functions as an archive node, utilizing technologies like staged sync, efficient state storage, and database compression.
+
+With **Erigon v3 Alpha 6**, the default configuration shifts from archive node to full node, enhancing efficiency, accessibility, and versatility for a wider range of users. Archive nodes remain available for developers and researchers needing full historical data, while the full node offers faster sync times and lower resource usage for everyday operations. More info [here](https://erigon.tech/announcing-erigon-v3-alpha-6-focus-on-staking-and-full-node-performance/).
 
 <div class="warning">
 
