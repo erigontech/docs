@@ -10,6 +10,8 @@
 - [Installation](installation.md)
     - [Linux and MacOS](installation/linux.md)
     - [Windows](installation/windows.md)
+        - [Build executable binaries natively for Windows](installation/build_exec_win.md)
+        - [Windows Subsystem for Linux (WSL)](installation/wsl.md)
     - [Docker](installation/docker.md)
     - [Upgrading from a previous version](installation/upgrading-md)
 
@@ -47,7 +49,7 @@
  ---
 
 - [Tools](tools.md)
-    - [Diagnostic Tool](tools/introduction.md)
+    - [Dagnostic Tools](tools/introduction.md)
         - [Installation](tools/installation.md)
         - [Setup](tools/setup.md)
         - [User Interface](tools/user_interface.md)

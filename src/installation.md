@@ -4,11 +4,7 @@ In order to use Erigon, the software has to be installed first. There are severa
 
 The current version documented in these pages is Erigon 3. 
 
-<div class="warning">
-
-Always check the [list of releases](https://github.com/erigontech/erigon/releases) for release notes.
-
-</div>
+> Always check the [list of releases](https://github.com/erigontech/erigon/releases) for release notes.
 
 _____________________________
 

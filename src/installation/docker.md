@@ -2,7 +2,6 @@
 *How to run a Erigon node with Docker*
 
 Using Docker allows starting Erigon packaged as a Docker image without installing the program directly on your system.
-General Info
 
 ## General info
 
@@ -18,13 +17,14 @@ General Info
 
 Here are the steps to download and start Erigon 3 in Docker:
 
-* Install Docker Desktop on Mac, Windows, or Linux.
+1. Install the latest version of Docker Engine, see instructions [here](https://docs.docker.com/engine/install/).
 
-* Check the Erigon Docker Hub page to see the available releases.
+2. Visit the Erigon Docker Hub page to view the available releases. For Erigon 3, search for the [latest available release](https://hub.docker.com/r/erigontech/erigon/tags?name=v3).
 
-* Download the latest version:
+3. Download the latest version:
+
 ```bash
-docker pull erigontech/erigon:main-latest
+docker pull erigontech/erigon:v3.0.0-alpha6
 ```
 * List the downloaded images to get the IMAGE ID:
 ```bash
@@ -34,9 +34,10 @@ docker images
 ```bash
 docker run -it <image_id> --v
 ```
-* If you want to start Erigon add the options according to the usage page or the advanced customization page. For example:
+* If you want to start Erigon add the options according to the [basic usage](/basic-usage.md) page or the advanced customization page. For example:
+
 ```bash
-docker run -it a3867a12bd23 --chain=holesky --prune.mode=minimal
+docker run -it 50bef1b5d0f9 --chain=holesky --prune.mode=minimal
 ```
 * When done, exit the container or press `Ctrl+C`. The container will stop.
 

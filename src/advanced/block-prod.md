@@ -1,10 +1,12 @@
 # Block production
 
-How to propose and validate blockswith Erigon
+*How to propose and validate blocks with Erigon*
 
-Only remote miners are supported.
+Both remote miners and Caplin are supported.
 
-To enable, add
+# Using remote miners
+
+To enable remote miners , add the flags:
 
 ```bash
 --mine --miner.etherbase=...
@@ -12,37 +14,104 @@ To enable, add
 or
 
 ```bash
---mine --miner.miner.sigkey=... flags
+--mine --miner.miner.sigkey=...
 ```
 
-Other supported options: `--miner.extradata`, `--miner.notify`, `--miner.gaslimit`, `--miner.gasprice` , `--miner.gastarget`
+Other supported options are:
+- `--miner.notify`: Comma separated HTTP URL list to notify of new work packages
+- `--miner.gaslimit`: Target gas limit for mined blocks (default: `36000000`)
+- `--miner.etherbase`: Public address for block mining rewards (default: "`0`")
+- `--miner.extradata`: Block extra data set by the miner (default: `client version`)
+- `--miner.noverify`: Disable remote sealing verification (default: `false`)
+- `--miner.noverify`: Disable remote sealing verification (default: `false`)
+- `--miner.sigfile`: Private key to sign blocks with
+- `--miner.recommit`: Time interval to recreate the block being mined (default: `3s`)
+- `--miner.gasprice`: This option sets the minimum gas price for mined transactions
+- `--miner.gastarget`: This option sets the maximum amount of gas that could be spent during a transaction.
 
-JSON-RPC supports methods: eth_coinbase , eth_hashrate, eth_mining, eth_getWork, eth_submitWork, eth_submitHashrate
-
-JSON-RPC supports websocket methods: newPendingTransaction
+Erigon supports [standard JSON-RPC methods](https://ethereum.org/en/developers/docs/apis/json-rpc/).
 
 # Using Caplin as validator
+*Running Erigon with Caplin and Lighthouse Validator*
 
-Only Lighthouse, Lodestar and Teku are supported as Validator Clients.
+Caplin is also suitable for staking, however, you will need to utilize either Lighthouse, Teku, or another validator client as your key manager, since Caplin does not offer a native key management solution.
 
-To enable block production and Caplin's beacon API when using Caplin as the Consensus Layer (CL) engine, the flag --beacon.api must be added. For example:
+This guide explains how to use Erigon with its embedded Caplin consensus layer and Lighthouse as the validator client for staking on Ethereum.
 
-```bash
---beacon.api=beacon,builder,config,debug,node,validator,lighthouse
-```
-
-Enabling the Beacon API will lead to a 6 GB higher RAM usage.
-
-For example, if you want to run Erigon + Caplin as a validator here following is the Erigon command:
+## 1. Start Erigon with Caplin
+Run the following command to start Erigon with the embedded Caplin consensus layer with the beacon API on:
 
 ```bash
-./build/bin/erigon --chain=holesky --prune.mode=full --beacon.api=beacon,builder,config,debug,node,validator,lighthouse
+erigon \
+  --datadir=/data/erigon \
+  --chain=mainnet \
+  --prune.mode=full \
+  --http \
+  --http.addr=0.0.0.0 \
+  --http.port=8545 \
+  --http.api=engine,eth,net,web3 \
+  --ws \
+  --ws.port=8546 \
+  --caplin.enable-upnp \
+  --caplin.discovery.addr=0.0.0.0 \
+  --caplin.discovery.port=4000 \
+  --caplin.discovery.tcpport=4001 \
+  --chain=<NETWORK>
+  --beacon.api=beacon,validator,builder,config,debug,events,node,lighthouse 
 ```
 
-While here the command for Lighthouse would look like*:
+**Flags Explanation**:
+
+- Execution Layer:
+    - `--http.api=engine,eth,net,web3`: enables the necessary APIs for external clients and Caplin.
+    - `--ws`: enables WebSocket-based communication (optional).
+- Consensus Layer (Caplin):
+    - `--caplin.discovery.addr` and `--caplin.discovery.port`: configures Caplin's gossip and discovery layer.
+    - `--beacon.api=beacon,validator,builder,config,debug,events,node,lighthouse`: enables all possible API endpoints for the validator client.
+
+## 2. Set Up Lighthouse Validator Client
+
+### 2.1 Install Lighthouse
+
+Download the latest Lighthouse binary:
+
+```
+curl -LO https://github.com/sigp/lighthouse/releases/latest/download/lighthouse
+chmod +x lighthouse
+sudo mv lighthouse /usr/local/bin/
+```
+
+Or, use Docker:
 
 ```bash
-lighthouse validator_client --network holesky --beacon-nodes http://localhost:5555
+docker pull sigp/lighthouse:latest
 ```
 
-*For adding validators and specific command syntax, refer to the documentation of your chosen Validator Client.
+### 2.2. Create Lighthouse Validator Key Directory
+
+```bash
+mkdir -p ~/.lighthouse/validators
+```
+
+### 2.3. Run Lighthouse Validator Client
+
+Start the validator client and connect it to the Caplin consensus layer:
+```bash
+lighthouse vc \
+  --network mainnet \
+  --beacon-nodes http://127.0.0.1:5555 \
+  --suggested-fee-recipient=<your_eth_address>
+```
+**Flags Explanation**:
+- `--network mainnet`: Specifies the Ethereum mainnet.
+- `--beacon-nodes`: Points to the Caplin beacon API at `http://127.0.0.1:5555`.
+- `--suggested-fee-recipient`: Specifies your Ethereum address for block rewards.
+
+### 2.4. Import Validator Keys
+
+If you have existing validator keys, import them:
+
+```bash
+lighthouse account validator import --directory <path_to_validator_keys>
+```
+
