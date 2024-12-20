@@ -1,4 +1,4 @@
-# Gnosis Chain
+# How to run a Gnosis Chain node
 
 Follow the [hardware](/getting-started/hw-requirements.md) and [software](/getting-started/sw-requirements.md) prerequisites.
 
@@ -82,7 +82,7 @@ Below is an example of Lighthouse running **Gnosis Chain**:
     --datadir=data \
     --http \
     --execution-endpoint http://localhost:8551 \
-    --execution-jwt /home/admin/.local/share/erigon/jwt.hex \
+    --execution-jwt /home/usr/.local/share/erigon/jwt.hex \
     --checkpoint-sync-url "https://checkpoint.gnosischain.com"
     ```
 
@@ -94,13 +94,13 @@ And an example of Lighthouse running Chiado testnet:
     --datadir=data \
     --http \
     --execution-endpoint http://localhost:8551 \
-    --execution-jwt /home/admin/.local/share/erigon/jwt.hex \
+    --execution-jwt /home/usr/.local/share/erigon/jwt.hex \
     --checkpoint-sync-url "https://checkpoint.chiadochain.net"
     ```
 
 ## Basic Configuration​
 
-- If you want to store Erigon files in a non-default location, add flag `--datadir=<your_data_dir>`. Default data directory is `/home/admin/.local/share/`.erigon.
+- If you want to store Erigon files in a non-default location, add flag `--datadir=<your_data_dir>`. Default data directory is `/home/usr/.local/share/`.erigon.
 - Erigon is full node by default, use `--prune.mode=archive` to run a archive node or `--prune.mode=minimal` (EIP-4444). If you want to change [type of node](/basic/node.md) delete the `--datadir` folder content and restart Erigon with the appropriate flags.
 - Add the flag `--chain=chiado` for Chiado testnet.
 - `--http.addr="0.0.0.0" --http.api=eth,web3,net,debug,trace,txpool` to use RPC and e.g. be able to connect your [wallet](/basic/wallet.md).

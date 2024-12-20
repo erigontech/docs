@@ -1,40 +1,7 @@
-# Block production
-
-*How to propose and validate blocks with Erigon*
-
-Both remote miners and Caplin are supported.
-
-# Using remote miners
-
-To enable remote miners , add the flags:
-
-```bash
---mine --miner.etherbase=...
-```
-or
-
-```bash
---mine --miner.miner.sigkey=...
-```
-
-Other supported options are:
-- `--miner.notify`: Comma separated HTTP URL list to notify of new work packages
-- `--miner.gaslimit`: Target gas limit for mined blocks (default: `36000000`)
-- `--miner.etherbase`: Public address for block mining rewards (default: "`0`")
-- `--miner.extradata`: Block extra data set by the miner (default: `client version`)
-- `--miner.noverify`: Disable remote sealing verification (default: `false`)
-- `--miner.noverify`: Disable remote sealing verification (default: `false`)
-- `--miner.sigfile`: Private key to sign blocks with
-- `--miner.recommit`: Time interval to recreate the block being mined (default: `3s`)
-- `--miner.gasprice`: This option sets the minimum gas price for mined transactions
-- `--miner.gastarget`: This option sets the maximum amount of gas that could be spent during a transaction.
-
-Erigon supports [standard JSON-RPC methods](https://ethereum.org/en/developers/docs/apis/json-rpc/).
-
 # Using Caplin as validator
-*Running Erigon with Caplin and Lighthouse Validator*
+*Running Erigon with Caplin as validator*
 
-Caplin is also suitable for staking, however, you will need to utilize either Lighthouse, Teku, or another validator client as your key manager, since Caplin does not offer a native key management solution.
+Caplin is also suitable for staking. However, it is required to pair it with a validator key manager, such as Lighthouse or Teku, since it doesn't have a native key management system.
 
 This guide explains how to use Erigon with its embedded Caplin consensus layer and Lighthouse as the validator client for staking on Ethereum.
 

@@ -24,7 +24,7 @@ Here are the steps to download and start Erigon 3 in Docker:
 3. Download the latest version:
 
 ```bash
-docker pull erigontech/erigon:v3.0.0-alpha6
+docker pull erigontech/erigon:v3.0.0-alpha7
 ```
 * List the downloaded images to get the IMAGE ID:
 ```bash

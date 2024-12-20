@@ -159,7 +159,7 @@ To display available options for downloader digit:
 
 The `--help` flag listing is reproduced below for your convenience.
 
-```
+```bash
 snapshot downloader
 
 Usage:
@@ -182,7 +182,7 @@ Available Commands:
 
 Flags:
       --chain string                       name of the network to join (default "mainnet")
-      --datadir string                     Data directory for the databases (default "/home/admin/.local/share/erigon")
+      --datadir string                     Data directory for the databases (default "/home/usr/.local/share/erigon")
       --db.writemap                        Enable WRITE_MAP feature for fast database writes and fast commit times (default true)
       --diagnostics.disabled               Disable diagnostics
       --diagnostics.endpoint.addr string   Diagnostics HTTP server listening interface (default "127.0.0.1")

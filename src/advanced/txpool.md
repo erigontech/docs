@@ -46,7 +46,7 @@ Usage:
   txpool [flags]
 
 Flags:
---datadir string                  Data directory for the databases (default "/home/admin/.local/share/erigon")
+--datadir string                  Data directory for the databases (default "/home/usr/.local/share/erigon")
 -h, --help                            help for txpool
 --log.console.json                Format console logs with JSON
 --log.console.verbosity string    Set the log level for console logs (default "info")

@@ -23,6 +23,11 @@
     - [Default Ports and Firewalls](basic/ports.md)
     - [Web3 Wallet](basic/wallet)
 
+- [Quick nodes](quick_nodes.md)
+    - [How to run an Ethereum node](nodes/ethereum.md)
+    - [How to run a Gnosis Chain node](nodes/gnosis.md)
+    - [How to run a Polygon node](nodes/polygon.md)
+
 - [Advanced Usage](advanced.md)
     - [Configuring Erigon](advanced/configuring.md)
     - [Consensus Layer](advanced/consensus_layer.md)
@@ -30,7 +35,6 @@
         - [Prysm](advanced/prysm.md)
         - [Lighthouse](advanced/lighthouse.md)
         - [JWT secret](advanced/jwt.md)
-        - [Block production](advanced/block-prod.md)
     - [Options](advanced/options.md)
     - [RPC Daemon](advanced/rpc_daemon.md)
     - [TxPool](advanced/txpool.md)
@@ -39,14 +43,9 @@
     - [TLS Authentication](advanced/tls-authentication.md)
     - [Perfomance Tricks](advanced/performance.md)
 
- ---
-
-- [Quick nodes](quick_nodes.md)
-    - [Ethereum](nodes/ethereum.md)
-    - [Gnosis](nodes/gnosis.md)
-    - [Polygon](nodes/polygon.md)
-
- ---
+- [Staking](staking.md)
+    - [External CL](advanced/bp-ext.md)
+    - [Caplin](advanced/bp-caplin.md)
 
 - [Tools](tools.md)
     - [Dagnostic Tools](tools/introduction.md)

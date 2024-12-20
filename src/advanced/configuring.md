@@ -4,8 +4,8 @@ The Erigon 3 CLI has a wide range of flags that can be used to customize its beh
 
 ## Data Storage
 
-* `--datadir`: Set the data directory for the databases (default: `/home/admin/.local/share/erigon`)
-* `--ethash.dagdir`: Set the directory to store the ethash mining DAGs (default: `/home/admin/.local/share/erigon-ethash`)
+* `--datadir`: Set the data directory for the databases (default: `/home/usr/.local/share/erigon`)
+* `--ethash.dagdir`: Set the directory to store the ethash mining DAGs (default: `/home/usr/.local/share/erigon-ethash`)
 * `--database.verbosity` Enabling internal db logs. Very high verbosity levels may require recompile db. Default: 2, means warning. (default: `2`)
 
 ## Logging

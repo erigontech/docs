@@ -49,7 +49,7 @@ For example:
 
 ```bash
 ./build/bin/erigon  --internalcl --private.api.addr=localhost:9090 --http=false
-./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.vhosts="*" --http.addr="0.0.0.0" --http.api=eth,erigon,web3,net,debug,trace,txpool —-datadir=/home/admin/.local/share/erigon
+./build/bin/rpcdaemon --private.api.addr=localhost:9090 --http.vhosts="*" --http.addr="0.0.0.0" --http.api=eth,erigon,web3,net,debug,trace,txpool —-datadir=/home/usr/.local/share/erigon
 ```
 
 With the above command it has also been specified which RPC namespaces to enable by `--http.api` flag.

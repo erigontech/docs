@@ -14,7 +14,7 @@ The default Consensus Layer utilized is [Caplin](./advanced/caplin.md), the Erig
 
 # Basic Configuration​
 
-* Default data directory is `/home/admin/.local/share/erigon`. If you want to store Erigon files in a non-default location, add flag:
+* Default data directory is `/home/usr/.local/share/erigon`. If you want to store Erigon files in a non-default location, add flag:
 
     ```bash
     --datadir=<your_data_dir>
