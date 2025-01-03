@@ -40,7 +40,7 @@ To display available options for downloader digit:
 ```
 The `--help` flag listing is reproduced below for your convenience.
 
-```bash
+```
 snapshot downloader
 
 Usage:

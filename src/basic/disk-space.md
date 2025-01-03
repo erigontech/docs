@@ -25,7 +25,6 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 | Ethereum |    --- TB    |    --- GB |  --- GB      |
 | Gnosis   |    --- GB    |    --- GB |  --- GB      |
 | Polygon  |    --- TB    |    --- TB |  --- GB      |
-
 | Chiado   |    ... GB    |    ... GB |  ... GB      |
 | Amoy     |    ... GB    |    ... GB |  ... GB      |
 
@@ -38,6 +37,7 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 |----------|--------------|-----------|--------------|
 | Holesky  |    170 GB    |    110 GB |  53 GB       |
 | Sepolia  |    186 GB    |    116 GB |  63 GB       |
+| Chiado   |     25 GB    |     17 GB |  12 GB       |
 
-                        
+
 See also hints on [optimizing storage](/basic/optimizing-storage.md).
