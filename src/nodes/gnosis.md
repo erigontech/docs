@@ -2,7 +2,7 @@
 
 Follow the [hardware](/getting-started/hw-requirements.md) and [software](/getting-started/sw-requirements.md) prerequisites.
 
-Check which [type of node](/basic/node.md) you might want torun and the [disk space](/basic/disk-space.md) needed.
+Check which [type of node](/basic/node.md) you might want to run and the [disk space](/basic/disk-space.md) required.
 
 <div class="warning">
 

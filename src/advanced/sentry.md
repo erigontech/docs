@@ -53,13 +53,82 @@ Erigon might be attached to several Sentry instances running across different ma
 ```bash
 --sentry.api.addr value
 ```
+Where `value` is comma separated sentry addresses '<host>:<port>,<host>:<port>'.
 
-Where `value` is comma separated sentry addresses '<host>:<port>,<host>:<port>'
+## More info
 
-## Command line options
+For other information regardin Sentry functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/sentry/README.md`.
 
-To display available options for sentry digit:
+## Options
+
+The --help flag listing is reproduced below for your convenience.
 
 ```bash
 ./build/bin/sentry --help
+```
+
+### Command Line Options
+
+To display available options for Sentry digit:
+
+```bash
+./build/bin/sentry -h
+```
+
+The `--help` flag listing is reproduced below for your convenience.
+
+
+```
+Run p2p sentry
+
+Usage:
+  sentry [flags]
+
+Flags:
+      --datadir string                     Data directory for the databases (default "/home/bloxster/.local/share/erigon")
+      --diagnostics.disabled               Disable diagnostics
+      --diagnostics.endpoint.addr string   Diagnostics HTTP server listening interface (default "127.0.0.1")
+      --diagnostics.endpoint.port uint     Diagnostics HTTP server listening port (default 6062)
+      --diagnostics.speedtest              Enable speed test
+      --discovery.dns strings              Sets DNS discovery entry points (use "" to disable DNS)
+      --healthcheck                        Enabling grpc health check
+  -h, --help                               help for sentry
+      --log.console.json                   Format console logs with JSON
+      --log.console.verbosity string       Set the log level for console logs (default "info")
+      --log.delays                         Enable block delay logging
+      --log.dir.disable                    disable disk logging
+      --log.dir.json                       Format file logs with JSON
+      --log.dir.path string                Path to store user and error logs to disk
+      --log.dir.prefix string              The file name prefix for logs stored to disk
+      --log.dir.verbosity string           Set the log verbosity for logs stored to disk (default "info")
+      --log.json                           Format console logs with JSON
+      --maxpeers int                       Maximum number of network peers (network disabled if set to 0) (default 32)
+      --maxpendpeers int                   Maximum number of TCP connections pending to become connected peers (default 1000)
+      --metrics                            Enable metrics collection and reporting
+      --metrics.addr string                Enable stand-alone metrics HTTP server listening interface (default "127.0.0.1")
+      --metrics.port int                   Metrics HTTP server listening port (default 6061)
+      --nat string                         NAT port mapping mechanism (any|none|upnp|pmp|stun|extip:<IP>)
+                                           			 "" or "none"         Default - do not nat
+                                           			 "extip:77.12.33.4"   Will assume the local machine is reachable on the given IP
+                                           			 "any"                Uses the first auto-detected mechanism
+                                           			 "upnp"               Uses the Universal Plug and Play protocol
+                                           			 "pmp"                Uses NAT-PMP with an auto-detected gateway address
+                                           			 "pmp:192.168.0.1"    Uses NAT-PMP with the given gateway address
+                                           			 "stun"               Uses STUN to detect an external IP using a default server
+                                           			 "stun:<server>"      Uses STUN to detect an external IP using the given server (host:port)
+                                           
+      --netrestrict string                 Restricts network communication to the given IP networks (CIDR masks)
+      --nodiscover                         Disables the peer discovery mechanism (manual peer addition)
+      --p2p.allowed-ports uints            Allowed ports to pick for different eth p2p protocol versions as follows <porta>,<portb>,..,<porti> (default [30303,30304,30305,30306,30307])
+      --p2p.protocol uint                  Version of eth p2p protocol (default 68)
+      --port int                           Network listening port (default 30303)
+      --pprof                              Enable the pprof HTTP server
+      --pprof.addr string                  pprof HTTP server listening interface (default "127.0.0.1")
+      --pprof.cpuprofile string            Write CPU profile to the given file
+      --pprof.port int                     pprof HTTP server listening port (default 6060)
+      --sentry.api.addr string             grpc addresses (default "localhost:9091")
+      --staticpeers strings                Comma separated enode URLs to connect to
+      --trace string                       Write execution trace to the given file
+      --trustedpeers strings               Comma separated enode URLs which are always allowed to connect, even above the peer limit
+      --verbosity string                   Set the log level for console logs (default "info")
 ```

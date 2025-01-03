@@ -10,11 +10,8 @@ The `--help` flag listing is reproduced below for your convenience.
 ```bash
 ./build/bin/erigon --help
 ```
-# Commands
 
-
-
-# Commands
+## Commands
 
 ```
 NAME:
@@ -24,7 +21,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-alpha6-f22317ef
+   3.00.0-alpha7-34714c0c
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -34,12 +31,10 @@ COMMANDS:
    help, h                   Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --datadir value                                                                  Data directory for the databases (default: /root/.local/share/erigon)
-   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /root/.local/share/erigon-ethash)
+   --datadir value                                                                  Data directory for the databases (default: /home/bloxster/.local/share/erigon)
+   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/bloxster/.local/share/erigon-ethash)
    --externalcl                                                                     Enables the external consensus layer (default: false)
    --txpool.disable                                                                 Experimental external pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
-   --txpool.locals value                                                            Comma separated accounts to treat as locals (no flush, priority inclusion)
-   --txpool.nolocals                                                                Disables price exemptions for locally submitted transactions (default: false)
    --txpool.pricelimit value                                                        Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
    --txpool.pricebump value                                                         Price bump percentage to replace an already existing transaction (default: 10)
    --txpool.blobpricebump value                                                     Price bump percentage to replace existing (type-3) blob transaction (default: 100)
@@ -48,9 +43,7 @@ GLOBAL OPTIONS:
    --txpool.totalblobpoollimit value                                                Total limit of number of all blobs in txs within the txpool (default: 480)
    --txpool.globalslots value                                                       Maximum number of executable transaction slots for all accounts (default: 10000)
    --txpool.globalbasefeeslots value                                                Maximum number of non-executable transactions where only not enough baseFee (default: 30000)
-   --txpool.accountqueue value                                                      Maximum number of non-executable transaction slots permitted per account (default: 64)
    --txpool.globalqueue value                                                       Maximum number of non-executable transaction slots for all accounts (default: 30000)
-   --txpool.lifetime value                                                          Maximum amount of time non-executable transaction are queued (default: 3h0m0s)
    --txpool.trace.senders value                                                     Comma separated list of addresses, whose transactions will traced in transaction pool with debug printing
    --txpool.commit.every value                                                      How often transactions should be committed to the storage (default: 15s)
    --prune.distance value                                                           Keep state history for the latest N blocks (default: everything) (default: 0)
@@ -227,7 +220,7 @@ GLOBAL OPTIONS:
    --beacon.api.cors.allow-credentials                                              set the cors' allow credentials (default: false)
    --beacon.api.port value                                                          sets the port to listen for beacon api requests (default: 5555)
    --beacon.api.read.timeout value                                                  Sets the seconds for a read time out in the beacon api (default: 5)
-   --beacon.api.write.timeout value                                                 Sets the seconds for a write time out in the beacon api (default: 5)
+   --beacon.api.write.timeout value                                                 Sets the seconds for a write time out in the beacon api (default: 31536000)
    --beacon.api.protocol value                                                      Protocol for beacon API (default: "tcp")
    --beacon.api.ide.timeout value                                                   Sets the seconds for a write time out in the beacon api (default: 25)
    --caplin.backfilling                                                             sets whether backfilling is enabled for caplin (default: false)
@@ -247,6 +240,8 @@ GLOBAL OPTIONS:
    --sync.loop.break.after value                                                    Sets the last stage of the sync loop to run
    --sync.parallel-state-flushing                                                   Enables parallel state flushing (default: true)
    --chaos.monkey                                                                   Enable 'chaos monkey' to generate spontaneous network/consensus/etc failures. Use ONLY for testing (default: false)
+   --shutter                                                                        Enable the Shutter encrypted transactions mempool (defaults to false) (default: false)
+   --shutter.keyper.bootnodes value [ --shutter.keyper.bootnodes value ]            Use to override the default keyper bootnodes (defaults to using the bootnodes from the embedded config)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
    --pprof.addr value                                                               pprof HTTP server listening interface (default: "127.0.0.1")
    --pprof.port value                                                               pprof HTTP server listening port (default: 6060)
