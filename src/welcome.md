@@ -50,7 +50,7 @@ Erigon 3 also introduces changes to the release process, including:
 
 # Known Issues
 
-See <https://github.com/erigontech/erigon?tab=readme-ov-file#known-issues>.
+See <https://github.com/erigontech/erigon?tab=readme-ov-file#known-issues>
 
 # Contributing to this documentation
 

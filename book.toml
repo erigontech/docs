@@ -5,3 +5,7 @@ description = "Erigon 3 documentation!"
 language = "en"
 multilingual = false
 src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/erigontech/docs"
+edit-url-template = "https://github.com/rust-lang/mdBook/edit/master/guide/{path}"

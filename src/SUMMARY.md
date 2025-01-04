@@ -36,11 +36,11 @@
         - [Lighthouse](advanced/lighthouse.md)
         - [JWT secret](advanced/jwt.md)
     - [Options](advanced/options.md)
-    - [RPC Daemon](advanced/rpc_daemon.md)
+    - [RPC Daemon](advanced/JSONRPC-daemon.md)
     - [TxPool](advanced/txpool.md)
     - [Sentry](advanced/sentry.md)
     - [Downloader](advanced/downloader.md)
-    - [Running an Op-node](op-node.md)
+    - [Running an Op-node](advanced/op-node.md)
     - [TLS Authentication](advanced/tls-authentication.md)
     - [Perfomance Tricks](advanced/performance.md)
 

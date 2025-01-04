@@ -6,7 +6,7 @@ Erigon is an open-source project that welcomes contributions from developers wor
 
 ### Programmer's Guide
 
-Begin by exploring the comprehensive [Programmer's Guide](https://github.com/ledgerwatch/erigon/blob/devel/docs/programmers_guide/guide.md), which covers topics such as the Ethereum state structure, account contents, and account addressing mechanisms. This guide serves as a valuable resource, providing detailed information on Erigon's architecture, coding conventions, and development workflows related to managing and interacting with the Ethereum state.
+Begin by exploring the comprehensive **[Programmer's Guide](https://github.com/ledgerwatch/erigon/blob/devel/docs/programmers_guide/guide.md)**, which covers topics such as the Ethereum state structure, account contents, and account addressing mechanisms. This guide serves as a valuable resource, providing detailed information on Erigon's architecture, coding conventions, and development workflows related to managing and interacting with the Ethereum state.
 
 ### Dive Deeper into the Architecture
 
@@ -22,7 +22,7 @@ Erigon introduces several innovative features that contributors may find interes
 
 ## Wiki
 
-Visit also Erigon's [Wiki](https://github.com/ledgerwatch/erigon/wiki) to gain more important insights:
+Visit also Erigon's **[Wiki](https://github.com/ledgerwatch/erigon/wiki)** to gain more important insights:
 - Caplin downloader sync
 - Choice of storage engine
 - Consensus Engine separation
@@ -40,4 +40,4 @@ Visit also Erigon's [Wiki](https://github.com/ledgerwatch/erigon/wiki) to gain m
 
 # Documentation
 
-To contribute to this documentation, commit your change to the development branch on [Github](https://github.com/erigontech/docs/tree/development). You might want to run it locally to verify the output before committing, see how MdBook works [here](https://rust-lang.github.io/mdBook/index.html).
+To contribute to this documentation, commit your change to the development branch on **[Github](https://github.com/erigontech/docs/tree/development)**. You might want to run it locally to verify the output before committing, see how MdBook works [here](https://rust-lang.github.io/mdBook/index.html).
