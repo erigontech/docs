@@ -40,6 +40,7 @@
     - [TxPool](advanced/txpool.md)
     - [Sentry](advanced/sentry.md)
     - [Downloader](advanced/downloader.md)
+    - [Running an Op-node](op-node.md)
     - [TLS Authentication](advanced/tls-authentication.md)
     - [Perfomance Tricks](advanced/performance.md)
 
