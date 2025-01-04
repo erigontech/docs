@@ -42,7 +42,7 @@
     - [Downloader](advanced/downloader.md)
     - [Running an Op-node](advanced/op-node.md)
     - [TLS Authentication](advanced/tls-authentication.md)
-    - [Perfomance Tricks](advanced/performance.md)
+    - [Performance Tricks](advanced/performance.md)
 
 - [Staking](staking.md)
     - [External CL](advanced/bp-ext.md)
