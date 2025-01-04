@@ -76,6 +76,6 @@ Flags:
       --txpool.globalslots int          Maximum number of executable transaction slots for all accounts (default 10000)
       --txpool.pricebump uint           Price bump percentage to replace an already existing transaction (default 10)
       --txpool.pricelimit uint          Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default 1)
-      --txpool.trace.senders strings    Comma separared list of addresses, whoes transactions will traced in transaction pool with debug printing
+      --txpool.trace.senders strings    Comma separared list of addresses, whose transactions will traced in transaction pool with debug printing
       --verbosity string                Set the log level for console logs (default "info")
 ```
