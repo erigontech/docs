@@ -37,7 +37,7 @@
     - [Sentry](advanced/sentry.md)
     - [Downloader](advanced/downloader.md)
     - [TLS Authentication](advanced/tls-authentication.md)
-    - [Perfomance Tricks](advanced/performance.md)
+    - [Performance Tricks](advanced/performance.md)
 
  ---
 
