@@ -24,7 +24,6 @@ Erigon introduces several innovative features that contributors may find interes
 ## Wiki
 
 Visit also Erigon's **[Wiki](https://github.com/ledgerwatch/erigon/wiki)** to gain more important insights:
-
 - Caplin downloader sync
 - Choice of storage engine
 - Consensus Engine separation
