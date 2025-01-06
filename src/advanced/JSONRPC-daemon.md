@@ -27,6 +27,8 @@ This document provides guidelines for understanding and using the various RPC me
 1. **Trace Module (`trace_`)**  
    - Erigon includes **[the `trace_` module](/advanced/JSONRPC-trace-module.md)**, which originates from OpenEthereum. This module provides additional functionality related to tracing transactions and state changes, which is valuable for advanced debugging and analysis.
 
+## More info
+
 For a comprehensive understanding of the RPC daemon's functionality, configuration, and usage, please refer to *<https://github.com/erigontech/erigon/blob/main/cmd/rpcdaemon/README.md>** (also contained in your locally compiled Erigon folder at `/cmd/rpcdaemon`) which covers the following key topics:
 
 1. **Introduction**: An overview of the RPC daemon, its benefits, and how it integrates with Erigon.
