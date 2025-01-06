@@ -1,6 +1,6 @@
 # Erigon 3 docs summary
 
-- [Introduction](welcome.md)
+- [Introduction](_introduction.md)
 
 - [Getting Started](getting_started.md)
     - [Hardware Requirements](getting-started/hw-requirements.md)

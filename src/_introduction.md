@@ -51,7 +51,3 @@ Erigon 3 also introduces changes to the release process, including:
 # Known Issues
 
 See <https://github.com/erigontech/erigon?tab=readme-ov-file#known-issues>
-
-# Contributing to this documentation
-
-To contribute to this documentation, commit your change to the development branch on [Github](https://github.com/erigontech/docs/tree/development). You might want to run it locally to verify the output before committing, see how MdBook works [here](https://rust-lang.github.io/mdBook/index.html).
