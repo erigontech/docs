@@ -1,6 +1,6 @@
 # Erigon 3 docs summary
 
-- [Welcome to Erigon 3](welcome.md)
+- [Introduction](welcome.md)
 
 - [Getting Started](getting_started.md)
     - [Hardware Requirements](getting-started/hw-requirements.md)
@@ -37,6 +37,7 @@
         - [JWT secret](advanced/jwt.md)
     - [Options](advanced/options.md)
     - [RPC Daemon](advanced/JSONRPC-daemon.md)
+        - [The trace Module](advanced/JSONRPC-trace-module.md)
     - [TxPool](advanced/txpool.md)
     - [Sentry](advanced/sentry.md)
     - [Downloader](advanced/downloader.md)

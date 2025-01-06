@@ -2,7 +2,32 @@
 # RPC Daemon
 *Remote Procedure Call*
 
-The RPC daemon is a crucial component of Erigon, enabling remote procedure calls and providing access to various APIs. For a comprehensive understanding of the RPC daemon's functionality, configuration, and usage, please refer to **[this page](https://github.com/erigontech/erigon/blob/main/cmd/rpcdaemon/README.md)** (also contained in your locally compiled Erigon folder at `/cmd/rpcdaemon`) which covers the following key topics:
+The RPC daemon is a crucial component of Erigon, enabling remote procedure calls and providing access to various APIs. 
+
+## Erigon RPC Method Guidelines
+
+This document provides guidelines for understanding and using the various RPC methods available in Erigon.
+
+1. **Compatibility with `eth` namespace**  
+   - Erigon aims to be compatible with all standard Ethereum JSON-RPC API methods, as described [here](https://github.com/ethereum/execution-apis). See also [here](https://github.com/erigontech/erigon/blob/main/docs/readthedocs/source/rpc/index.rst) for examples.
+
+1. **Compatibility with standard Geth methods**
+   - All methods featured by Geth including [WebSocket Server](https://geth.ethereum.org/docs/interacting-with-geth/rpc#websockets-server), [IPC Server](https://geth.ethereum.org/docs/interacting-with-geth/rpc#ipc-server), TLS, [GraphQL](https://geth.ethereum.org/docs/interacting-with-geth/rpc/graphql), etc..., are supported by Erigon.
+
+1. **Otterscan (`ots_`) Methods**  
+   - In addition to the standard Geth methods, Erigon includes RPC methods prefixed with `ots_` for **Otterscan**. These are specific to the Otterscan functionality integrated with Erigon. See more details [here](https://docs.otterscan.io/api-docs/ots-api). 
+
+1. **Erigon Extensions (`erigon_`)**  
+   - Erigon introduces some small extensions to the Geth API, denoted by the `erigon_` prefix aimed to enhance the functionality, see more details [here](https://github.com/erigontech/erigon/blob/main/cmd/rpcdaemon/README.md#rpc-implementation-status) about implementation status.
+
+1. **gRPC API**  
+   - Erigon also exposes a **gRPC** API for lower-level data access. This is primarily used by Erigon’s components when they are deployed separately as independent processes (either on the same or different servers). 
+   - This gRPC API is also accessible to users. For more information, visit the [Erigon Interfaces GitHub repository](https://github.com/erigontech/interfaces).
+
+1. **Trace Module from OpenEthereum**  
+   - Erigon includes the **[trace_](/advanced/JSONRPC-trace-module.md)** module, which originates from OpenEthereum. This module provides additional functionality related to tracing transactions and state changes, which is valuable for advanced debugging and analysis.
+
+For a comprehensive understanding of the RPC daemon's functionality, configuration, and usage, please refer to *<https://github.com/erigontech/erigon/blob/main/cmd/rpcdaemon/README.md>** (also contained in your locally compiled Erigon folder at `/cmd/rpcdaemon`) which covers the following key topics:
 
 1. **Introduction**: An overview of the RPC daemon, its benefits, and how it integrates with Erigon.
 2. **Getting Started**: Step-by-step guides for running the RPC daemon locally and remotely, including configuration options and command-line flags.
@@ -93,7 +118,7 @@ Flags:
       --rpc.overlay.getlogstimeout duration         Maximum amount of time to wait for the answer from the overlay_getLogs call. (default 5m0s)
       --rpc.overlay.replayblocktimeout duration     Maximum amount of time to wait for the answer to replay a single block when called from an overlay_getLogs call. (default 10s)
       --rpc.returndata.limit int                    Maximum number of bytes returned from eth_call or similar invocations (default 100000)
-      --rpc.slow duration                           Print in logs RPC requests slower than given threshold: 100ms, 1s, 1m. Exluded methods: eth_getBlock,eth_getBlockByNumber,eth_getBlockByHash,eth_blockNumber,erigon_blockNumber,erigon_getHeaderByNumber,erigon_getHeaderByHash,erigon_getBlockByTimestamp,eth_call
+      --rpc.slow duration                           Print in logs RPC requests slower than given threshold: 100ms, 1s, 1m. Excluded methods: eth_getBlock,eth_getBlockByNumber,eth_getBlockByHash,eth_blockNumber,erigon_blockNumber,erigon_getHeaderByNumber,erigon_getHeaderByHash,erigon_getBlockByTimestamp,eth_call
       --rpc.streaming.disable                       Erigon has enabled json streaming for some heavy endpoints (like trace_*). It's a trade-off: greatly reduce amount of RAM (in some cases from 30GB to 30mb), but it produce invalid json format if error happened in the middle of streaming (because json is not streaming-friendly format)
       --rpc.subscription.filters.maxaddresses int   Maximum number of addresses per subscription to filter logs by.
       --rpc.subscription.filters.maxheaders int     Maximum number of block headers to store per subscription.

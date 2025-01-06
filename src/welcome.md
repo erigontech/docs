@@ -1,13 +1,5 @@
-# Welcome to Erigon 3!
+# Introduction
              
->
-> **NOTE**: The Erigon 3 book is under construction and you may find broken links, empty pages and inexact information.
-> 
-> For instructions regarding Erigon 2 please refer to <https://erigon.gitbook.io>.
-
-
-
-
 	########b          oo                               d####b. 
 	##                                                      '## 
 	##aaaa    ##d###b. dP .d####b. .d####b. ##d###b.     aaad#' 
@@ -17,7 +9,11 @@
 	                           .##                              
 	                       d####P    
 
-> **DISCLAIMER**: Erigon 3 is in alpha phase and it is not recommended to be used in production environments. The Erigon team does not take any responsibility for losses or damages occurred through the use of Erigon. While we employ a seasoned in-house security team, we have not subjected our systems to independent third-party security assessments, leaving potential vulnerabilities to bugs or malicious activity unaddressed. It is essential for validators to be aware that unforeseen events, including software glitches, may result in lost rewards.
+> 📖 **Contributing**
+>
+> You can contribute to this book on [GitHub](https://github.com/erigontech/docs).
+>  
+> For instructions regarding Erigon 2 please refer to <https://erigon.gitbook.io>.
 
 Erigon is an efficient Ethereum implementation designed for speed, modularity, and optimization. By default, it functions as an archive node, utilizing technologies like staged sync, efficient state storage, and database compression.
 
@@ -30,6 +26,10 @@ With Erigon 3 the default configuration shifts from archive node to full node, e
 If you wanto to test Erigon without reading all the documentation, go straight to the [quick nodes](quick_nodes.md) section.
 
 </div>
+
+> **DISCLAIMER**
+>
+> Erigon 3 is in alpha phase and it is not recommended to be used in production environments. The Erigon team does not take any responsibility for losses or damages occurred through the use of Erigon. While we employ a seasoned in-house security team, we have not subjected our systems to independent third-party security assessments, leaving potential vulnerabilities to bugs or malicious activity unaddressed. It is essential for validators to be aware that unforeseen events, including software glitches, may result in lost rewards.
 
 # Features
 
