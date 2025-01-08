@@ -1,5 +1,4 @@
 # Contributing to Erigon 3
-# Contributing to Erigon 3
 
 ## Development
 
