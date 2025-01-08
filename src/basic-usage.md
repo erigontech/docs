@@ -8,8 +8,7 @@ The all-in-one client is the preferred option for most users:
 ./build/bin/erigon
 ```
 
-This CLI command allows you to run an Ethereum **full node ** where every process is integrated and no special configuration is needed.
-This CLI command allows you to run an Ethereum **full node ** where every process is integrated and no special configuration is needed.
+This CLI command allows you to run an Ethereum **full node** where every process is integrated and no special configuration is needed.
 
 The default Consensus Layer utilized is [Caplin](./advanced/caplin.md), the Erigon flagship embedded CL.
 
@@ -22,12 +21,9 @@ The default Consensus Layer utilized is [Caplin](./advanced/caplin.md), the Erig
     ```
 
 * Based on the [type of node](basic/node.md) you want to run you can add ```--prune.mode=archive``` to run a archive node or ```--prune.mode=minimal``` for a minimal node.
-* Based on the [type of node](basic/node.md) you want to run you can add ```--prune.mode=archive``` to run a archive node or ```--prune.mode=minimal``` for a minimal node.
 The default node is archive node.
 * ```--chain=mainnet```, add the flag `--chain=sepolia` for Sepolia testnet or `--chain=holesky` for Holesky testnet.
-* ```--chain=mainnet```, add the flag `--chain=sepolia` for Sepolia testnet or `--chain=holesky` for Holesky testnet.
 * ```--http.addr="0.0.0.0" --http.api=eth,web3,net,debug,trace,txpool``` to use RPC and e.g. be able to connect your [wallet](basic/wallet.md).
-* To increase download speed add ```--torrent.download.rate=512mb``` (default is 16mb).
 * To increase download speed add ```--torrent.download.rate=512mb``` (default is 16mb).
 
 To stop the Erigon node you can use the ```CTRL+C``` command.

@@ -57,7 +57,7 @@ Where `value` is comma separated sentry addresses '<host>:<port>,<host>:<port>'.
 
 ## More info
 
-For other information regardin Sentry functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/sentry/README.md`.
+For other information regarding Sentry functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/sentry/README.md`.
 
 ## Options
 

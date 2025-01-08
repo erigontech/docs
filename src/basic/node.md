@@ -13,7 +13,6 @@ Erigon 3 introduces a flexible approach to node configuration, offering three di
 
 ## Minimal node
 
-
 Erigon 3 implements support for [EIP-4444](https://eips.ethereum.org/EIPS/eip-4444) through its *Minimal Node configuration*, enabled by the flag `--prune.mode=minimal`. For example:
 
 ```bash

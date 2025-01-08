@@ -6,6 +6,7 @@ Caplin is also suitable for staking. However, it is required to pair it with a v
 This guide explains how to use Erigon with its embedded Caplin consensus layer and Lighthouse as the validator client for staking on Ethereum.
 
 ## 1. Start Erigon with Caplin
+
 Run the following command to start Erigon with the embedded Caplin consensus layer with the beacon API on:
 
 ```bash
@@ -63,13 +64,16 @@ mkdir -p ~/.lighthouse/validators
 ### 2.3. Run Lighthouse Validator Client
 
 Start the validator client and connect it to the Caplin consensus layer:
+
 ```bash
 lighthouse vc \
   --network mainnet \
   --beacon-nodes http://127.0.0.1:5555 \
   --suggested-fee-recipient=<your_eth_address>
 ```
+
 **Flags Explanation**:
+
 - `--network mainnet`: Specifies the Ethereum mainnet.
 - `--beacon-nodes`: Points to the Caplin beacon API at `http://127.0.0.1:5555`.
 - `--suggested-fee-recipient`: Specifies your Ethereum address for block rewards.
@@ -81,4 +85,3 @@ If you have existing validator keys, import them:
 ```bash
 lighthouse account validator import --directory <path_to_validator_keys>
 ```
-

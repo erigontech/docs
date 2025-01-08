@@ -1,9 +1,8 @@
 # Disk Space Required
 *How much space your Erigon node will take*
-*How much space your Erigon node will take*
-
 
 # Mainnets
+
 ## Erigon with Caplin
 
 | Network  | Archive Node | Full Node | Minimal Node |
@@ -13,7 +12,7 @@
 | Polygon  |    4.3 TB    |    2 TB   |  873 GB      |
 
 <div class="hidden">
-<div class="hidden">
+
 ## Erigon with an external Consensus Layer client
 
 *(Values obtained with [Lighthouse](https://lighthouse-book.sigmaprime.io/))*
@@ -27,11 +26,11 @@
 | Amoy     |    ... GB    |    ... GB |  ... GB      |
 
 </div>
-</div>
 
 # Testnets
+
 ## Erigon with Caplin
-## Erigon with Caplin
+
 
 | Network  | Archive Node | Full Node | Minimal Node |
 |----------|--------------|-----------|--------------|
