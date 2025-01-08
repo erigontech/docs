@@ -1,5 +1,6 @@
 # Optimizing Storage
 *Using fast disks and cheap disks*
+*Using fast disks and cheap disks*
 
 For optimal performance, it's recommended to store the datadir on a fast NVMe-RAID disk. However, if this is not feasible, you can store the history on a cheaper disk and still achieve good performance.
 

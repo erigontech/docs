@@ -8,7 +8,14 @@ To upgrade Erigon to a newer version when you've originally installed it via Git
     ```bash
     git fetch --tags
     ```
+    ```bash
+    git fetch --tags
+    ```
 * **Check out** the [latest version](https://github.com/ledgerwatch/erigon/releases) and switch to it using:
+    ```bash
+    git checkout <new_version_tag>
+    ```
+    Replace `<new_version_tag>` with the version tag of the new release, for example:
     ```bash
     git checkout <new_version_tag>
     ```
@@ -20,6 +27,9 @@ To upgrade Erigon to a newer version when you've originally installed it via Git
 
 * **Rebuild Erigon**: Since the codebase has changed, you need to compile the new version. Run:
 
+    ```bash
+    make erigon
+    ```
     ```bash
     make erigon
     ```
@@ -35,12 +45,22 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     docker pull erigontech/erigon:<new_version_tag>
     ```
     Replace `<new_version_tag>` with the actual version tag you wish to use. For example:
+    ```bash
+    docker pull erigontech/erigon:<new_version_tag>
+    ```
+    Replace `<new_version_tag>` with the actual version tag you wish to use. For example:
 
+    ```bash
+    docker pull erigontech/erigon:3.0.0
+    ```
     ```bash
     docker pull erigontech/erigon:3.0.0
     ```
 * **List Your Docker Images**: Check your downloaded images to confirm the new image is there and get the new image ID:
 
+    ```bash
+    docker images
+    ```
     ```bash
     docker images
     ```
@@ -50,11 +70,19 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     docker ps
     ```
     Then stop the container using:
+    ```bash
+    docker ps
+    ```
+    Then stop the container using:
 
     ```bash
     docker stop <container_id>
     ```
+    ```bash
+    docker stop <container_id>
+    ```
 
+    Replace `<container_id>` with the actual ID of the container running Erigon.
     Replace `<container_id>` with the actual ID of the container running Erigon.
 
 * **Remove the Old Container**: (Optional) If you want to clean up, you can remove the old container after stopping it:
@@ -62,9 +90,15 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     ```bash
     docker rm <container_id>
     ```
+    ```bash
+    docker rm <container_id>
+    ```
 
 * **Run the New Image**: Now you can start a new container with the new Erigon version using the new image ID:
 
+    ```bash
+    docker run -it <new_image_id>
+    ```
     ```bash
     docker run -it <new_image_id>
     ```
