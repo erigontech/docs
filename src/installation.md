@@ -16,4 +16,4 @@ _____________________________
 
 [Upgrading from a previous version](/installation/upgrading.md)
 
-___________________________
+_____________________________
