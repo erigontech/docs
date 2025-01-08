@@ -3,6 +3,7 @@
 
 # Mainnets
 
+
 ## Erigon with Caplin
 
 | Network  | Archive Node | Full Node | Minimal Node |
@@ -15,7 +16,7 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 
 <div class="hidden">
 
-<div class="hidden">
+
 ## Erigon with an external Consensus Layer client
 
 *(Values obtained with [Lighthouse](https://lighthouse-book.sigmaprime.io/))*
@@ -32,6 +33,7 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 
 # Testnets
 ## Erigon with Caplin
+
 
 | Network  | Archive Node | Full Node | Minimal Node |
 |----------|--------------|-----------|--------------|
