@@ -59,24 +59,15 @@ Where `value` is comma separated sentry addresses '<host>:<port>,<host>:<port>'.
 
 For other information regarding Sentry functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/sentry/README.md`.
 
-## Options
-
-The --help flag listing is reproduced below for your convenience.
-
-```bash
-./build/bin/sentry --help
-```
-
 ### Command Line Options
 
 To display available options for Sentry digit:
 
 ```bash
-./build/bin/sentry -h
+./build/bin/sentry --help
 ```
 
 The `--help` flag listing is reproduced below for your convenience.
-
 
 ```
 Run p2p sentry
