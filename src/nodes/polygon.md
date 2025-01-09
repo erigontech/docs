@@ -1,6 +1,5 @@
 # How to run a Polygon node
 
-
 Follow the [hardware](/getting-started/hw-requirements.md) and [software](/getting-started/sw-requirements.md) prerequisites.
 
 Check which [type of node](/basic/node.md) you might want to run and the [disk space](/basic/disk-space.md) required.
@@ -39,13 +38,13 @@ If you are using [Windows](/installation/windows.md) follow the dedicated instal
 To start a Erigon full node for **Polygon mainnet** with remote Heimdall:
 
 ```bash
-./build/bin/erigon --chain=bor-mainnet --bor.heimdall=https://heimdall-api.polygon.technology/
+./build/bin/erigon --chain=bor-mainnet --bor.heimdall=https://heimdall-api.polygon.technology
 ```
 
 For a **Amoy testnet** archive node with remote Heimdall:
 
 ```bash
-./build/bin/erigon --chain=amoy --bor.heimdall=https://heimdall-api-amoy.polygon.technology/.
+./build/bin/erigon --chain=amoy --bor.heimdall=https://heimdall-api-amoy.polygon.technology
 ```
 
 ## Basic Configuration​
