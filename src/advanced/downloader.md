@@ -11,152 +11,33 @@ While all Erigon components are separable and can be run on different machines, 
 
 </div>
 
-Like many other Erigon components (txpool, sentry, rpc daemon) `downloader` can be running [integrated into Erigon](#start-erigon-with-snapshots-support) or as a [separate process](#running-downloader-as-a-separate-process).
+For a comprehensive understanding of the Downloader's functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/downloader/README.md`. This file covers the following key topics:
 
-## Start Erigon with snapshots support
+1. **Snapshots overview**: An introduction to snapshots, their benefits, and how they are created and used in Erigon.
+2. **Starting Erigon with snapshots support**: Instructions on how to start Erigon with snapshots support, either by default or as a separate process.
+3. **Creating new networks or bootnodes**: A guide on how to create new networks or bootnodes, including creating new snapshots and starting the Downloader.
+4. **Architecture**: An overview of the Downloader's architecture, including how it works with Erigon and the different ways .torrent files can be created.
+5. **Utilities**: A list of available utilities, including `torrent_cat`, `torrent_magnet`, and `torrent_clean`.
+6. **Remote manifest verify**: Instructions on how to verify that remote webseeds have available manifests and all manifested files are available.
+7. **Faster rsync**: Tips on how to use `rsync` for faster file transfer.
+8. **Release details**: Information on how to start automatic commits of new hashes to the `master` branch.
+9. **Creating a seedbox**: A guide on how to create a seedbox to support a new network or type of snapshots.
 
+Some of the key sections in the documentation include:
 
-Downloader is running by default inside Erigon, where it can be configured with the `--snapshots` flag:
+* **How to create new snapshots**: Instructions on how to create new snapshots, including using the `seg` command and creating .torrent files.
+* **How to start the Downloader**: Instructions on how to start the Downloader, either as a separate process or as part of Erigon.
+* **How to verify .seg files**: Instructions on how to verify that .seg files have the same checksum as the current .torrent files.
 
-```bash
-./build/bin/erigon  --snapshots 
-```
+By referring to the embedded documentation file, you can gain a deeper understanding of the Downloader's capabilities and how to effectively utilize it in your Erigon setup.
 
-The `--snapshots` flag is compatible with the `--prune.mode` flag.
-
-When you start the Erigon node with the --snapshots flag, it allows you to control the behavior of the Downloader component, such as:
-
-- Enabling or disabling the Downloader component
-- Configuring the Downloader to use specific snapshots or directories
-- Controlling the seeding and downloading of snapshots
-
-## Running downloader as a separate process
-
-Before using a separate downloader process the executable must be built:
-
-```bash
-cd erigon
-make downloader
-```
-Downloader can then be started as independent process, for example:
-
-```bash
-./build/bin/downloader --downloader.api.addr=127.0.0.1:9093 --torrent.port=42068
-```
-
-- `--downloader.api.addr` is for internal communication with Erigon;
-- `--torrent.port=42068` is for public BitTorrent protocol listen;
-- The default download speed is 16mb/sec. You can increase/limit the network usage by adding the flags `--torrent.download.rate=512mb --torrent.upload.rate=512mb` 
-- On startup Erigon sends list of `.torrent` files to Downloader and waits for 100% download completion
-    ```bash
-    ./build/bin/erigon --snapshots --downloader.api.addr=127.0.0.1:9093
-    ```
-- Use `--snap.keepblocks=true` to not delete retired blocks from DB.
-- Any network/chain can start with snapshot sync:
-    - The node will only download snapshots that are registered in the next repository, which can be found at <https://github.com/erigontech/erigon-snapshot>.
-    - The node will periodically clear out old blocks from the database by copying them into snapshots of 1,000-block size. It will then merge these snapshots into larger ranges until it reaches snapshots of 500,000 blocks. Once this process is complete, the node will automatically begin creating new snapshots.".
-
-## Creation of a new network or bootnode
-
-When creating a new network or bootnode, it's possible that new snapshots may need to be created and seeded. To do this, you'll need to create the snapshots using the following command:
-
-```bash
-erigon snapshots retire --datadir=<your_datadir>
-```
-
-This will create .torrent files that the Downloader can use to seed the new snapshots. The output format is compatible with <https://github.com/ledgerwatch/erigon-snapshot>.
-
-To change the size of the snapshots, add the following flags:
-
-```bash
---from=0 --to=1_000_000 --segment.size=500_000
-```
-
-Then, use the downloader command to rebuild the snapshots:
-
-```bash
-./build/bin/downloader torrent_hashes --rebuild --datadir=<your_datadir>
-```
-
-The Downloader will automatically seed the new snapshots.
-
-Note that while Erigon is not required to seed snapshots, running Erigon with the --snapshots flag will also enable seeding.
-
-## Additional info
-
-When creating snapshots, you don't need a fully-synced Erigon node. In fact, you only need to complete a few initial stages of syncing. This allows you to start seeding snapshots without having to wait for a full sync.
-
-To take advantage of this, you can use the following flags to start syncing, but only seed the first few stages:
-
-- `STOP AFTER STAGE=Senders`: this flag tells Erigon to stop syncing after reaching the "Senders" stage. This allows you to seed the snapshots without waiting for the full sync.
-- `./build/bin/erigon --snapshots=false --datadir=<your_datadir>`: this command starts the Erigon node in snapshot-only mode, which allows it to seed the snapshots without waiting for the full sync.
-
-However, for security reasons, it's highly recommended to have a fully-synced Erigon node. This ensures that all data is up-to-date and secure.
-
-### Indexing Snapshots Before Seeding
-
-Before seeding snapshots, they must be indexed by Erigon. While indexing is not required for seeding, it's recommended to run the following command to ensure that snapshots are properly indexed:
-
-```bash
-./build/bin/erigon snapshots index --datadir=<your_datadir>
-```
-
-This step is not required for seeding, but it's essential for using snapshots effectively.
-
-## Architecture
-
-Snapshots can be created in four ways:
-
-1. **Automated creation**: Erigon can create new .torrent files using the downloader.Download RPC method.
-2. **Manual creation**: Erigon can create new .seg files, which are then scanned by the Downloader to create .torrent files.
-3. **Manual seeding**: .torrent files can be manually copied from another server or restored from backup.
-4. **Manual indexing**: .seg files can be manually copied and indexed by the Downloader.
-
-**Erigon**'s role in the snapshot creation process:
-- Connects to the Downloader and shares the list of hashes.
-- Waits for the download of all snapshots.
-- Creates `.idx` files (secondary indices) when .seg files are available.
-- Switches to normal staged sync after downloading all snapshots.
-- Ensures that snapshot downloading happens only once, even if new Erigon versions are released.
-
-**Downloader**'s role in the snapshot creation process:
-- Reads .torrent files and downloads the contents described by them.
-- Uses a list of trackers to download files (see ./trackers/embed.go).
-- Automatically seeds the downloaded files.
-
-# Technical Details
-
-To prevent attacks, `.idx` files are created with random seeds, ensuring that each node has a unique `.idx` file (but the same `.seg` file).
-If `.seg` files are manually added or removed, the `<your_datadir>/snapshots/db` folder must also be updated.
-
-## Verifying .seg file checksums
-
-Use the `downloader --verify` command to check the checksums of the `.seg` files. Compare the checksums with those of the current `.torrent` files.
-
-## Faster Rsync
-
-Use the following command to perform a faster rsync:
-```bash
-rsync -aP --delete -e "ssh -T -o Compression=no -x"
-```
-
-## Release Details
-
-To start automatic commits of new hashes to the master branch:
-```bash
-crontab -e @hourly cd <erigon_source_dir> && ./cmd/downloader/torrent_hashes_update.sh <your_datadir> <network_name> 1>&2 2>> ~/erigon_cron.log
-```
-
-This command pushes the changes to the master branch automatically before each release.
-
-# Command line options
+## Command line options
 
 To display available options for downloader digit:
 
 ```bash
 ./build/bin/downloader --help
 ```
-
 The `--help` flag listing is reproduced below for your convenience.
 
 ```
@@ -182,7 +63,7 @@ Available Commands:
 
 Flags:
       --chain string                       name of the network to join (default "mainnet")
-      --datadir string                     Data directory for the databases (default "/home/admin/.local/share/erigon")
+      --datadir string                     Data directory for the databases (default "/home/bloxster/.local/share/erigon")
       --db.writemap                        Enable WRITE_MAP feature for fast database writes and fast commit times (default true)
       --diagnostics.disabled               Disable diagnostics
       --diagnostics.endpoint.addr string   Diagnostics HTTP server listening interface (default "127.0.0.1")

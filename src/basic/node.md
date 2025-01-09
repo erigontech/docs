@@ -6,7 +6,9 @@ Erigon 3 introduces a flexible approach to node configuration, offering three di
 |--------------|--------------|-----------|--------------|
 | Privacy, RPC |    **Yes**   |   **Yes** |    **Yes**   |
 | Contribute to network | No  |   **Yes** |    **Yes**   |
+| Contribute to network | No  |   **Yes** |    **Yes**   |
 | Research     |    No        |    No     |    **Yes**   |
+| Staking      |    **Yes**   |  **Yes**  |    **Yes**   |
 | Staking      |    **Yes**   |  **Yes**  |    **Yes**   |
 
 ## Minimal node
@@ -21,13 +23,13 @@ Minimal node is suitable for users with constrained hardware who wants to achiev
 
 ## Full node
 
-Erigon 3 is full Node by default. The full node configuration delivers **faster sync times** and reduced resource consumption for everyday operation, maintaining essential data while **reducing storage requirements**. We recommend running a full node whenever possible, as it supports the network's decentralization, resilience, and robustness, aligning with Ethereum's trustless and distributed ethos. Given the reduced [disk space](disk-space.md) requirements of Erigon 3, the full node configuration is suitable for the majority of users.
+Erigon 3 is full node by default (`--prune.mode=full`). This configuration delivers **faster sync times** and reduced resource consumption for everyday operation, maintaining essential data while **reducing storage requirements**. We recommend running a full node whenever possible, as it supports the network's decentralization, resilience, and robustness, aligning with Ethereum's trustless and distributed ethos. Given the reduced [disk space](disk-space.md) requirements of Erigon 3, the full node configuration is suitable for the majority of users.
 
 ## Archive node
 
 Ethereum's state refers to account balances, contracts, and consensus data. Archive nodes store every historical state, making it easier to access past data, but requiring more disk space. They provide comprehensive historical data, making them optimal for conducting extensive **research** on the chain, ranging from searching for old states of the EVM to implementing advanced block explorers, such as Otterscan, and undertaking **development** activities.
 
-Erigon 3 has consistently reduced the [disk space](disk-space.md) requirements for running an archive node, rendering it more affordable and accessible to a broader range of users.
+Erigon 3 has consistently reduced the [disk space](disk-space.md) requirements for running an archive node, rendering it more affordable and accessible to a broader range of users. To run a archive node use the flag `--prune.mode=archive`.
 
 <div class="warning">
 

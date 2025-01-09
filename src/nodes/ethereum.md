@@ -1,8 +1,8 @@
-# Ethereum
+# How to run an Ethereum node
 
 Follow the [hardware](/getting-started/hw-requirements.md) and [software](/getting-started/sw-requirements.md) prerequisites.
 
-Check which [type of node](/basic/node.md) you might want torun and the [disk space](/basic/disk-space.md) needed.
+Check which [type of node](/basic/node.md) you might want to run and the [disk space](/basic/disk-space.md) required.
 
 <div class="warning">
 
@@ -65,7 +65,7 @@ The basic command to run Erigon with Caplin on Ethereum mainnet is:
 4. Prysm must point to the **[JWT secret](/advanced/jwt.md)** automatically created by Erigon in the datadir directory. In the following example the default data directory is used.
 
     ```bash
-    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --mainnet --jwt-secret=/home/admin/.local/share/erigon/jwt.hex --checkpoint-sync-url=https://beaconstate.info --genesis-beacon-api-url=https://beaconstate.info
+    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --mainnet --jwt-secret=/home/usr/.local/share/erigon/jwt.hex --checkpoint-sync-url=https://beaconstate.info --genesis-beacon-api-url=https://beaconstate.info
     ```
 
     If your Prysm is on a different device, add `--authrpc.addr 0.0.0.0` (Engine API listens on localhost by default) as well as `--authrpc.vhosts <CL host>` to your Prysm configuration.
@@ -97,7 +97,7 @@ The basic command to run Erigon with Caplin on Ethereum mainnet is:
 
 ## Basic Configuration​
 
-- If you want to store Erigon files in a non-default location, add flag `--datadir=<your_data_dir>`. Default data directory is `/home/admin/.local/share/`.erigon.
+- If you want to store Erigon files in a non-default location, add flag `--datadir=<your_data_dir>`. Default data directory is `/home/usr/.local/share/`.erigon.
 - Erigon is full node by default, use `--prune.mode=archive` to run a archive node or `--prune.mode=minimal` (EIP-4444). If you want to change [type of node](/basic/node.md) delete the `--datadir` folder content and restart Erigon with the appropriate flags.
 - Default chain is `--chain=mainnet` for Ethereum mainnet:
     - add the flag `--chain=holesky` for Holesky testnet;

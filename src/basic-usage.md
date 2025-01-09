@@ -8,13 +8,13 @@ The all-in-one client is the preferred option for most users:
 ./build/bin/erigon
 ```
 
-This CLI command allows you to run an Ethereum **full node ** where every process is integrated and no special configuration is needed.
+This CLI command allows you to run an Ethereum **full node** where every process is integrated and no special configuration is needed.
 
 The default Consensus Layer utilized is [Caplin](./advanced/caplin.md), the Erigon flagship embedded CL.
 
 # Basic Configuration​
 
-* Default data directory is `/home/admin/.local/share/erigon`. If you want to store Erigon files in a non-default location, add flag:
+* Default data directory is `/home/usr/.local/share/erigon`. If you want to store Erigon files in a non-default location, add flag:
 
     ```bash
     --datadir=<your_data_dir>

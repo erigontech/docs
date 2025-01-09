@@ -10,11 +10,8 @@ The `--help` flag listing is reproduced below for your convenience.
 ```bash
 ./build/bin/erigon --help
 ```
-# Commands
 
-
-
-# Commands
+## Commands
 
 ```
 NAME:
@@ -24,7 +21,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-alpha6-f22317ef
+   3.00.0-alpha7-34714c0c
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -32,14 +29,17 @@ COMMANDS:
    seg, snapshots, segments  Managing historical data segments (partitions)
    support                   Connect Erigon instance to a diagnostics system for support
    help, h                   Shows a list of commands or help for one command
+   init                      Bootstrap and initialize a new genesis block
+   import                    Import a blockchain file
+   seg, snapshots, segments  Managing historical data segments (partitions)
+   support                   Connect Erigon instance to a diagnostics system for support
+   help, h                   Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --datadir value                                                                  Data directory for the databases (default: /root/.local/share/erigon)
-   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /root/.local/share/erigon-ethash)
+   --datadir value                                                                  Data directory for the databases (default: /home/bloxster/.local/share/erigon)
+   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/bloxster/.local/share/erigon-ethash)
    --externalcl                                                                     Enables the external consensus layer (default: false)
    --txpool.disable                                                                 Experimental external pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
-   --txpool.locals value                                                            Comma separated accounts to treat as locals (no flush, priority inclusion)
-   --txpool.nolocals                                                                Disables price exemptions for locally submitted transactions (default: false)
    --txpool.pricelimit value                                                        Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
    --txpool.pricebump value                                                         Price bump percentage to replace an already existing transaction (default: 10)
    --txpool.blobpricebump value                                                     Price bump percentage to replace existing (type-3) blob transaction (default: 100)
@@ -48,13 +48,15 @@ GLOBAL OPTIONS:
    --txpool.totalblobpoollimit value                                                Total limit of number of all blobs in txs within the txpool (default: 480)
    --txpool.globalslots value                                                       Maximum number of executable transaction slots for all accounts (default: 10000)
    --txpool.globalbasefeeslots value                                                Maximum number of non-executable transactions where only not enough baseFee (default: 30000)
-   --txpool.accountqueue value                                                      Maximum number of non-executable transaction slots permitted per account (default: 64)
    --txpool.globalqueue value                                                       Maximum number of non-executable transaction slots for all accounts (default: 30000)
-   --txpool.lifetime value                                                          Maximum amount of time non-executable transaction are queued (default: 3h0m0s)
    --txpool.trace.senders value                                                     Comma separated list of addresses, whose transactions will traced in transaction pool with debug printing
    --txpool.commit.every value                                                      How often transactions should be committed to the storage (default: 15s)
    --prune.distance value                                                           Keep state history for the latest N blocks (default: everything) (default: 0)
    --prune.distance.blocks value                                                    Keep block history for the latest N blocks (default: everything) (default: 0)
+   --prune.mode value                                                               Choose a pruning preset to run onto. Available values: "full", "archive", "minimal".
+                                                                                          Full: Keep only blocks and latest state,
+                                                                                          Archive: Keep the entire indexed database, aka. no pruning,
+                                                                                          Minimal: Keep only latest state (default: "full")
    --prune.mode value                                                               Choose a pruning preset to run onto. Available values: "full", "archive", "minimal".
                                                                                           Full: Keep only blocks and latest state,
                                                                                           Archive: Keep the entire indexed database, aka. no pruning,
@@ -93,6 +95,7 @@ GLOBAL OPTIONS:
    --state.cache value                                                              Amount of data to store in StateCache (enabled if no --datadir set). Set 0 to disable StateCache. Defaults to 0MB (default: "0MB")
    --rpc.batch.concurrency value                                                    Does limit amount of goroutines to process 1 batch request. Means 1 bach request can't overload server. 1 batch still can have unlimited amount of request (default: 2)
    --rpc.streaming.disable                                                          Erigon has enabled json streaming for some heavy endpoints (like trace_*). It's a trade-off: greatly reduce amount of RAM (in some cases from 30GB to 30mb), but it produce invalid json format if error happened in the middle of streaming (because json is not streaming-friendly format) (default: false)
+   --db.read.concurrency value                                                      Does limit amount of parallel db reads. Default: equal to GOMAXPROCS (or number of CPU) (default: 1408)
    --db.read.concurrency value                                                      Does limit amount of parallel db reads. Default: equal to GOMAXPROCS (or number of CPU) (default: 1408)
    --rpc.accessList value                                                           Specify granular (method-by-method) API allowlist
    --trace.compat                                                                   Bug for bug compatibility with OE for trace_ routines (default: false)
@@ -154,6 +157,7 @@ GLOBAL OPTIONS:
    --staticpeers value                                                              Comma separated enode URLs to connect to
    --trustedpeers value                                                             Comma separated enode URLs which are always allowed to connect, even above the peer limit
    --maxpeers value                                                                 Maximum number of network peers (network disabled if set to 0) (default: 32)
+   --maxpeers value                                                                 Maximum number of network peers (network disabled if set to 0) (default: 32)
    --chain value                                                                    name of the network to join (default: "mainnet")
    --dev.period value                                                               Block period to use in developer mode (0 = mine only if transaction pending) (default: 0)
    --vmdebug                                                                        Record information useful for VM and contract debugging (default: false)
@@ -170,6 +174,7 @@ GLOBAL OPTIONS:
    --mine                                                                           Enable mining (default: false)
    --proposer.disable                                                               Disables PoS proposer (default: false)
    --miner.notify value                                                             Comma separated HTTP URL list to notify of new work packages
+   --miner.gaslimit value                                                           Target gas limit for mined blocks (default: 36000000)
    --miner.gaslimit value                                                           Target gas limit for mined blocks (default: 36000000)
    --miner.etherbase value                                                          Public address for block mining rewards (default: "0")
    --miner.extradata value                                                          Block extra data set by the miner (default = client version)
@@ -205,6 +210,12 @@ GLOBAL OPTIONS:
    --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "256KB")
    --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "256KB")
    --caplin.adaptable-maximum-traffic-requirements                                  Make the node adaptable to the maximum traffic requirement based on how many validators are being ran (default: true)
+   --caplin.subscribe-all-topics                                                    Subscribe to all gossip topics (default: false)
+   --caplin.max-peer-count value                                                    Max number of peers to connect (default: 80)
+   --caplin.enable-upnp                                                             Enable NAT porting for Caplin (default: false)
+   --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "256KB")
+   --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "256KB")
+   --caplin.adaptable-maximum-traffic-requirements                                  Make the node adaptable to the maximum traffic requirement based on how many validators are being ran (default: true)
    --sentinel.addr value                                                            Address for sentinel (default: "localhost")
    --sentinel.port value                                                            Port for sentinel (default: 7777)
    --sentinel.bootnodes value [ --sentinel.bootnodes value ]                        Comma separated enode URLs for P2P discovery bootstrap
@@ -221,13 +232,14 @@ GLOBAL OPTIONS:
    --silkworm.rpc.workers value                                                     Number of worker threads used in embedded Silkworm RPC service (zero means use default in Silkworm) (default: 0)
    --silkworm.rpc.compatibility                                                     Preserve JSON-RPC compatibility using embedded Silkworm RPC service (default: true)
    --beacon.api value [ --beacon.api value ]                                        Enable beacon API (available endpoints: beacon, builder, config, debug, events, node, validator, lighthouse)
+   --beacon.api value [ --beacon.api value ]                                        Enable beacon API (available endpoints: beacon, builder, config, debug, events, node, validator, lighthouse)
    --beacon.api.addr value                                                          sets the host to listen for beacon api requests (default: "localhost")
    --beacon.api.cors.allow-methods value [ --beacon.api.cors.allow-methods value ]  set the cors' allow methods (default: "GET", "POST", "PUT", "DELETE", "OPTIONS")
    --beacon.api.cors.allow-origins value [ --beacon.api.cors.allow-origins value ]  set the cors' allow origins
    --beacon.api.cors.allow-credentials                                              set the cors' allow credentials (default: false)
    --beacon.api.port value                                                          sets the port to listen for beacon api requests (default: 5555)
    --beacon.api.read.timeout value                                                  Sets the seconds for a read time out in the beacon api (default: 5)
-   --beacon.api.write.timeout value                                                 Sets the seconds for a write time out in the beacon api (default: 5)
+   --beacon.api.write.timeout value                                                 Sets the seconds for a write time out in the beacon api (default: 31536000)
    --beacon.api.protocol value                                                      Protocol for beacon API (default: "tcp")
    --beacon.api.ide.timeout value                                                   Sets the seconds for a write time out in the beacon api (default: 25)
    --caplin.backfilling                                                             sets whether backfilling is enabled for caplin (default: false)
@@ -235,6 +247,7 @@ GLOBAL OPTIONS:
    --caplin.backfilling.blob.no-pruning                                             disable blob pruning in caplin (default: false)
    --caplin.checkpoint-sync.disable                                                 disable checkpoint sync in caplin (default: false)
    --caplin.archive                                                                 enables archival node in caplin (default: false)
+   --caplin.snapgen                                                                 enables snapshot generation in caplin (default: false)
    --caplin.snapgen                                                                 enables snapshot generation in caplin (default: false)
    --caplin.mev-relay-url value                                                     MEV relay endpoint. Caplin runs in builder mode if this is set
    --caplin.validator-monitor                                                       Enable caplin validator monitoring metrics (default: false)
@@ -247,6 +260,8 @@ GLOBAL OPTIONS:
    --sync.loop.break.after value                                                    Sets the last stage of the sync loop to run
    --sync.parallel-state-flushing                                                   Enables parallel state flushing (default: true)
    --chaos.monkey                                                                   Enable 'chaos monkey' to generate spontaneous network/consensus/etc failures. Use ONLY for testing (default: false)
+   --shutter                                                                        Enable the Shutter encrypted transactions mempool (defaults to false) (default: false)
+   --shutter.keyper.bootnodes value [ --shutter.keyper.bootnodes value ]            Use to override the default keyper bootnodes (defaults to using the bootnodes from the embedded config)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
    --pprof.addr value                                                               pprof HTTP server listening interface (default: "127.0.0.1")
    --pprof.port value                                                               pprof HTTP server listening port (default: 6060)

@@ -20,11 +20,15 @@ Here are the steps to download and start Erigon 3 in Docker:
 1. Install the latest version of Docker Engine, see instructions [here](https://docs.docker.com/engine/install/).
 
 2. Visit the Erigon Docker Hub page to view the available releases. For Erigon 3, search for the [latest available release](https://hub.docker.com/r/erigontech/erigon/tags?name=v3).
+1. Install the latest version of Docker Engine, see instructions [here](https://docs.docker.com/engine/install/).
 
+2. Visit the Erigon Docker Hub page to view the available releases. For Erigon 3, search for the [latest available release](https://hub.docker.com/r/erigontech/erigon/tags?name=v3).
+
+3. Download the latest version:
 3. Download the latest version:
 
 ```bash
-docker pull erigontech/erigon:v3.0.0-alpha6
+docker pull erigontech/erigon:v3.0.0-alpha7
 ```
 * List the downloaded images to get the IMAGE ID:
 ```bash
@@ -36,7 +40,10 @@ docker run -it <image_id> --v
 ```
 * If you want to start Erigon add the options according to the [basic usage](/basic-usage.md) page or the advanced customization page. For example:
 
+* If you want to start Erigon add the options according to the [basic usage](/basic-usage.md) page or the advanced customization page. For example:
+
 ```bash
+docker run -it 50bef1b5d0f9 --chain=holesky --prune.mode=minimal
 docker run -it 50bef1b5d0f9 --chain=holesky --prune.mode=minimal
 ```
 * When done, exit the container or press `Ctrl+C`. The container will stop.
