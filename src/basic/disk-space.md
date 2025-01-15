@@ -11,6 +11,8 @@
 | Gnosis   |    535 GB    |    365 GB |  210 GB      |
 | Polygon  |    4.3 TB    |    2 TB   |  873 GB      |
 
+See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sync-times).
+
 <div class="hidden">
 
 ## Erigon with an external Consensus Layer client
