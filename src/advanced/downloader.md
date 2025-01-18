@@ -11,7 +11,7 @@ While all Erigon components are separable and can be run on different machines, 
 
 </div>
 
-For a comprehensive understanding of the Downloader's functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/downloader/README.md`. This file covers the following key topics:
+For a comprehensive understanding of the Downloader's functionality, configuration, and usage, please refer to [./cmd/downloader/README.md](https://github.com/erigontech/erigon/blob/main/cmd/downloader/readme.md) with the following key topics:
 
 1. **Snapshots overview**: An introduction to snapshots, their benefits, and how they are created and used in Erigon.
 2. **Starting Erigon with snapshots support**: Instructions on how to start Erigon with snapshots support, either by default or as a separate process.
