@@ -81,4 +81,4 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
 
 * **Verify Operation**: Ensure that Erigon starts correctly and connects to the desired network, verifying the logs for any initial errors.
 
-By following these steps, you'll keep your Docker setup clean and up-to-date with the latest Erigon version without needing to manually clean up or reconfigure your environment. Docker's ability to encapsulate software in containers simplifies upgrades and reduces conflicts with existing software on your machine.
+sBy following these steps, you'll keep your Docker setup clean and up-to-date with the latest Erigon version without needing to manually clean up or reconfigure your environment. Docker's ability to encapsulate software in containers simplifies upgrades and reduces conflicts with existing software on your machine.

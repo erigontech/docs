@@ -1,6 +1,6 @@
 # Software Requirements
 
-Before we start, please note that building software from source can be complex. If you're not comfortable with technical tasks, you might want to check the [Docker](./docker.md) installation.
+Before we start, please note that building software from source can be complex. If you're not comfortable with technical tasks, you might want to check the [Docker](/installation/docker.md) installation.
 
 Erigon works only from command line interface (CLI), so it is advisable to have a good confidence with basic commands.
 
