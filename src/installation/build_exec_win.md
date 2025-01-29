@@ -57,6 +57,7 @@ Open the Command Prompt and type the following:
 ```bash
 git clone --branch v3.0.0-beta1 --single-branch https://github.com/erigontech/erigon.git
 ```
+
 You might need to change the `ExecutionPolicy` to allow scripts created locally or signed by a trusted publisher to run:
 
 ```powershell

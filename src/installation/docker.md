@@ -34,6 +34,7 @@ docker images
 ```
 
 * Check which Erigon version has been downloaded:
+
 ```bash
 docker run -it <image_id> --v
 ```
@@ -43,6 +44,7 @@ docker run -it <image_id> --v
 ```bash
 docker run -it 50bef1b5d0f9 --chain=holesky --prune.mode=minimal
 ```
+
 * When done, exit the container or press `Ctrl+C`. The container will stop.
 
 ## Optional: Setup dedicated user
