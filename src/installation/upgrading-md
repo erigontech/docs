@@ -3,15 +3,11 @@
 To upgrade Erigon to a newer version when you've originally installed it via Git and manual compilation, you should follow these steps without needing to delete the entire folder:
 
 * **Terminate your Erigon** session by pressing CTRL+C
-
-* **Navigate to your Erigon directory**
-
+* *Navigate to your Erigon directory*
 * **Fetch the latest changes from the repository**: You need to make sure your local repository is up-to-date with the main GitHub repository. Run:
-
     ```bash
     git fetch --tags
     ```
-
 * **Check out** the [latest version](https://github.com/ledgerwatch/erigon/releases) and switch to it using:
 
     ```bash
@@ -42,9 +38,9 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     ```
 
     Replace `<new_version_tag>` with the actual version tag you wish to use. For example:
-    
+
     ```bash
-    docker pull erigontech/erigon:v3.0.0-beta1
+    docker pull erigontech/erigon:3.0.0
     ```
 
 * **List Your Docker Images**: Check your downloaded images to confirm the new image is there and get the new image ID:

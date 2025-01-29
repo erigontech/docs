@@ -7,7 +7,7 @@ The Downloader is a service responsible for seeding and downloading historical d
 
 **Information**:
 
-While all Erigon components are separable and can be run on different machines, the Downloader must run on the same machine as Erigon to be able to share downloaded and seeded files.
+While all Erigon components are separable and can be run on different machines, the downloader must run on the same machine as Erigon to be able to share downloaded and seeded files.
 
 </div>
 
