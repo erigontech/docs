@@ -21,7 +21,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-alpha7-34714c0c
+   3.00.0-beta1-0b94461f
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -124,6 +124,7 @@ GLOBAL OPTIONS:
    --snap.keepblocks                                                                Keep ancient blocks in db (useful for debug) (default: false)
    --snap.stop                                                                      Workaround to stop producing new snapshots, if you meet some snapshots-related critical bug. It will stop move historical data from DB to new immutable snapshots. DB will grow and may slightly slow-down - and removing this flag in future will not fix this effect (db size will not greatly reduce). (default: false)
    --snap.state.stop                                                                Workaround to stop producing new state files, if you meet some state-related critical bug. It will stop aggregate DB history in a state files. DB will grow and may slightly slow-down - and removing this flag in future will not fix this effect (db size will not greatly reduce). (default: false)
+   --snap.skip-state-snapshot-download                                              Skip state download and start from genesis block (default: false)
    --db.pagesize value                                                              DB is splitted to 'pages' of fixed size. Can't change DB creation. Must be power of 2 and '256b <= pagesize <= 64kb'. Default: equal to OperationSystem's pageSize. Bigger pageSize causing: 1. More writes to disk during commit 2. Smaller b-tree high 3. Less fragmentation 4. Less overhead on 'free-pages list' maintainance (a bit faster Put/Commit) 5. If expecting DB-size > 8Tb then set pageSize >= 8Kb (default: "4KB")
    --db.size.limit value                                                            Runtime limit of chaindata db size (can change at any time) (default: "200GB")
    --db.writemap                                                                    Enable WRITE_MAP feature for fast database writes and fast commit times (default: true)
@@ -196,7 +197,7 @@ GLOBAL OPTIONS:
    --bor.minblocksize                                                               Ignore the bor block period and wait for 'blocksize' transactions (for testing purposes) (default: false)
    --bor.milestone                                                                  Enabling bor milestone processing (default: true)
    --bor.waypoints                                                                  Enabling bor waypont recording (default: false)
-   --polygon.sync                                                                   Enabling syncing using the new polygon sync component (default: false)
+   --polygon.sync                                                                   Enabling syncing using the new polygon sync component (default: true)
    --polygon.sync.stage                                                             Enabling syncing with a stage that uses the polygon sync component (default: false)
    --ethstats value                                                                 Reporting URL of a ethstats service (nodename:secret@host:port)
    --override.prague value                                                          Manually specify the Prague fork time, overriding the bundled setting (default: 0)
@@ -219,6 +220,7 @@ GLOBAL OPTIONS:
    --sentinel.addr value                                                            Address for sentinel (default: "localhost")
    --sentinel.port value                                                            Port for sentinel (default: 7777)
    --sentinel.bootnodes value [ --sentinel.bootnodes value ]                        Comma separated enode URLs for P2P discovery bootstrap
+   --sentinel.staticpeers value [ --sentinel.staticpeers value ]                    connect to comma-separated Consensus static peers
    --ots.search.max.pagesize value                                                  Max allowed page size for search methods (default: 25)
    --silkworm.exec                                                                  Enable Silkworm block execution (default: false)
    --silkworm.rpc                                                                   Enable embedded Silkworm RPC service (default: false)
@@ -242,11 +244,12 @@ GLOBAL OPTIONS:
    --beacon.api.write.timeout value                                                 Sets the seconds for a write time out in the beacon api (default: 31536000)
    --beacon.api.protocol value                                                      Protocol for beacon API (default: "tcp")
    --beacon.api.ide.timeout value                                                   Sets the seconds for a write time out in the beacon api (default: 25)
-   --caplin.backfilling                                                             sets whether backfilling is enabled for caplin (default: false)
-   --caplin.backfilling.blob                                                        sets whether backfilling is enabled for caplin (default: false)
-   --caplin.backfilling.blob.no-pruning                                             disable blob pruning in caplin (default: false)
+   --caplin.blocks-archive                                                          sets whether backfilling is enabled for caplin (default: false)
+   --caplin.blobs-archive                                                           sets whether backfilling is enabled for caplin (default: false)
+   --caplin.states-archive                                                          enables archival node for historical states in caplin (it will enable block archival as well) (default: false)
+   --caplin.blobs-immediate-backfill                                                sets whether caplin should immediatelly backfill blobs (4096 epochs) (default: false)
+   --caplin.blobs-no-pruning                                                        disable blob pruning in caplin (default: false)
    --caplin.checkpoint-sync.disable                                                 disable checkpoint sync in caplin (default: false)
-   --caplin.archive                                                                 enables archival node in caplin (default: false)
    --caplin.snapgen                                                                 enables snapshot generation in caplin (default: false)
    --caplin.snapgen                                                                 enables snapshot generation in caplin (default: false)
    --caplin.mev-relay-url value                                                     MEV relay endpoint. Caplin runs in builder mode if this is set
@@ -261,7 +264,8 @@ GLOBAL OPTIONS:
    --sync.parallel-state-flushing                                                   Enables parallel state flushing (default: true)
    --chaos.monkey                                                                   Enable 'chaos monkey' to generate spontaneous network/consensus/etc failures. Use ONLY for testing (default: false)
    --shutter                                                                        Enable the Shutter encrypted transactions mempool (defaults to false) (default: false)
-   --shutter.keyper.bootnodes value [ --shutter.keyper.bootnodes value ]            Use to override the default keyper bootnodes (defaults to using the bootnodes from the embedded config)
+   --shutter.p2p.bootstrap.nodes value [ --shutter.p2p.bootstrap.nodes value ]      Use to override the default p2p bootstrap nodes (defaults to using the values in the embedded config)
+   --shutter.p2p.listen.port value                                                  Use to override the default p2p listen port (defaults to 23102) (default: 0)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
    --pprof.addr value                                                               pprof HTTP server listening interface (default: "127.0.0.1")
    --pprof.port value                                                               pprof HTTP server listening port (default: 6060)
