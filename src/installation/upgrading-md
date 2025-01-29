@@ -14,9 +14,11 @@ To upgrade Erigon to a newer version when you've originally installed it via Git
 
 * **Check out** the [latest version](https://github.com/ledgerwatch/erigon/releases) and switch to it using:
 
+
     ```bash
     git checkout <new_version_tag>
     ```
+
 
     Replace `<new_version_tag>` with the version tag of the new release, for example:
 
@@ -41,11 +43,16 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     docker pull erigontech/erigon:<new_version_tag>
     ```
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d04463c (Update to v3.00.0-beta1 (#7))
     Replace `<new_version_tag>` with the actual version tag you wish to use. For example:
     
     ```bash
     docker pull erigontech/erigon:v3.0.0-beta1
     ```
+
 
 * **List Your Docker Images**: Check your downloaded images to confirm the new image is there and get the new image ID:
 
@@ -53,11 +60,13 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     docker images
     ```
 
+
 * **Stop the Running Erigon Container**: If you have a currently running Erigon container, you'll need to stop it before you can start the new version. First, find the container ID by listing the running containers:
 
     ```bash
     docker ps
     ```
+
 
     Then stop the container using:
 
