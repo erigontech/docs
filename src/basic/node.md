@@ -6,7 +6,9 @@ Erigon 3 introduces a flexible approach to node configuration, offering three di
 |--------------|--------------|-----------|--------------|
 | Privacy, RPC |    **Yes**   |   **Yes** |    **Yes**   |
 | Contribute to network | No  |   **Yes** |    **Yes**   |
+| Contribute to network | No  |   **Yes** |    **Yes**   |
 | Research     |    No        |    No     |    **Yes**   |
+| Staking      |    **Yes**   |  **Yes**  |    **Yes**   |
 | Staking      |    **Yes**   |  **Yes**  |    **Yes**   |
 
 ## Minimal node
