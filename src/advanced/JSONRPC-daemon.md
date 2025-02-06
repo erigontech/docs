@@ -9,7 +9,7 @@ The RPC daemon is a crucial component of Erigon, enabling JSON remote procedure 
 This document provides guidelines for understanding and using the various RPC methods available in Erigon.
 
 1. **Compatibility with `eth` namespace**  
-   - Erigon aims to be compatible with all standard Ethereum JSON-RPC API methods, as described [here](https://github.com/ethereum/execution-apis). See also [here](https://github.com/erigontech/erigon/blob/main/docs/readthedocs/source/rpc/index.rst) for examples.
+   - Erigon aims to be compatible with all standard Ethereum JSON-RPC API methods, as described [here](https://ethereum.org/en/developers/docs/apis/json-rpc/). See also [here](https://github.com/erigontech/erigon/blob/main/docs/readthedocs/source/rpc/index.rst) for examples.
 
 1. **Compatibility with standard Geth methods**
    - All methods featured by Geth including [WebSocket Server](https://geth.ethereum.org/docs/interacting-with-geth/rpc#websockets-server), [IPC Server](https://geth.ethereum.org/docs/interacting-with-geth/rpc#ipc-server), TLS, [GraphQL](https://geth.ethereum.org/docs/interacting-with-geth/rpc/graphql), etc..., are supported by Erigon.

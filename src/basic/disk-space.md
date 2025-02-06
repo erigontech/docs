@@ -3,6 +3,7 @@
 
 # Mainnets
 
+
 ## Erigon with Caplin
 
 | Network  | Archive Node | Full Node | Minimal Node |
@@ -14,6 +15,7 @@
 See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sync-times).
 
 <div class="hidden">
+
 
 ## Erigon with an external Consensus Layer client
 
@@ -30,7 +32,6 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 </div>
 
 # Testnets
-
 ## Erigon with Caplin
 
 

@@ -22,5 +22,3 @@ Other supported options are:
 - `--miner.recommit`: Time interval to recreate the block being mined (default: `3s`)
 - `--miner.gasprice`: This option sets the minimum gas price for mined transactions
 - `--miner.gastarget`: This option sets the maximum amount of gas that could be spent during a transaction.
-
-Erigon supports [standard JSON-RPC methods](https://ethereum.org/en/developers/docs/apis/json-rpc/).

@@ -29,9 +29,9 @@ To install the latest Go version, visit the official documentation at [https://g
 
 ### C++ Compiler
 
-This turns the C++ part of Erigon's code into a program your computer can run. You can use either **Clang** or **GCC**.
+This turns the C++ part of Erigon's code into a program your computer can run. You can use either **Clang** or **GCC**:
 
-- For **Clang** follow the instructions at [https://clang.llvm.org/get_started.html](https://clang.llvm.org/get_started.html). Only in Linux, place your terminal to directory where you want to install Clang and copy-paste this code:
-- For **GCC** (version 10 or newer): [https://gcc.gnu.org/install/index.html](https://gcc.gnu.org/install/index.html)
+- For **Clang** follow the instructions at [https://clang.llvm.org/get_started.html](https://clang.llvm.org/get_started.html);
+- For **GCC** (version 10 or newer): [https://gcc.gnu.org/install/index.html](https://gcc.gnu.org/install/index.html).
 
 You can now proceed with Erigon [installation](/installation.md).
