@@ -50,10 +50,11 @@
     - [Caplin](advanced/bp-caplin.md)
 
 - [Tools](tools.md)
-    - [Dagnostic Tools](tools/introduction.md)
+    - [Diagnostics Tool](tools/introduction.md)
         - [Installation](tools/installation.md)
         - [Setup](tools/setup.md)
-        - [User Interface](tools/user_interface.md)
+        - [Options](tools/options.md)
+        - [Browser Interface](tools/user_interface.md)
     - [Otterscan](tools/otterscan.md)
 
 - [Frequently Asked Questions](faq.md)
