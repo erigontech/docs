@@ -46,7 +46,7 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
     Replace `<new_version_tag>` with the actual version tag you wish to use. For example:
     
     ```bash
-    docker pull erigontech/erigon:v3.0.0-beta1
+    docker pull erigontech/erigon:v3.0.0-beta2
     ```
 
 
