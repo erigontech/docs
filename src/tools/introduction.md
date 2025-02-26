@@ -1,7 +1,8 @@
-# Diagnostic Tool
+# Diagnostics Tool
 
-As the Erigon ecosystem expands, the demand for an effective system to diagnose and resolve user issues grows. The Erigon Diagnostics Tool is designed to offer a simplified approach to pinpointing the underlying reasons for problems faced by Erigon users, be they individuals, companies utilizing Erigon internally, or enterprises granting Erigon node access to others.
-Key Features
+As the Erigon ecosystem expands, the demand for an effective system to diagnose and resolve user issues grows. The Erigon Diagnostics Tool is designed to offer a simplified approach to pinpointing the underlying reasons for problems faced by Erigon users.
+
+## Key Features
 
 The Erigon Diagnostics tool offers the following features:
 
@@ -9,4 +10,4 @@ The Erigon Diagnostics tool offers the following features:
 
 - **Interactive Diagnostics**: When additional data is needed to pinpoint the issue, the tool facilitates an interactive process, guiding the user through targeted data collection to optimize the troubleshooting process.
 
-- **Diagnostic Reporting**: The tool generates comprehensive diagnostic reports, making it easier for the Erigon development team to analyze the issues and provide effective solutions.
+- **Diagnostic Reporting**: The tool generates comprehensive diagnostic reports, making it easier to analyze the issues.

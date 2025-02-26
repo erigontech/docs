@@ -1,6 +1,13 @@
-# Contributing to Erigon 3
+# Contributing
 
-## Development
+ 
+- [Contributing to Erigon 3](#contributing-to-erigon-3)
+- [Contributing to Documentation](#contributing-to-documentation)
+
+
+## Contributing to Erigon 3
+
+### Development
 
 Erigon is an open-source project that welcomes contributions from developers worldwide who are passionate about advancing the Ethereum ecosystem. Bounties may be offered for noteworthy contributions, as the team is committed to continuously enhancing the tool to better serve the Erigon community.
 
@@ -39,6 +46,6 @@ Visit also Erigon's **[Wiki](https://github.com/ledgerwatch/erigon/wiki)** to ga
 - Transaction Pool Design
 - Using Postman to test RPC.
 
-# Documentation
+# Contributing to Documentation
 
-To contribute to this documentation, commit your change to the development branch on **[Github](https://github.com/erigontech/docs/tree/development)**. You might want to run it locally to verify the output before committing, see how MdBook works [here](https://rust-lang.github.io/mdBook/index.html).
+To contribute to the Erigon 3 book, commit your change to the development branch on **[Github](https://github.com/erigontech/docs/tree/development)**. You might want to run it locally to verify the output before committing, see how MdBook works [here](https://rust-lang.github.io/mdBook/index.html).

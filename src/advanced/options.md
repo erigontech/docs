@@ -23,7 +23,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-beta1-0b94461f
+   3.00.0-beta2-9da58c0b
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -191,7 +191,7 @@ GLOBAL OPTIONS:
    --polygon.sync.stage                                                             Enabling syncing with a stage that uses the polygon sync component (default: false)
    --ethstats value                                                                 Reporting URL of a ethstats service (nodename:secret@host:port)
    --override.prague value                                                          Manually specify the Prague fork time, overriding the bundled setting (default: 0)
-   --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "127.0.0.1")
+   --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "0.0.0.0")
    --caplin.discovery.port value                                                    Port for Caplin DISCV5 protocol (default: 4000)
    --caplin.discovery.tcpport value                                                 TCP Port for Caplin DISCV5 protocol (default: 4001)
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
@@ -248,6 +248,8 @@ GLOBAL OPTIONS:
    --shutter                                                                        Enable the Shutter encrypted transactions mempool (defaults to false) (default: false)
    --shutter.p2p.bootstrap.nodes value [ --shutter.p2p.bootstrap.nodes value ]      Use to override the default p2p bootstrap nodes (defaults to using the values in the embedded config)
    --shutter.p2p.listen.port value                                                  Use to override the default p2p listen port (defaults to 23102) (default: 0)
+   --polygon.pos.ssf                                                                Enabling Polygon PoS Single Slot Finality (default: false)
+   --polygon.pos.ssf.block value                                                    Enabling Polygon PoS Single Slot Finality since block (default: 0)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
    --pprof.addr value                                                               pprof HTTP server listening interface (default: "127.0.0.1")
    --pprof.port value                                                               pprof HTTP server listening port (default: 6060)
@@ -273,4 +275,3 @@ GLOBAL OPTIONS:
    --config value                                                                   Sets erigon flags from YAML/TOML file
    --help, -h                                                                       show help
    --version, -v                                                                    print the version
-```
