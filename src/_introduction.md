@@ -41,12 +41,14 @@ Erigon 3 is a major update that introduces several significant changes, improvem
 
 The main changes from Erigon 2 are listed [here](https://github.com/erigontech/erigon?tab=readme-ov-file#erigon3-changes-from-erigon2).
 
-# Release Process
+# Releases
 
-Erigon 3 also introduces changes to the release process, including:
-* New Docker Image Repository: Erigon images are now available on Dockerhub repository "erigontech/erigon".
-* Multi-Platform Support: The docker image is built for linux/amd64/v2 and linux/arm64 platforms using Alpine 3.20.2.
-* Release Workflow Changes: Build flags are now passed to the release workflow, allowing users to view previously missed build information in released binaries.
+[https://github.com/erigontech/erigon/releases](https://github.com/erigontech/erigon/releases)
+
+# Docker image releases
+
+* New Docker Image Repository: Erigon images are now available on Dockerhub repository `erigontech/erigon`.
+* Multi-Platform Support: The docker image is built for linux/amd64/v2 and linux/arm64 platforms using Alpine.
 
 # Known Issues
 
