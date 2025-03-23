@@ -192,6 +192,7 @@ GLOBAL OPTIONS:
    --ethstats value                                                                 Reporting URL of a ethstats service (nodename:secret@host:port)
    --override.prague value                                                          Manually specify the Prague fork time, overriding the bundled setting (default: 0)
    --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "0.0.0.0")
+   --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "0.0.0.0")
    --caplin.discovery.port value                                                    Port for Caplin DISCV5 protocol (default: 4000)
    --caplin.discovery.tcpport value                                                 TCP Port for Caplin DISCV5 protocol (default: 4001)
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
@@ -248,6 +249,8 @@ GLOBAL OPTIONS:
    --shutter                                                                        Enable the Shutter encrypted transactions mempool (defaults to false) (default: false)
    --shutter.p2p.bootstrap.nodes value [ --shutter.p2p.bootstrap.nodes value ]      Use to override the default p2p bootstrap nodes (defaults to using the values in the embedded config)
    --shutter.p2p.listen.port value                                                  Use to override the default p2p listen port (defaults to 23102) (default: 0)
+   --polygon.pos.ssf                                                                Enabling Polygon PoS Single Slot Finality (default: false)
+   --polygon.pos.ssf.block value                                                    Enabling Polygon PoS Single Slot Finality since block (default: 0)
    --polygon.pos.ssf                                                                Enabling Polygon PoS Single Slot Finality (default: false)
    --polygon.pos.ssf.block value                                                    Enabling Polygon PoS Single Slot Finality since block (default: 0)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
