@@ -1,4 +1,4 @@
-# The Erigon 3 Book
+# Erigon 3 Docs
 
 This is the official Erigon 3 documentation, hosted at <https://docs.erigon.tech/>.
 

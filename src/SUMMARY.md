@@ -21,6 +21,7 @@
         - [Optimizing Storage](basic/optimizing-storage.md)
     - [Supported Networks](basic/networks.md)
     - [Default Ports and Firewalls](basic/ports.md)
+    - [YAML/TOML Config](basic/yaml.md)
     - [Web3 Wallet](basic/wallet)
 
 - [Quick nodes](quick_nodes.md)
@@ -57,10 +58,9 @@
         - [Browser Interface](tools/user_interface.md)
     - [Otterscan](tools/otterscan.md)
 
-- [Frequently Asked Questions](faq.md)
-
 - [About](about.md)
     - [License](about/license.md)
     - [Contributing](about/contributing.md)
+    - [Disclaimer](about/disclaimer.md)
     - [Donate](about/donate.md)
     - [How to reach us](about/reachus.md)

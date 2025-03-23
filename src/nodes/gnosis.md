@@ -53,7 +53,7 @@ The basic command to run Erigon with Caplin on Gnosis Chain is:
 1. Start Erigon:
 
     ```bash
-    ./build/bin/erigon --externalcl
+    ./build/bin/erigon --chain=gnosis --externalcl 
     ```
 
 2. Install Lighthouse, another popular client that can be used with Erigon for block building. Follow the instructions until the chapter **Build Lighthouse**, skipping the `make` instruction.: <https://lighthouse-book.sigmaprime.io/installation.html>

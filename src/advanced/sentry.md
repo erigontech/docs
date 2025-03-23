@@ -20,9 +20,10 @@ The ETH core interacts with the Ethereum p2p network through the Sentry componen
 
 It is possible to have multiple Sentry to increase connectivity to the network or to obscure the location of the core computer. In this case it is necessary to define address and port of each Sentry that should be connected to the Core.
 
-Before using the Sentry component the executable must be built. Head over to /erigon directory and type:
+Before using the Sentry component the executable must be built:
 
 ```bash
+cd erigon
 make sentry
 ```
 
@@ -39,13 +40,13 @@ In this example we will run an instance of Erigon and Sentry on the same machine
 Following is the Sentry client running separately:  
 
 ```bash
-screen ./build/bin/sentry --datadir=~/.local/share/erigon
+./build/bin/sentry --datadir=~/.local/share/erigon
 ```
 
-And here is Erigon attaching to it
+And Erigon attaching to it:
 
 ```bash
-./build/bin/erigon --internalcl --snapshots=true --sentry.api.addr=127.0.0.1:9091
+./build/bin/erigon --sentry.api.addr=127.0.0.1:9091
 ```
 
 Erigon might be attached to several Sentry instances running across different machines. As per Erigon help:
@@ -53,7 +54,7 @@ Erigon might be attached to several Sentry instances running across different ma
 ```bash
 --sentry.api.addr value
 ```
-Where `value` is comma separated sentry addresses '<host>:<port>,<host>:<port>'.
+Where `value` is comma separated sentry addresses `<host>:<port>,<host>:<port>`.
 
 ## More info
 
@@ -76,7 +77,7 @@ Usage:
   sentry [flags]
 
 Flags:
-      --datadir string                     Data directory for the databases (default "/home/bloxster/.local/share/erigon")
+      --datadir string                     Data directory for the databases (default "/home/user/.local/share/erigon")
       --diagnostics.disabled               Disable diagnostics
       --diagnostics.endpoint.addr string   Diagnostics HTTP server listening interface (default "127.0.0.1")
       --diagnostics.endpoint.port uint     Diagnostics HTTP server listening port (default 6062)
