@@ -8,21 +8,13 @@ With Erigon 3 the default configuration shifts from archive node to full node, e
 
 # Topics
 
-Review the hardware and software requirements to get started.
-Follow the installation guide to set up Erigon.
-Learn the basic usage of Erigon.
-Quickly deploy your own Ethereum, Gnosis, or Polygon node.
-Explore Erigon's advanced features.
-Discover the capabilities of the RPC Daemon.
-Utilize integrated tools like Diagnostic Tools and Otterscan.
-
-- Review the hardware and software requirements to [get Started](getting_started.md).
-- Follow the [Installation Guide](installation.md) to set up Erigon.
-- Learn the [basic usage](basic-usage.md) of Erigon
-- Quickly deploy your own Ethereum, Gnosis or Polygon [node](quick_nodes.md).
-- Discover the [advanced features](advanced.md) of Erigon
-- Dig into Erigon [RPC Daemon](advanced/JSONRPC-daemon.md) capabilities
-- Try our integrated powerful [tools](tools.md) like the Diagnostic Tools and Otterscan.
+- Review the hardware and software requirements [get started](getting_started.md).
+- Follow the [installation guide](installation.md) to set up Erigon.
+- Learn the [basic usage](basic-usage.md) of Erigon.
+- Quickly deploy your own Ethereum, Gnosis, or Polygon [node](quick_nodes.md).
+- Explore Erigon's [advanced features](advanced.md).
+- Discover the capabilities of the [RPC Daemon](advanced/JSONRPC-daemon.md).
+- Utilize integrated [tools](tools.md) like Diagnostic Tools and Otterscan.
 
 # Additional Resources and Information
 
