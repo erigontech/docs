@@ -16,14 +16,14 @@ The `--help` flag listing is reproduced below for your convenience.
 ## Commands
 
 ```
-NNAME:
+NAME:
    erigon - erigon
 
 USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-rc3-844c6cf3
+   3.00.0-57625b40
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -33,8 +33,8 @@ COMMANDS:
    help, h                   Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --datadir value                                                                  Data directory for the databases (default: /home/user/.local/share/erigon)
-   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/user/.local/share/erigon-ethash)
+   --datadir value                                                                  Data directory for the databases (default: /home/bloxster/.local/share/erigon)
+   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/bloxster/.local/share/erigon-ethash)
    --externalcl                                                                     Enables the external consensus layer (default: false)
    --txpool.disable                                                                 Experimental external pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
    --txpool.pricelimit value                                                        Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
@@ -192,7 +192,6 @@ GLOBAL OPTIONS:
    --ethstats value                                                                 Reporting URL of a ethstats service (nodename:secret@host:port)
    --override.prague value                                                          Manually specify the Prague fork time, overriding the bundled setting (default: 0)
    --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "0.0.0.0")
-   --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "0.0.0.0")
    --caplin.discovery.port value                                                    Port for Caplin DISCV5 protocol (default: 4000)
    --caplin.discovery.tcpport value                                                 TCP Port for Caplin DISCV5 protocol (default: 4001)
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
@@ -251,8 +250,6 @@ GLOBAL OPTIONS:
    --shutter.p2p.listen.port value                                                  Use to override the default p2p listen port (defaults to 23102) (default: 0)
    --polygon.pos.ssf                                                                Enabling Polygon PoS Single Slot Finality (default: false)
    --polygon.pos.ssf.block value                                                    Enabling Polygon PoS Single Slot Finality since block (default: 0)
-   --polygon.pos.ssf                                                                Enabling Polygon PoS Single Slot Finality (default: false)
-   --polygon.pos.ssf.block value                                                    Enabling Polygon PoS Single Slot Finality since block (default: 0)
    --pprof                                                                          Enable the pprof HTTP server (default: false)
    --pprof.addr value                                                               pprof HTTP server listening interface (default: "127.0.0.1")
    --pprof.port value                                                               pprof HTTP server listening port (default: 6060)
@@ -278,4 +275,5 @@ GLOBAL OPTIONS:
    --config value                                                                   Sets erigon flags from YAML/TOML file
    --help, -h                                                                       show help
    --version, -v                                                                    print the version
+```
 

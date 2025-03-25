@@ -18,7 +18,7 @@ Check which [type of node](/basic/node.md) you might want to run and the [disk s
 For MacOS and Linux, run the following commands to build from source the latest Erigon version:
 
 ```bash
-git clone --branch v3.0.0-beta2 --single-branch https://github.com/erigontech/erigon.git
+git clone --branch v3.0.0 --single-branch https://github.com/erigontech/erigon.git
 cd erigon
 make erigon
 ```
