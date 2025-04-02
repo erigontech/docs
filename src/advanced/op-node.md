@@ -1,4 +1,4 @@
-# Running an Op-Node Alongside Erigon
+# Running an Op-Node alongside Erigon
 
 To run an op-node alongside Erigon, follow these steps:
 

@@ -29,7 +29,7 @@ This document provides guidelines for understanding and using the various RPC me
 
 ## More info
 
-For a comprehensive understanding of the RPC daemon's functionality, configuration, and usage, please refer to *<https://github.com/erigontech/erigon/blob/main/cmd/rpcdaemon/README.md>** (also contained in your locally compiled Erigon folder at `/cmd/rpcdaemon`) which covers the following key topics:
+For a comprehensive understanding of the RPC daemon's functionality, configuration, and usage, please refer to <https://github.com/erigontech/erigon/blob/main/cmd/rpcdaemon/README.md> (also contained in your locally compiled Erigon folder at `/cmd/rpcdaemon`) which covers the following key topics:
 
 1. **Introduction**: An overview of the RPC daemon, its benefits, and how it integrates with Erigon.
 2. **Getting Started**: Step-by-step guides for running the RPC daemon locally and remotely, including configuration options and command-line flags.

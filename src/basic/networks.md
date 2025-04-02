@@ -20,10 +20,11 @@ Utilize the flag `--chain=<tag>` to synchronize with one of the supported networ
 
 ## Ethereum testnets
 
-|Chain     |    Tag| ChainId   |
-|----------|-------|-----------|
-|Holesky   |holesky|    17000  |
-|Sepolia   |sepolia|   11155111|
+|Chain     |    Tag| ChainId  |
+|----------|-------|----------|
+|Holesky   |holesky|    17000 |
+|Sepolia   |sepolia|  11155111|
+|Hoodi     |hoodi  |   560048 |
 
 ## Polygon testnets
 

@@ -1,38 +1,76 @@
-# TxPool
-*Memory pool management*
+# Txpool
 
-In Erigon, `txpool` is a specific API namespace that keeps pending and queued transactions in the local memory pool. It is used to store transactions that are waiting to be processed by miners. Default is `4096` pending and `1024` queued transactions. However, the number of pending transactions can be much higher than this default value.
+The transaction pool, also known as the mempool, is a dynamic storage area where pending transactions are held before being confirmed and added to the blockchain. Each node on the Ethereum network maintains its own local transaction pool, which is combined with others to form the global pool.
 
-The transaction pool (txpool or mempool) is the dynamic in-memory area where pending transactions reside before they are included in a block and thus become static. Each node on the Ethereum mainnet has its own pool of transactions and, combined, they all form the global pool. 
+In Erigon, the txpool is a dedicated API namespace that stores pending and queued transactions in local memory. Its primary function is to manage transactions waiting to be processed by miners. 
 
-The thousands of pending transactions that enter the global pool by being broadcast on the network and before being included in a block are an always changing data set that’s holding millions of dollars at any given second. There are many ways to use txpool such as yield farming, liquidity providing, arbitrage, front running and MEV .
+The TxPool component is typically run as an internal Erigon component, but it can also be operated as a separate process, providing flexibility in transaction management.
 
-WHile Txpool component is run by default as an internal Erigon component,  it can also be run as a separate process.
+## Txpool as an internal Erigon component
 
-## Running with TX pool as a separate process
+Txpool is run as an internal Erigon component by default.
 
-Before using a separate TxPool process the executable must be built:
+## Txpool as a separate process (experimental)
+
+Running an external txpool can provide a more secure, scalable, and flexible transaction management solution, which can be particularly beneficial in high-performance or high-availability Ethereum node deployments.
+
+1) Before TxPool can be using as a separate process the executable must be built:
 
 ```bash
 cd erigon
 make txpool
 ```
 
-If Erigon is on a different device, add the flag `--pprof.addr 0.0.0.0` or TxPool will listen on localhost by default.
+2) Together with external TxPool also [Sentry](sentry.md) and [RPCDaemon](JSONRPC-daemon.md) must be compiled and run separately.
 
 ```bash
-./build/bin/txpool --pprof.addr 0.0.0.0
+make sentry
 ```
-
-Erigon must be launched with options to listen to external TxPool
 
 ```bash
-./build/bin/erigon --pprof --pprof.addr 123.123.123.123
+make rpcdaemon
 ```
 
-## More info
+3) Now Erigon and other services can be started as separate processes
 
-For other information regardin Txpool functionality, configuration, and usage, please refer to the embedded file you can find in your compiled Erigon folder at `./cmd/txpool/README.md`.
+
+```sh
+./build/bin/erigon --txpool.disable --private.api.addr=localhost:9090 --datadir=<your datadir> --http=false
+```
+
+If Erigon is on a different device, add the flags `--pprof --pprof.addr 0.0.0.0` or TxPool will listen on localhost by default. 
+
+
+```sh
+./build/bin/sentry --sentry.api.addr=localhost:9091 --datadir=<your datadir>
+```
+
+```sh
+./build/bin/txpool --private.api.addr=localhost:9090 --sentry.api.addr=localhost:9091 --txpool.api.addr=localhost:9094 --datadir=<your datadir>
+```
+
+```sh
+./build/bin/rpcdaemon --private.api.addr=localhost:9090 --datadir=<your datadir> --txpool.api.addr=localhost:9094
+```
+
+## Flags explanation
+
+- `--txpool.disable`: This flag disables the internal transaction pool (txpool) and block producer (default: `false`). When running the txpool as a separate process, this flag is used to prevent the internal txpool from interfering with the external one.
+
+- `--private.api.addr=localhost:9090`: This flag sets the address and port for the private API. The private API is used for internal communication between Erigon components (default: `127.0.0.1:9090`).
+
+- `--datadir=<your datadir>`: This flag specifies the data directory for Erigon. This is where Erigon stores its databases and other data.
+
+- `--http=false`: This flag disables the HTTP API server in Erigon (default: `true)`. When running the txpool as a separate process, this flag is used to prevent the internal HTTP server from interfering with the external txpool.
+
+- `--sentry.api.addr=localhost:9091`: This flag sets the address and port for the sentry API. The sentry API is used for communication between the txpool and the sentry.
+
+- `--txpool.api.addr=localhost:9094`: This flag sets the address and port for the txpool API (default: use value of `--private.api.addr`). The txpool API is used for communication between the txpool and other Erigon components.
+
+- `--pprof`: Enable the pprof HTTP server (default: `false`)
+
+- `--pprof.addr 0.0.0.0`: This flag sets the address for the pprof HTTP server (default: `127.0.0.1`). The pprof server is used for profiling and debugging Erigon. By setting this flag to `0.0.0.0`, the pprof server is made accessible from outside the local machine.
+
 
 ## Command Line Options
 
@@ -45,13 +83,14 @@ To display available options for Txpool digit:
 The `--help` flag listing is reproduced below for your convenience.
 
 ```
+./build/bin/txpool --help
 Launch external Transaction Pool instance - same as built-into Erigon, but as independent Process
 
 Usage:
   txpool [flags]
 
 Flags:
-      --datadir string                     Data directory for the databases (default "/home/bloxster/.local/share/erigon")
+      --datadir string                     Data directory for the databases (default "/home/user/.local/share/erigon")
       --db.writemap                        Enable WRITE_MAP feature for fast database writes and fast commit times (default true)
       --diagnostics.disabled               Disable diagnostics
       --diagnostics.endpoint.addr string   Diagnostics HTTP server listening interface (default "127.0.0.1")

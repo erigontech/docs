@@ -23,7 +23,7 @@ To upgrade Erigon to a newer version when you've originally installed it via Git
     Replace `<new_version_tag>` with the version tag of the new release, for example:
 
     ```bash
-    git checkout v3.0.0-beta2
+    git checkout v3.0.0
     ```
 
 * **Rebuild Erigon**: Since the codebase has changed, you need to compile the new version. Run:

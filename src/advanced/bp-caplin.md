@@ -7,13 +7,11 @@ This guide explains how to use Erigon with its embedded Caplin consensus layer a
 
 ## 1. Start Erigon with Caplin
 
-Run the following command to start Erigon with the embedded Caplin consensus layer with the beacon API on:
+The following command starts Erigon with the embedded Caplin consensus layer with the beacon API on:
 
 ```bash
 erigon \
   --datadir=/data/erigon \
-  --chain=mainnet \
-  --prune.mode=full \
   --http \
   --http.addr=0.0.0.0 \
   --http.port=8545 \
@@ -24,13 +22,12 @@ erigon \
   --caplin.discovery.addr=0.0.0.0 \
   --caplin.discovery.port=4000 \
   --caplin.discovery.tcpport=4001 \
-  --chain=<NETWORK>
   --beacon.api=beacon,validator,builder,config,debug,events,node,lighthouse 
 ```
 
 **Flags Explanation**:
 
-- Execution Layer:
+- Execution Layer (Erigon):
     - `--http.api=engine,eth,net,web3`: enables the necessary APIs for external clients and Caplin.
     - `--ws`: enables WebSocket-based communication (optional).
 - Consensus Layer (Caplin):
@@ -41,15 +38,7 @@ erigon \
 
 ### 2.1 Install Lighthouse
 
-Download the latest Lighthouse binary:
-
-```
-curl -LO https://github.com/sigp/lighthouse/releases/latest/download/lighthouse
-chmod +x lighthouse
-sudo mv lighthouse /usr/local/bin/
-```
-
-Or, use Docker:
+Install and run Lighthouse by following the official guide at <https://lighthouse-book.sigmaprime.io/installation.html> or use Docker:
 
 ```bash
 docker pull sigp/lighthouse:latest
@@ -63,7 +52,7 @@ mkdir -p ~/.lighthouse/validators
 
 ### 2.3. Run Lighthouse Validator Client
 
-Start the validator client and connect it to the Caplin consensus layer:
+Start the validator client and connect it to the Caplin CL:
 
 ```bash
 lighthouse vc \

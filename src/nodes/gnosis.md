@@ -18,7 +18,7 @@ Check which [type of node](/basic/node.md) you might want to run and the [disk s
 For MacOS and Linux, run the following commands to build from source the latest Erigon version:
 
 ```bash
-git clone --branch v3.0.0-beta2 --single-branch https://github.com/erigontech/erigon.git
+git clone --branch release/3.0 --single-branch https://github.com/erigontech/erigon.git
 cd erigon
 make erigon
 ```
@@ -53,7 +53,7 @@ The basic command to run Erigon with Caplin on Gnosis Chain is:
 1. Start Erigon:
 
     ```bash
-    ./build/bin/erigon --externalcl
+    ./build/bin/erigon --chain=gnosis --externalcl 
     ```
 
 2. Install Lighthouse, another popular client that can be used with Erigon for block building. Follow the instructions until the chapter **Build Lighthouse**, skipping the `make` instruction.: <https://lighthouse-book.sigmaprime.io/installation.html>
