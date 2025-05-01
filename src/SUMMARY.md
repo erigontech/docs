@@ -4,7 +4,6 @@
 
 - [Getting Started](getting_started.md)
     - [Hardware Requirements](getting-started/hw-requirements.md)
-        - [Tips for faster syncing](getting-started/tips.md)
     - [Software Requirements](getting-started/sw-requirements.md)
 
 - [Installation](installation.md)
