@@ -10,6 +10,10 @@ These instructions are designed to improve the performance of Erigon 3, particul
 ```bash
 --sync.loop.block.limit=10_000 --batchSize=2g
 ```
+* Increase download speed with flag ```--torrent.download.rate=[value]``` setting your max speed (default value is 128MB). For example:
+```bash
+--torrent.download.rate=512mb
+```
 
 ## Optimize for Cloud Drives
 
