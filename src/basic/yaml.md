@@ -1,11 +1,14 @@
 # Using TOML or YAML Config Files
 
+You can configure Erigon using a YAML or TOML configuration file by specifying its path with the `--config` flag. 
 
-You can set Erigon flags via a YAML or TOML configuration file with the flag `--config`. The flags set in the configuration file can be overridden by writing the flags directly to the Erigon command line.
+> Note: flags specified in the configuration file can be overridden by directly setting them in the Erigon command line.
+
+Both in YAML and TOML files boolean operators (`false`, `true`) and strings without spaces can be specified without quotes, while strings with spaces must be included in `""` or `''` quotes.
 
 ## YAML
 
-Assuming we have `--chain=mainnet` in our configuration file, adding `--chain=holesky` will override the flag inside the yaml configuration file and set the chain to Holesky.
+Use the `--config` flag to point at the YAML configuration file.
 
 ```bash
 ./build/bin/erigon --config ./config.yaml --chain=holesky
@@ -13,22 +16,27 @@ Assuming we have `--chain=mainnet` in our configuration file, adding `--chain=ho
 
 Example of setting up a YAML config file:
 
-```bash
+```yaml
 datadir : 'your datadir'
 chain : "mainnet"
 http : true
-
 http.api : ["eth","debug","net"]
 ```
 
+In this case the `--chain` flag in the command line will override the value in the YAML file and Erigon will run on the Holesky testnet.
+
 ## TOML
+
+```bash
+./build/bin/erigon --config ./config.toml
+```
 
 Example of setting up TOML config file:
 
-```bash
+```toml
 datadir = 'your datadir'
 chain = "mainnet"
 http = true
-
 "http.api" = ["eth","debug","net"]
 ```
+

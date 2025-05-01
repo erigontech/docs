@@ -44,7 +44,7 @@ To start a Erigon full node for **Polygon mainnet** with remote Heimdall:
 For a **Amoy testnet** archive node with remote Heimdall:
 
 ```bash
-./build/bin/erigon --chain=amoy --bor.heimdall=https://heimdall-api-amoy.polygon.technology
+./build/bin/erigon --chain=amoy --bor.heimdall=https://heimdall-api-amoy.polygon.technology --prune.mode=archive
 ```
 
 ## Basic Configuration​
