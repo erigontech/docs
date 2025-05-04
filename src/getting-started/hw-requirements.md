@@ -8,27 +8,63 @@ Additionally, SSDs may experience performance degradation when nearing full capa
 
 See here how you can [optimize storage](/basic/optimizing-storage.md).
 
-## RAID Configuration
 
-When using multiple disks, consider implementing a **RAID 0** configuration to maximize performance and utilize space efficiently. RAID ZFS is not recommended.
+Here is the outline of the hardware requirements for running Erigon on the following networks:
 
-## Disk size
+- Ethereum Mainnet
+- Polygon (formerly Matic)
+- Gnosis (formerly xDai)
 
-Please refer to [disk space required](/basic/disk-space.md) for details. To ensure smooth operation, it is recommended to maintain at least 25% of free disk space. For more detailed guidance on optimizing storage, refer to disk space required.
+Hardware requirements vary depending on whether you're running a Minimal, Full, or Archive node.
 
-## CPU Requirements
+General recommendations for all node types include:
 
-* **Architecture**: 64-bit architecture.
-* **Number of core and threads**: While a powerful CPU can be beneficial, it's not essential for running Erigon. A moderate number of cores and threads should be sufficient. However, we recommend at least 4 cores, or 8 cores for high performance.
+- **Disk Type:** Use high-end NVMe SSDs. RAID or ZFS setups may improve performance for archive nodes.
+- **RAM:** Adequate memory reduces bottlenecks during sync and improves performance under load.
+- **CPU:** 4–8 cores recommended for Full nodes; 8–16 cores for Archive.
+- **Linux**: kernel version > v4
+- When using multiple disks, consider implementing a **RAID 0** configuration to maximize performance and utilize space efficiently. RAID ZFS is not recommended.
 
-## RAM Requirements
-    
-* **Minimum**: 64GB
 
-## Kernel Requirements
+## Minimal Node Requirements
 
-* **Linux**: kernel version > v4
+Minimal nodes are suitable for light operation with pruned state and minimal historical data retention. (`--prune.mode=minimal`)
 
-## Bandwith
+| Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
+|-----------|----------------------|--------------------------|----------------|-------------------|
+| Mainnet   | 500 GB       | 500 GB        | 16 GB           | 64 GB             |
+| Polygon   | 2 TB  | 2 TB        | 32 GB           | 64 GB             |
+| Gnosis    | 250 GB         | 500 GB      | 8 GB           | 16 GB              |
 
-A stable and reliable internet connection is crucial for running a node, especially if you're running a validator node, as downtime can lead to missed rewards or penalties. We recommend a minimum inbound and outbound bandwidth of 20 Mbps, with a stable connection and low latency. For optimal performance, it's best to use an ISP with an uncapped data allowance.
+
+## Full Node Requirements
+
+Full nodes maintain full state with standard pruning and all recent data.  (`--prune.mode=full`)
+
+| Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
+|-----------|----------------------|--------------------------|----------------|-------------------|
+| Mainnet   | 1 TB       | 2 TB    | 16 GB          | 64 GB             |
+| Polygon   | 2 TB   | 4 TB    | 16 GB          | 32 GB             |
+| Gnosis    | 500 GB       | 1 TB          | 8 GB           | 16 GB             |
+
+
+## Archive Node Requirements
+
+Archive nodes retain **all** historical state and require significantly more disk space. These are typically used for block explorers or deep analytical queries. (`--prune.mode=archive`)
+
+| Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
+|-----------|----------------------|--------------------------|----------------|-------------------|
+| Mainnet   | 2 TB     | 4 TB       | 32 GB          | 64 GB            |
+| Polygon   | 6 TB   | 6 TB        | 64 GB          | 128 GB             |
+| Gnosis    | 1 TB           | 2 TB         | 16 GB          | 32 GB             |
+
+
+
+## Bandwidth Requirements
+
+Your internet bandwidth is also an important factor, particularly for sync speed and validator performance.
+
+| Node Type     | Bandwidth (Required) | Bandwidth (Recommended) |
+|---------------|----------------------|--------------------------|
+| Staking/Mining       | 10 Mbps              | 50 Mbps                 |
+| Non-Staking   | 5 Mbps               | 25 Mbps                 |

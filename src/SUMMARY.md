@@ -4,11 +4,12 @@
 
 - [Getting Started](getting_started.md)
     - [Hardware Requirements](getting-started/hw-requirements.md)
-        - [Tips for faster syncing](getting-started/tips.md)
     - [Software Requirements](getting-started/sw-requirements.md)
 
 - [Installation](installation.md)
     - [Linux and MacOS](installation/linux.md)
+        - [Pre-built binaries](installation/prebuilt.md)
+        - [Build Erigon from source](installation/build.md)
     - [Windows](installation/windows.md)
         - [Build executable binaries natively for Windows](installation/build_exec_win.md)
         - [Windows Subsystem for Linux (WSL)](installation/wsl.md)

@@ -1,12 +1,10 @@
-# Linux and MacOS
-*How to install Erigon in Linux and MacOS*
+# Linux and Mac OS
+*How to install and run Erigon 3 on Linux or Mac OS*
 
-The basic Erigon configuration is suitable for most users just wanting to run a node. For building the latest stable release use the following command:
+There are 3 options for running Erigon 3, listed from easiest to most difficult installation:
 
-```bash
-git clone --branch release/3.0 --single-branch https://github.com/erigontech/erigon.git
-cd erigon
-make erigon
-```
+-   [Use pre-built binaries](/installation/prebuilt.md): Download and run the latest stable release of Erigon. This is the easiest option and requires no additional dependencies.
+    
+-   [Use Docker](/installation/docker.md): Run Erigon in a Docker container for isolation from the host system. This avoids dependencies but requires installing Docker.
 
-This should create the binary at `./build/bin/erigon`.
+-  [Build Erigon from source](/installation/build.md): Build the Erigon source code directly on your system. This is the most complex option and requires a working Go environment.
