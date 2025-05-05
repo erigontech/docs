@@ -8,6 +8,8 @@
 
 - [Installation](installation.md)
     - [Linux and MacOS](installation/linux.md)
+        - [Pre-built binaries](installation/prebuilt.md)
+        - [Build Erigon from source](installation/build.md)
     - [Windows](installation/windows.md)
         - [Build executable binaries natively for Windows](installation/build_exec_win.md)
         - [Windows Subsystem for Linux (WSL)](installation/wsl.md)

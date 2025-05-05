@@ -4,6 +4,7 @@
 # Mainnets
 
 Below is the size of the `--datadir` used by Erigon.
+Below is the size of the `--datadir` used by Erigon.
 
 ## Erigon with Caplin
 

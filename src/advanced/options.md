@@ -198,7 +198,10 @@ GLOBAL OPTIONS:
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
    --caplin.subscribe-all-topics                                                    Subscribe to all gossip topics (default: false)
    --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
+   --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
    --caplin.enable-upnp                                                             Enable NAT porting for Caplin (default: false)
+   --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "1MB")
+   --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "1MB")
    --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "1MB")
    --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "1MB")
    --caplin.adaptable-maximum-traffic-requirements                                  Make the node adaptable to the maximum traffic requirement based on how many validators are being ran (default: true)
@@ -276,5 +279,7 @@ GLOBAL OPTIONS:
    --config value                                                                   Sets erigon flags from YAML/TOML file
    --help, -h                                                                       show help
    --version, -v                                                                    print the version
+```
+
 ```
 
