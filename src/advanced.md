@@ -2,7 +2,7 @@
 
 Erigon is by default an "all-in-one" binary solution, but it's possible start any internal component as a separated processes:
 
-- [RPCDaemon](./advanced/rpc_daemon.md), the JSON RPC layer
+- [RPCDaemon](./advanced/JSONRPC-daemon.md), the JSON RPC layer
 - [TxPool](./advanced/txpool.md), the transaction pool
 - [Sentry](./advanced/sentry.md), the p2p layer
 - [Downloader](./advanced/downloader.md), the history download layer

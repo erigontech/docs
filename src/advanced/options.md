@@ -23,7 +23,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.00.0-57625b40
+   3.0.2-cd286380
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -34,9 +34,9 @@ COMMANDS:
 
 GLOBAL OPTIONS:
    --datadir value                                                                  Data directory for the databases (default: /home/user/.local/share/erigon)
-   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/bloxster/.local/share/erigon-ethash)
+   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/user/.local/share/erigon-ethash)
    --externalcl                                                                     Enables the external consensus layer (default: false)
-   --txpool.disable                                                                 Experimental external pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
+   --txpool.disable                                                                 External pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
    --txpool.pricelimit value                                                        Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
    --txpool.pricebump value                                                         Price bump percentage to replace an already existing transaction (default: 10)
    --txpool.blobpricebump value                                                     Price bump percentage to replace existing (type-3) blob transaction (default: 100)
@@ -95,10 +95,10 @@ GLOBAL OPTIONS:
    --rpc.batch.limit value                                                          Maximum number of requests in a batch (default: 100)
    --rpc.returndata.limit value                                                     Maximum number of bytes returned from eth_call or similar invocations (default: 100000)
    --rpc.allow-unprotected-txs                                                      Allow for unprotected (non-EIP155 signed) transactions to be submitted via RPC (default: false)
-   --rpc.maxgetproofrewindblockcount.limit value                                    Max GetProof rewind block count (default: 100000)
    --rpc.txfeecap value                                                             Sets a cap on transaction fee (in ether) that can be sent via the RPC APIs (0 = no cap) (default: 1)
    --txpool.api.addr value                                                          TxPool api network address, for example: 127.0.0.1:9090 (default: use value of --private.api.addr)
    --trace.maxtraces value                                                          Sets a limit on traces that can be returned in trace_filter (default: 200)
+   --experimental.commitment-history                                                Enables blazing fast eth_getProof for executed block (default: false)
    --http.timeouts.read value                                                       Maximum duration for reading the entire request, including the body. (default: 30s)
    --http.timeouts.write value                                                      Maximum duration before timing out writes of the response. It is reset whenever a new request's header is read. (default: 30m0s)
    --http.timeouts.idle value                                                       Maximum amount of time to wait for the next request when keep-alives are enabled. If http.timeouts.idle is zero, the value of http.timeouts.read is used. (default: 2m0s)
@@ -154,6 +154,7 @@ GLOBAL OPTIONS:
    --dev.period value                                                               Block period to use in developer mode (0 = mine only if transaction pending) (default: 0)
    --vmdebug                                                                        Record information useful for VM and contract debugging (default: false)
    --networkid value                                                                Explicitly set network id (integer)(For testnets: use --chain <testnet_name> instead) (default: 1)
+   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receipts/logs will be faster. Values: 1_000 good starting point. 10_000 receipts it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 0)
    --fakepow                                                                        Disables proof-of-work verification (default: false)
    --gpo.blocks value                                                               Number of recent blocks to check for gas prices (default: 20)
    --gpo.percentile value                                                           Suggested gas price is the given percentile of a set of recent transaction gas prices (default: 60)
@@ -197,7 +198,10 @@ GLOBAL OPTIONS:
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
    --caplin.subscribe-all-topics                                                    Subscribe to all gossip topics (default: false)
    --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
+   --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
    --caplin.enable-upnp                                                             Enable NAT porting for Caplin (default: false)
+   --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "1MB")
+   --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "1MB")
    --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "1MB")
    --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "1MB")
    --caplin.adaptable-maximum-traffic-requirements                                  Make the node adaptable to the maximum traffic requirement based on how many validators are being ran (default: true)
@@ -275,5 +279,7 @@ GLOBAL OPTIONS:
    --config value                                                                   Sets erigon flags from YAML/TOML file
    --help, -h                                                                       show help
    --version, -v                                                                    print the version
+```
+
 ```
 
