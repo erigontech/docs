@@ -154,7 +154,7 @@ GLOBAL OPTIONS:
    --dev.period value                                                               Block period to use in developer mode (0 = mine only if transaction pending) (default: 0)
    --vmdebug                                                                        Record information useful for VM and contract debugging (default: false)
    --networkid value                                                                Explicitly set network id (integer)(For testnets: use --chain <testnet_name> instead) (default: 1)
-   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receit/logs will be faster. Values: 1_000 good starting point. 10_000 receitps it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 0)
+   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receipts/logs will be faster. Values: 1_000 good starting point. 10_000 receipts it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 0)
    --fakepow                                                                        Disables proof-of-work verification (default: false)
    --gpo.blocks value                                                               Number of recent blocks to check for gas prices (default: 20)
    --gpo.percentile value                                                           Suggested gas price is the given percentile of a set of recent transaction gas prices (default: 60)
