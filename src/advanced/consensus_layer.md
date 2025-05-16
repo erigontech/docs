@@ -17,11 +17,11 @@ By default, Erigon is configured to run with [Caplin](/advanced/caplin.md), the 
 
 ## Choosing the Consensus Layer client
 
-A Consensus Layer (CL) client needs to run alongside Erigon to run a full Ethereum node, a Gnosis Chain node and a Polygon node and its respective testnets. Basically, without a CL client the EL will never get in sync.
+A CL client needs to run alongside Erigon to run a Ethereum node and a Gnosis Chain node or its respective testnets. Basically, without a CL client the EL will never get in sync. While Erigon run by default with Caplin, the embedded CL, it is possible to run Erigon with any external CL.
 
-Below are the links to examples on how to configure Lighhouse and Prysm to run along with Erigon:
+Below are some examples on how to configure Lighhouse and Prysm to run along with Erigon:
 
-- [Ethereum](/nodes/ethereum.md#erigon-with-prysm-as-the-external-consensus-layer)
-- [Gnosis Chain](/nodes/gnosis.md#erigon-with-lighthouse)
+- [Ethereum](/advanced/eth_extcl.md)
+- [Gnosis Chain](/advanced/gno_extcl.md)
 
-> **important Note**: When configuring a CL client, always refer to the official CL documentation for the most up-to-date and accurate configuration instructions. This will ensure that you set up your CL client correctly and avoid any potential issues.
+> **Important Note**: When configuring a CL client, always refer to the official CL documentation for the most up-to-date and accurate configuration instructions in order to avoid any potential issues.

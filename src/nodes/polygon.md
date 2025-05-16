@@ -1,58 +1,48 @@
-# How to run a Polygon node
+# How to run a Gnosis Chain node
 
-Follow the [hardware](/getting-started/hw-requirements.md) and [software](/getting-started/sw-requirements.md) prerequisites.
+## Prerequisites
 
-Check which [type of node](/basic/node.md) you might want to run and the [disk space](/basic/disk-space.md) required.
-
-<div class="warning">
-
-**Information**
-
-**Do not use HDD**: Hard Disk Drives (HDD) are not recommended for running Erigon, as it may cause the node to stay N blocks behind the chain tip and lead to performance issues.
-
-**Use SSD or NVMe**: Solid State Drives (SSD) or Non-Volatile Memory Express (NVMe) drives are recommended for optimal performance. These storage devices provide faster read/write speeds and can handle the demanding requirements of an Erigon node.
-</div>
+- Check the [hardware](/getting-started/hw-requirements.md) prerequisites;
+- Check which [type of node](/basic/node.md) you want to run and the [disk space](/basic/disk-space.md) required.
 
 ## Install Erigon​
 
-For MacOS and Linux, run the following commands to build from source the latest Erigon version:
-
-```bash
-git clone --branch release/3.0 --single-branch https://github.com/erigontech/erigon.git
-cd erigon
-make erigon
-```
-
-This should create the binary at ./build/bin/erigon
-
-<div class="warning">
-
-**Information**
-
-If you are using [Windows](/installation/windows.md) follow the dedicated installation guide or use [Docker](/installation/docker.md).
-
-</div>
+To set up Erigon quickly, we recommend the following:
+- For Linux and MacOS users, use our [pre-built binaries](/installation/prebuilt.md);
+- For Windows users, [build executable binaries natively](/installation/build_exec_win.md).
 
 # Start Erigon
 
-To start a Erigon full node for **Polygon mainnet** with remote Heimdall:
+To execute an Erigon full node on the Polygon mainnet with remote Heimdall using pre-compiled binaries, use the following basic command:
 
 ```bash
-./build/bin/erigon --chain=bor-mainnet --bor.heimdall=https://heimdall-api.polygon.technology
+erigon --chain=bor-mainnet --bor.heimdall=https://heimdall-api.polygon.technology
 ```
 
-For a **Amoy testnet** archive node with remote Heimdall:
+## Example of basic configuration​
+
+The command above allows you to run your local Erigon node on the Polygon mainnet. Additionally, you can include several options, as shown in the following example:
 
 ```bash
-./build/bin/erigon --chain=amoy --bor.heimdall=https://heimdall-api-amoy.polygon.technology --prune.mode=archive
+erigon \
+--chain=bor-mainnet \
+--bor.heimdall=https://heimdall-api.polygon.technology \
+--datadir=<your_data_dir> \
+--prune.mode=minimal \
+--http.addr="0.0.0.0" \
+--http.api=eth,web3,net,debug,trace,txpool \
+--torrent.download.rate=512mb
 ```
 
-## Basic Configuration​
+### Flag explanation
 
-- If you want to store Erigon files in a non-default location, add flag `--datadir=<your_data_dir>`. Default data directory is `/home/usr/.local/share/erigon`.
+- `--chain=bor-mainnet` and `--bor.heimdall=https://heimdall-api.polygon.technologyspecifies` specify respctevely the Polygon mainnet and the API endpoint for the Heimdall network; to use Amoy tesnet replace with flags `--chain=amoy --bor.heimdall=https://heimdall-api-amoy.polygon.technology`.
+- `--datadir=<your_data_dir>` to store Erigon files in a non-default location. Default data directory is `./home/user/.local/share/erigon`.
 - Erigon is full node by default, use `--prune.mode=archive` to run a archive node or `--prune.mode=minimal` (EIP-4444). If you want to change [type of node](/basic/node.md) delete the `--datadir` folder content and restart Erigon with the appropriate flags.
 - `--http.addr="0.0.0.0" --http.api=eth,web3,net,debug,trace,txpool` to use RPC and e.g. be able to connect your [wallet](/basic/wallet.md).
-- To increase download speed add `--torrent.download.rate=512mb` (default is 16mb)
-- To stop the Erigon node you can use the `CTRL+C` command.
+- `--torrent.download.rate=512mb` to increase download speed. While the default downloading speed is 128mb, with this flag Erigon will use as much download speed as it can, up to a maximum of 512 megabytes per second. This means it will try to download data as quickly as possible, but it won't exceed the 512 MB/s limit you've set.
 
-Additional flags can be added to [configure](/advanced/configuring.md) Erigon with several options.
+
+To stop your Erigon node you can use the `CTRL+C` command.
+
+Several other [configurations](/advanced/configuring.md) and [options](/advanced/options.md) are available.

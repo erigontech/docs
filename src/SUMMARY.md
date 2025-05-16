@@ -37,6 +37,8 @@
         - [Prysm](advanced/prysm.md)
         - [Lighthouse](advanced/lighthouse.md)
         - [JWT secret](advanced/jwt.md)
+        - [Ethereum with a external CL](advanced/eth_extcl.md)
+        - [Gnosis Chain with a external CL](advanced/gno_extcl.md)
     - [Options](advanced/options.md)
     - [RPC Daemon](advanced/JSONRPC-daemon.md)
         - [The trace Module](advanced/JSONRPC-trace-module.md)
