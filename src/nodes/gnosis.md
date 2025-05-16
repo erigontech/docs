@@ -35,7 +35,7 @@ erigon \
 --torrent.download.rate=512mb
 ```
 
-### Flag explanation
+### Flags explanation
 
 - `--chain=gnosis` specifies the Gnosis Chain network, use `--chain=chiado` for Chiado testnet.
 - `--datadir=<your_data_dir>` to store Erigon files in a non-default location. Default data directory is `./home/user/.local/share/erigon`.
@@ -45,6 +45,6 @@ erigon \
 
 To stop your Erigon node you can use the `CTRL+C` command.
 
-When you get familiar with running Erigon from CLI you may also consider [staking](/staking.md) and/or run Erigon with an external [Consensus Layer](/advanced/gno_extcl.md).
+When you get familiar with running Erigon from CLI you may also consider [staking](/staking.md) and/or run a [Gnosis chain node with an external Consensus Layer](/nodes/gno_extcl.md).
 
 Additional flags can be added to [configure](/advanced/configuring.md) Erigon with several [options](/advanced/options.md).

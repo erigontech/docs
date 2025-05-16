@@ -33,7 +33,7 @@ erigon \
 --torrent.download.rate=512mb
 ```
 
-### Flag explanation
+### Flags explanation
 
 - `--datadir=<your_data_dir>` to store Erigon files in a non-default location. Default data directory is `./home/user/.local/share/erigon`.
 - Erigon is full node by default, use `--prune.mode=archive` to run a archive node or `--prune.mode=minimal` (EIP-4444). If you want to change [type of node](/basic/node.md) delete the `--datadir` folder content and restart Erigon with the appropriate flags.
@@ -43,7 +43,7 @@ erigon \
 
 To stop your Erigon node you can use the `CTRL+C` command.
 
-When you get familiar with running Erigon from CLI you may also consider [staking](/staking.md) and/or run Erigon with an external [Consensus Layer](/advanced/eth_extcl.md).
+When you get familiar with running Erigon from CLI you may also consider [staking](/staking.md) and/or run a [Ethereum node with an external Consensus Layer](/nodes/eth_extcl.md).
 
 Additional flags can be added to [configure](/advanced/configuring.md) Erigon with several [options](/advanced/options.md). 
 
