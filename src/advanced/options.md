@@ -1,17 +1,16 @@
 # Options
+
 *All available options*
 
 Erigon is primarily controlled using the command line, started using the `./build/bin/erigon` command and stopped by pressing `CTRL-C`.
 
 Using the command-line options allows for configurations, and several functionalities can be called using sub commands.
 
-The `--help` flag listing is reproduced below for your convenience. 
+The `--help` flag listing is reproduced below for your convenience.
 
 ```bash
 ./build/bin/erigon --help
 ```
-
-
 
 ## Commands
 
@@ -118,7 +117,7 @@ GLOBAL OPTIONS:
    --snap.state.stop                                                                Workaround to stop producing new state files, if you meet some state-related critical bug. It will stop aggregate DB history in a state files. DB will grow and may slightly slow-down - and removing this flag in future will not fix this effect (db size will not greatly reduce). (default: false)
    --snap.skip-state-snapshot-download                                              Skip state download and start from genesis block (default: false)
    --db.pagesize value                                                              DB is splitted to 'pages' of fixed size. Can't change DB creation. Must be power of 2 and '256b <= pagesize <= 64kb'. Default: equal to OperationSystem's pageSize. Bigger pageSize causing: 1. More writes to disk during commit 2. Smaller b-tree high 3. Less fragmentation 4. Less overhead on 'free-pages list' maintainance (a bit faster Put/Commit) 5. If expecting DB-size > 8Tb then set pageSize >= 8Kb (default: "4KB")
-   --db.size.limit value                                                            Runtime limit of chaindata db size (can change at any time) (default: "200GB")
+   --db.size.limit value                                                            Runtime limit of chaindata db size (can change at any time) (default: "1TB")
    --db.writemap                                                                    Enable WRITE_MAP feature for fast database writes and fast commit times (default: true)
    --torrent.port value                                                             Port to listen and serve BitTorrent protocol (default: 42069)
    --torrent.maxpeers value                                                         Unused parameter (reserved for future use) (default: 100)
