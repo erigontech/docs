@@ -19,8 +19,6 @@ To execute a Ethereum full node using pre-compiled binaries, use the following b
 erigon
 ```
 
-> In case you compiled Erigon from source, you need to run the above command from the directory `/erigon/build/bin`.
-
 ## Example of basic configuration​ 
 The command above allows you to run your local Erigon node on the Ethereum mainnet with Caplin, the embedded Consesus Layer. Additionally, you can include several options, as shown in the following example:
 

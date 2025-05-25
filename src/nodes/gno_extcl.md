@@ -5,7 +5,7 @@ Alternatively, you can also run a Ethereum node as an Execution Layer (EL) and c
 1. Start Erigon:
 
     ```bash
-    ./build/bin/erigon --chain=gnosis --externalcl 
+    erigon --chain=gnosis --externalcl 
     ```
 
     If your CL client is on a different device, add the following flags:

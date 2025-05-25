@@ -1,4 +1,4 @@
-# How to run a Gnosis Chain node
+# How to run a Polygon node
 
 ## Prerequisites
 
