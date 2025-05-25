@@ -23,7 +23,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.0.2-cd286380
+   3.0.3-81d661fe
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -33,8 +33,8 @@ COMMANDS:
    help, h                   Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --datadir value                                                                  Data directory for the databases (default: /home/user/.local/share/erigon)
-   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/user/.local/share/erigon-ethash)
+   --datadir value                                                                  Data directory for the databases (default: /home/bloxster/.local/share/erigon)
+   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/bloxster/.local/share/erigon-ethash)
    --externalcl                                                                     Enables the external consensus layer (default: false)
    --txpool.disable                                                                 External pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
    --txpool.pricelimit value                                                        Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
@@ -154,7 +154,8 @@ GLOBAL OPTIONS:
    --dev.period value                                                               Block period to use in developer mode (0 = mine only if transaction pending) (default: 0)
    --vmdebug                                                                        Record information useful for VM and contract debugging (default: false)
    --networkid value                                                                Explicitly set network id (integer)(For testnets: use --chain <testnet_name> instead) (default: 1)
-   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receipts/logs will be faster. Values: 1_000 good starting point. 10_000 receipts it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 0)
+   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receit/logs will be faster. Values: 1_000 good starting point. 10_000 receitps it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 10000)
+   --experiment.persist.receipts.v2                                                 To store receipts in chaindata db (only on chain-tip) - RPC for recent receit/logs will be faster. Values: 1_000 good starting point. 10_000 receitps it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: false)
    --fakepow                                                                        Disables proof-of-work verification (default: false)
    --gpo.blocks value                                                               Number of recent blocks to check for gas prices (default: 20)
    --gpo.percentile value                                                           Suggested gas price is the given percentile of a set of recent transaction gas prices (default: 60)
@@ -190,6 +191,7 @@ GLOBAL OPTIONS:
    --bor.waypoints                                                                  Enabling bor waypont recording (default: false)
    --polygon.sync                                                                   Enabling syncing using the new polygon sync component (default: true)
    --polygon.sync.stage                                                             Enabling syncing with a stage that uses the polygon sync component (default: false)
+   --polygon.logindex                                                               Workaround for incorrect logIndex in RPC (default: false)
    --ethstats value                                                                 Reporting URL of a ethstats service (nodename:secret@host:port)
    --override.prague value                                                          Manually specify the Prague fork time, overriding the bundled setting (default: 0)
    --caplin.discovery.addr value                                                    Address for Caplin DISCV5 protocol (default: "0.0.0.0")
@@ -198,10 +200,7 @@ GLOBAL OPTIONS:
    --caplin.checkpoint-sync-url value [ --caplin.checkpoint-sync-url value ]        checkpoint sync endpoint
    --caplin.subscribe-all-topics                                                    Subscribe to all gossip topics (default: false)
    --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
-   --caplin.max-peer-count value                                                    Max number of peers to connect (default: 128)
    --caplin.enable-upnp                                                             Enable NAT porting for Caplin (default: false)
-   --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "1MB")
-   --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "1MB")
    --caplin.max-inbound-traffic-per-peer value                                      Max inbound traffic per second per peer (default: "1MB")
    --caplin.max-outbound-traffic-per-peer value                                     Max outbound traffic per second per peer (default: "1MB")
    --caplin.adaptable-maximum-traffic-requirements                                  Make the node adaptable to the maximum traffic requirement based on how many validators are being ran (default: true)
@@ -280,6 +279,3 @@ GLOBAL OPTIONS:
    --help, -h                                                                       show help
    --version, -v                                                                    print the version
 ```
-
-```
-
