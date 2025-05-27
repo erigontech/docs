@@ -23,7 +23,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.0.3-81d661fe
+   3.0.4-406d855f
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -33,8 +33,8 @@ COMMANDS:
    help, h                   Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --datadir value                                                                  Data directory for the databases (default: /home/user/.local/share/erigon)
-   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/user/.local/share/erigon-ethash)
+   --datadir value                                                                  Data directory for the databases (default: /home/bloxster/.local/share/erigon)
+   --ethash.dagdir value                                                            Directory to store the ethash mining DAGs (default: /home/bloxster/.local/share/erigon-ethash)
    --externalcl                                                                     Enables the external consensus layer (default: false)
    --txpool.disable                                                                 External pool and block producer, see ./cmd/txpool/readme.md for more info. Disabling internal txpool and block producer. (default: false)
    --txpool.pricelimit value                                                        Minimum gas price (fee cap) limit to enforce for acceptance into the pool (default: 1)
@@ -118,12 +118,12 @@ GLOBAL OPTIONS:
    --snap.state.stop                                                                Workaround to stop producing new state files, if you meet some state-related critical bug. It will stop aggregate DB history in a state files. DB will grow and may slightly slow-down - and removing this flag in future will not fix this effect (db size will not greatly reduce). (default: false)
    --snap.skip-state-snapshot-download                                              Skip state download and start from genesis block (default: false)
    --db.pagesize value                                                              DB is splitted to 'pages' of fixed size. Can't change DB creation. Must be power of 2 and '256b <= pagesize <= 64kb'. Default: equal to OperationSystem's pageSize. Bigger pageSize causing: 1. More writes to disk during commit 2. Smaller b-tree high 3. Less fragmentation 4. Less overhead on 'free-pages list' maintainance (a bit faster Put/Commit) 5. If expecting DB-size > 8Tb then set pageSize >= 8Kb (default: "4KB")
-   --db.size.limit value                                                            Runtime limit of chaindata db size (can change at any time) (default: "200GB")
+   --db.size.limit value                                                            Runtime limit of chaindata db size (can change at any time) (default: "1TB")
    --db.writemap                                                                    Enable WRITE_MAP feature for fast database writes and fast commit times (default: true)
    --torrent.port value                                                             Port to listen and serve BitTorrent protocol (default: 42069)
    --torrent.maxpeers value                                                         Unused parameter (reserved for future use) (default: 100)
    --torrent.conns.perfile value                                                    Number of connections per file (default: 10)
-   --torrent.download.slots value                                                   Amount of files to download in parallel. (default: 128)
+   --torrent.download.slots value                                                   Amount of files to download in parallel. (default: 32)
    --torrent.staticpeers value                                                      Comma separated host:port to connect to
    --torrent.upload.rate value                                                      Bytes per second, example: 32mb (default: "4mb")
    --torrent.download.rate value                                                    Bytes per second, example: 32mb (default: "128mb")
@@ -154,7 +154,7 @@ GLOBAL OPTIONS:
    --dev.period value                                                               Block period to use in developer mode (0 = mine only if transaction pending) (default: 0)
    --vmdebug                                                                        Record information useful for VM and contract debugging (default: false)
    --networkid value                                                                Explicitly set network id (integer)(For testnets: use --chain <testnet_name> instead) (default: 1)
-   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receit/logs will be faster. Values: 1_000 good starting point. 10_000 receitps it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 10000)
+   --experiment.persist.receipts value                                              Set > 0 to store receipts in chaindata db (only on chain-tip) - RPC for recent receit/logs will be faster. Values: 1_000 good starting point. 10_000 receitps it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: 0)
    --experiment.persist.receipts.v2                                                 To store receipts in chaindata db (only on chain-tip) - RPC for recent receit/logs will be faster. Values: 1_000 good starting point. 10_000 receitps it's ~1Gb (not much IO increase). Please test before go over 100_000 (default: false)
    --fakepow                                                                        Disables proof-of-work verification (default: false)
    --gpo.blocks value                                                               Number of recent blocks to check for gas prices (default: 20)
@@ -241,6 +241,7 @@ GLOBAL OPTIONS:
    --caplin.validator-monitor                                                       Enable caplin validator monitoring metrics (default: false)
    --caplin.custom-config value                                                     set the custom config for caplin
    --caplin.custom-genesis value                                                    set the custom genesis for caplin
+   --caplin.use-engine-api                                                          Use engine API for internal Caplin. useful for testing and if CL network is degraded (default: false)
    --trusted-setup-file value                                                       Absolute path to trusted_setup.json file
    --rpc.slow value                                                                 Print in logs RPC requests slower than given threshold: 100ms, 1s, 1m. Exluded methods: eth_getBlock,eth_getBlockByNumber,eth_getBlockByHash,eth_blockNumber,erigon_blockNumber,erigon_getHeaderByNumber,erigon_getHeaderByHash,erigon_getBlockByTimestamp,eth_call (default: 0s)
    --txpool.gossip.disable                                                          Disabling p2p gossip of txs. Any txs received by p2p - will be dropped. Some networks like 'Optimism execution engine'/'Optimistic Rollup' - using it to protect against MEV attacks (default: false)
@@ -261,7 +262,7 @@ GLOBAL OPTIONS:
    --metrics                                                                        Enable metrics collection and reporting (default: false)
    --metrics.addr value                                                             Enable stand-alone metrics HTTP server listening interface (default: "127.0.0.1")
    --metrics.port value                                                             Metrics HTTP server listening port (default: 6061)
-   --diagnostics.disabled                                                           Disable diagnostics (default: false)
+   --diagnostics.disabled                                                           Disable diagnostics (default: true)
    --diagnostics.endpoint.addr value                                                Diagnostics HTTP server listening interface (default: "127.0.0.1")
    --diagnostics.endpoint.port value                                                Diagnostics HTTP server listening port (default: 6062)
    --diagnostics.speedtest                                                          Enable speed test (default: false)
