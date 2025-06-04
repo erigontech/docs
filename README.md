@@ -4,8 +4,7 @@ This is the official Erigon 3 documentation, hosted at <https://docs.erigon.tech
 
 
 # Contributing to this documentation
-
-To contribute to this documentation, commit your change to the development branch, commitments to the main branch will be ignored.
+To contribute to this documentation, you can either create an issue in the main branch or open a new branch and submit a pull request (PR).
 
 See how MdBook works [here](https://rust-lang.github.io/mdBook/index.html).
 
