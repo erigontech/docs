@@ -22,7 +22,7 @@ USAGE:
    erigon [command] [flags]
 
 VERSION:
-   3.0.4-406d855f
+   3.0.12-39c6a6ff
 
 COMMANDS:
    init                      Bootstrap and initialize a new genesis block
@@ -49,10 +49,11 @@ GLOBAL OPTIONS:
    --txpool.commit.every value                                                      How often transactions should be committed to the storage (default: 15s)
    --prune.distance value                                                           Keep state history for the latest N blocks (default: everything) (default: 0)
    --prune.distance.blocks value                                                    Keep block history for the latest N blocks (default: everything) (default: 0)
-   --prune.mode value                                                               Choose a pruning preset to run onto. Available values: "full", "archive", "minimal".
-                                                                                          Full: Keep only blocks and latest state,
-                                                                                          Archive: Keep the entire indexed database, aka. no pruning,
-                                                                                          Minimal: Keep only latest state (default: "full")
+   --prune.mode value                                                               Choose a pruning preset to run onto. Available values: "full", "archive", "minimal", "blocks".
+                                                                                          full: Keep only necessary blocks and latest state,
+                                                                                          blocks: Keep all blocks but not the state history,
+                                                                                          archive: Keep the entire state history and all blocks,
+                                                                                          minimal: Keep only latest state (default: "full")
    --batchSize value                                                                Batch size for the execution stage (default: "512M")
    --bodies.cache value                                                             Limit on the cache for block bodies (default: "268435456")
    --database.verbosity value                                                       Enabling internal db logs. Very high verbosity levels may require recompile db. Default: 2, means warning. (default: 2)
@@ -167,8 +168,9 @@ GLOBAL OPTIONS:
    --mine                                                                           Enable mining (default: false)
    --proposer.disable                                                               Disables PoS proposer (default: false)
    --miner.notify value                                                             Comma separated HTTP URL list to notify of new work packages
-   --miner.gaslimit value                                                           Target gas limit for mined blocks (default: 36000000)
+   --miner.gaslimit value                                                           Target gas limit for mined blocks (default: 0)
    --miner.etherbase value                                                          Public address for block mining rewards (default: "0")
+   --miner.gasprice value                                                           Minimum gas price for mining a transaction (default: 0)
    --miner.extradata value                                                          Block extra data set by the miner (default = client version)
    --miner.noverify                                                                 Disable remote sealing verification (default: false)
    --miner.sigfile value                                                            Private key to sign blocks with
