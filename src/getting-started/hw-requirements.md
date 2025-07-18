@@ -55,7 +55,7 @@ Archive nodes retain **all** historical state and require significantly more dis
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|--------------------------|----------------|-------------------|
 | Mainnet   | 2 TB     | 4 TB       | 32 GB          | 64 GB            |
-| Polygon   | 6 TB   | 6 TB        | 64 GB          | 128 GB             |
+| Polygon   | 4.3 TB   | 6 TB        | 64 GB          | 128 GB             |
 | Gnosis    | 1 TB           | 2 TB         | 16 GB          | 32 GB             |
 
 
