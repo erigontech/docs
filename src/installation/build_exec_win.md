@@ -58,7 +58,7 @@ Open the Command Prompt and type the following:
 git clone --branch release/3.0 --single-branch https://github.com/erigontech/erigon.git
 ```
 
-You might need to change the `ExecutionPolicy` to allow scripts created locally or signed by a trusted publisher to run:
+You might need to change the `ExecutionPolicy` to allow scripts created locally or signed by a trusted publisher to run. Open a Powershell session as Administrator and type:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
