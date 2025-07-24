@@ -22,13 +22,13 @@ Install **Build-essential** and **Cmake**:
 sudo apt install build-essential cmake -y
 ```
 
-### Go Programming Language (only for Linux and MacOS)
+### Go Programming Language
 
 Erigon utilizes Go (also known as Golang) version 1.23 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the /usr/local/go folder (you may need to use sudo) and re-extract the new version in its place.
 
 To install the latest Go version, visit the official documentation at [https://golang.org/doc/install](https://golang.org/doc/install).
 
-### C++ Compiler (only for Linux and MacOS)
+### C++ Compiler
 
 This turns the C++ part of Erigon's code into a program your computer can run. You can use either **Clang** or **GCC**:
 

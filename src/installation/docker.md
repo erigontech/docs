@@ -43,7 +43,6 @@ If you want to start Erigon add the options according to the [basic usage](/basi
 
 ```bash
 docker run -it 36f25992dd1a --chain=holesky --prune.mode=minimal
-docker run -it 36f25992dd1a --chain=holesky --prune.mode=minimal
 ```
 
 To exit the container press `Ctrl+C`; the container will stop.
