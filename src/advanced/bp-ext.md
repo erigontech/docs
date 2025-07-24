@@ -2,8 +2,8 @@
 
 To use an external Consensus Layer (CL) it is necessary to add to Erigon the flag `--externalcl`. Here are a couple of examples on how to configure Lighhouse and Prysm to run along with Erigon:
 
-- [Ethereum](/nodes/ethereum.md#erigon-with-prysm-as-the-external-consensus-layer)
-- [Gnosis Chain](/nodes/gnosis.md#erigon-with-lighthouse)
+- [Ethereum](../nodes/ethereum.md#erigon-with-prysm-as-the-external-consensus-layer)
+- [Gnosis Chain](../nodes/gnosis.md#erigon-with-lighthouse)
 
 Once you have Erigon and a CL client up and running, you can proceed to set up a Validator Client (VC). The VC is responsible for managing your keys and signing valid blocks.
 

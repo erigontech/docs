@@ -23,7 +23,7 @@ Both [Prysm](#erigon-with-prysm-as-the-external-cl) and [Lighthouse](#erigon-wit
 
 3. To communicate with Erigon, the `--execution-endpoint` must be specified as `<erigon address>:8551`, where `<erigon address>` is either `http://localhost` or the IP address of the device running Erigon.
 
-4. Prysm must point to the [JWT secret](/advanced/jwt.md) automatically created by Erigon in the `--datadir` directory. 
+4. Prysm must point to the [JWT secret](../advanced/jwt.md) automatically created by Erigon in the `--datadir` directory. 
 
     ```bash
     ./prysm.sh beacon-chain \
@@ -48,7 +48,7 @@ Both [Prysm](#erigon-with-prysm-as-the-external-cl) and [Lighthouse](#erigon-wit
 
 4. To communicate with Erigon, the `--execution-endpoint` must be specified as `<erigon address>:8551`, where `<erigon address>` is either `http://localhost` or the IP address of the device running Erigon.
 
-5. Lighthouse must point to the [JWT secret](/advanced/jwt.md) automatically created by Erigon in the `--datadir` directory.
+5. Lighthouse must point to the [JWT secret](../advanced/jwt.md) automatically created by Erigon in the `--datadir` directory.
 
     ```bash
     lighthouse bn \

@@ -2,7 +2,7 @@
 
  
 - [Contributing to Erigon 3](#contributing-to-erigon-3)
-- [Contributing to Documentation](#contributing-to-documentation)
+- [Contributing to Documentation](#contributing-to-this-documentation)
 
 
 ## Contributing to Erigon 3
