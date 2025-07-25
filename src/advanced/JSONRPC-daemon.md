@@ -25,7 +25,7 @@ This document provides guidelines for understanding and using the various RPC me
    - This gRPC API is also accessible to users. For more information, visit the [Erigon Interfaces GitHub repository](https://github.com/erigontech/interfaces).
 
 1. **Trace Module (`trace_`)**  
-   - Erigon includes **[the `trace_` module](/advanced/JSONRPC-trace-module.md)**, which originates from OpenEthereum. This module provides additional functionality related to tracing transactions and state changes, which is valuable for advanced debugging and analysis.
+   - Erigon includes **[the `trace_` module](JSONRPC-trace-module.md)**, which originates from OpenEthereum. This module provides additional functionality related to tracing transactions and state changes, which is valuable for advanced debugging and analysis.
 
 ## More info
 

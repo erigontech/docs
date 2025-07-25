@@ -1,6 +1,6 @@
 # Configuring Erigon
 
-The Erigon 3 CLI has a wide range of flags that can be used to customize its behavior. Here's a breakdown of some of the flags, see [Options](/advanced/options.md) for the full list:
+The Erigon 3 CLI has a wide range of flags that can be used to customize its behavior. Here's a breakdown of some of the flags, see [Options](options.md) for the full list:
 
 ## Data Storage
 
@@ -23,7 +23,7 @@ The Erigon 3 CLI has a wide range of flags that can be used to customize its beh
 
 ## Pruning Presets
 
-* `--prune.mode`: Choose a pruning preset: `archive`, `full`, or `minimal` (default: `full`) see also [Type of node](/basic/node.md)
+* `--prune.mode`: Choose a pruning preset: `archive`, `full`, or `minimal` (default: `full`) see also [Type of node](../basic/node.md)
 * `--prune.distance`: Keep state history for the latest N blocks (default: everything) (default: `0`)
 * `--prune.distance.blocks`: Keep block history for the latest N blocks (default: everything) (default: `0`)
 

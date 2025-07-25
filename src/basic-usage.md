@@ -28,7 +28,7 @@ The default node is full node.
 
 To stop the Erigon node you can use the ```CTRL+C``` command.
 
-Additional flags can be added to configure the node with several [options](/advanced/options.md).
+Additional flags can be added to configure the node with several [options](advanced/options.md).
 
 
 # Testnets

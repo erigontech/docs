@@ -10,7 +10,7 @@ To ensure proper P2P functionality for both the Execution and Consensus layers u
 
 ## Command-Line Switches for Network and Port Configuration
 
-Here is an extensive list of port-related options from the [options](/advanced/options.md) list:
+Here is an extensive list of port-related options from the [options](../advanced/options.md) list:
 
 ### Engine
 

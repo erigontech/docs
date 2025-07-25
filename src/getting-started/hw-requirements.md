@@ -6,7 +6,7 @@ A locally mounted **SSD** (Solid-State Drive) or **NVMe** (Non-Volatile Memory E
 
 Additionally, SSDs may experience performance degradation when nearing full capacity.
 
-See here how you can [optimize storage](/basic/optimizing-storage.md).
+See here how you can [optimize storage](../basic/optimizing-storage.md).
 
 
 Here is the outline of the hardware requirements for running Erigon on the following networks:

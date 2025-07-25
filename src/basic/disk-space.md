@@ -41,4 +41,4 @@ See also [sync times](https://github.com/erigontech/erigon?tab=readme-ov-file#sy
 | Hoodi    |     16 GB    |     16 GB |  15 GB       |
 | Chiado   |     25 GB    |     18 GB |  14 GB       |
 
-See also hints on [optimizing storage](/basic/optimizing-storage.md).
+See also hints on [optimizing storage](optimizing-storage.md).

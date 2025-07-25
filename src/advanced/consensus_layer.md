@@ -14,14 +14,14 @@ Basically, without a CL client, the EL will never sync.
 
 **Information**
 
-By default, Erigon is configured to run with [Caplin](/advanced/caplin.md), the embedded CL.
+By default, Erigon is configured to run with [Caplin](caplin.md), the embedded CL.
 </div>
 
 ## Choosing an external CL client
 
 While Erigon runs by default with Caplin, the embedded CL, it is possible to run Erigon with any external CL. Below are some examples of how to configure Lighthouse and Prysm to run alongside Erigon:
 
-- [Ethereum](/nodes/eth_extcl.md)
-- [Gnosis Chain](/nodes/gno_extcl.md)
+- [Ethereum](../nodes/eth_extcl.md)
+- [Gnosis Chain](../nodes/gno_extcl.md)
 
 > **Important note**: When configuring a CL client, always refer to the official CL documentation for the most up-to-date and accurate configuration instructions to avoid any potential issues.

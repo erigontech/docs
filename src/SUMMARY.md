@@ -14,7 +14,7 @@
         - [Build executable binaries natively for Windows](installation/build_exec_win.md)
         - [Windows Subsystem for Linux (WSL)](installation/wsl.md)
     - [Docker](installation/docker.md)
-    - [Upgrading from a previous version](installation/upgrading-md)
+    - [Upgrading from a previous version](installation/upgrading.md)
 
 - [Basic Usage](basic-usage.md)
     - [Type of Node](basic/node.md)
@@ -23,7 +23,7 @@
     - [Supported Networks](basic/networks.md)
     - [Default Ports and Firewalls](basic/ports.md)
     - [YAML/TOML Config](basic/yaml.md)
-    - [Web3 Wallet](basic/wallet)
+    - [Web3 Wallet](basic/wallet.md)
 
 - [Quick nodes](quick_nodes.md)
     - [How to run an Ethereum node](nodes/ethereum.md)

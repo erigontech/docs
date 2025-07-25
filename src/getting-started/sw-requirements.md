@@ -4,7 +4,7 @@ If you plan to compile Erigon from source, ensure that the following prerequisit
 
 Erigon works only from command line interface (CLI), so it is advisable to have a good confidence with basic commands.
 
-> Please note that building software from source can be complex. If you're not comfortable with technical tasks, we recommend you use other [installation](/installation.md) methods like pre-built images or Docker and skip these requirements.
+> Please note that building software from source can be complex. If you're not comfortable with technical tasks, we recommend you use other [installation](../installation.md) methods like pre-built images or Docker and skip these requirements.
 
 
 ### Git
@@ -35,4 +35,4 @@ This turns the C++ part of Erigon's code into a program your computer can run. Y
 - For **Clang** follow the instructions at [https://clang.llvm.org/get_started.html](https://clang.llvm.org/get_started.html);
 - For **GCC** (version 10 or newer): [https://gcc.gnu.org/install/index.html](https://gcc.gnu.org/install/index.html).
 
-You can now proceed with Erigon [installation](/installation.md).
+You can now proceed with Erigon [installation](../installation.md).

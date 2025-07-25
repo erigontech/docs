@@ -70,7 +70,7 @@ Replace `YOUR_SESSION_PIN` with the 8-digit PIN allocated to your session during
 
 This will attach the Diagnostics Tool to the Erigon node using the provided session PIN. 
 
-See also other [options](/tools/options.md).
+See also other [options](options.md).
 
 ### 4.2 Remote Node
 
