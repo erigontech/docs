@@ -29,7 +29,7 @@ Alternatively, you can also run a Ethereum node as an Execution Layer (EL) and c
 
 4. To communicate with Erigon, the execution endpoint must be specified as `<erigon address>:8551`, where `<erigon address>` is either `http://localhost` or the IP address of the device running Erigon.
 
-5. Lighthouse must point to the [JWT secret](/advanced/jwt.md) automatically created by Erigon in the `--datadir` directory. In the following example the default data directory is used.
+5. Lighthouse must point to the [JWT secret](../advanced/jwt.md) automatically created by Erigon in the `--datadir` directory. In the following example the default data directory is used.
 
         lighthouse \
         --network gnosis beacon_node \

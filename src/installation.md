@@ -6,12 +6,12 @@ In order to use Erigon, the software has to be installed first. There are severa
 
 _____________________________
 
-[Linux and MacOS](/installation/linux.md)
+[Linux and MacOS](installation/linux.md)
 
-[Windows](/installation/windows.md)
+[Windows](installation/windows.md)
 
-[Docker](/installation/docker.md)
+[Docker](installation/docker.md)
 
-[Upgrading from a previous version](/installation/upgrading.md)
+[Upgrading from a previous version](installation/upgrading.md)
 
 _____________________________
