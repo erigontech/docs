@@ -17,12 +17,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install mdbook, linkchek and run build Book
+      - name: Install mdbook and run build Book
         run: |
           # This assumes your book is in the root of your repository.
           # Just add a `cd` here if you need to change to another directory.
           cargo install mdbook
-          cargo install mdbook-linkcheck
+          # cargo install mdbook-linkcheck
           mdbook build
       - name: Publish
         uses: cloudflare/wrangler-action@v3
