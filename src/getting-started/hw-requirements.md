@@ -6,7 +6,7 @@ A locally mounted **SSD** (Solid-State Drive) or **NVMe** (Non-Volatile Memory E
 
 Additionally, SSDs may experience performance degradation when nearing full capacity.
 
-See here how you can [optimize storage](../basic/optimizing-storage.md).
+See here how you can [optimize storage](../advanced/optimizing-storage.md).
 
 
 Here is the outline of the hardware requirements for running Erigon on the following networks:
@@ -54,9 +54,9 @@ Archive nodes retain **all** historical state and require significantly more dis
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|--------------------------|----------------|-------------------|
-| Mainnet   | 2 TB     | 4 TB       | 32 GB          | 64 GB            |
-| Polygon   | 4.3 TB   | 6 TB        | 64 GB          | 128 GB             |
-| Gnosis    | 1 TB           | 2 TB         | 16 GB          | 32 GB             |
+| Mainnet   | 1.8 TB     | 4 TB       | 32 GB          | 64 GB            |
+| Polygon   | 4 TB   | 6 TB        | 64 GB          | 128 GB             |
+| Gnosis    | 0.6 TB           | 2 TB         | 16 GB          | 32 GB             |
 
 
 

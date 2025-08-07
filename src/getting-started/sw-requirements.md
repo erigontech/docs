@@ -24,7 +24,7 @@ sudo apt install build-essential cmake -y
 
 ### Go Programming Language
 
-Erigon utilizes Go (also known as Golang) version 1.23 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the /usr/local/go folder (you may need to use sudo) and re-extract the new version in its place.
+Erigon utilizes Go (also known as Golang) version 1.24 or newer for part of its development. It is recommended to have a fresh Go installation. If you have an older version, consider deleting the /usr/local/go folder (you may need to use sudo) and re-extract the new version in its place.
 
 To install the latest Go version, visit the official documentation at [https://golang.org/doc/install](https://golang.org/doc/install).
 

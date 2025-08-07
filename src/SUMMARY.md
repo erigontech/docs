@@ -18,8 +18,6 @@
 
 - [Basic Usage](basic-usage.md)
     - [Type of Node](basic/node.md)
-        - [Disk Space Required](basic/disk-space.md)
-        - [Optimizing Storage](basic/optimizing-storage.md)
     - [Supported Networks](basic/networks.md)
     - [Default Ports and Firewalls](basic/ports.md)
     - [YAML/TOML Config](basic/yaml.md)
@@ -38,6 +36,7 @@
         - [Caplin](advanced/caplin.md)
         - [JWT secret](advanced/jwt.md)
     - [Options](advanced/options.md)
+    - [Optimizing Storage](advanced/optimizing-storage.md)
     - [RPC Daemon](advanced/JSONRPC-daemon.md)
         - [The trace Module](advanced/JSONRPC-trace-module.md)
     - [TxPool](advanced/txpool.md)
@@ -45,19 +44,12 @@
     - [Downloader](advanced/downloader.md)
     - [Running an Op-node](advanced/op-node.md)
     - [TLS Authentication](advanced/tls-authentication.md)
+    - [Otterscan](tools/otterscan.md)
     - [Performance Tricks](advanced/performance.md)
 
 - [Staking](staking.md)
     - [External CL](advanced/bp-ext.md)
     - [Caplin](advanced/bp-caplin.md)
-
-- [Tools](tools.md)
-    - [Diagnostics Tool](tools/introduction.md)
-        - [Installation](tools/installation.md)
-        - [Setup](tools/setup.md)
-        - [Options](tools/options.md)
-        - [Browser Interface](tools/user_interface.md)
-    - [Otterscan](tools/otterscan.md)
 
 - [About](about.md)
     - [License](about/license.md)
