@@ -1,43 +1,45 @@
 # Upgrading from a previous version
 
-To upgrade Erigon to a newer version when you've originally installed it via Git and manual compilation, you should follow these steps without needing to delete the entire folder:
+Updating to the latest version of Erigon gives you access to the latest features and ensures optimal performance and stability.
 
-* **Terminate your Erigon** session by pressing CTRL+C
+## General Recommendations Before Upgrade
 
-* **Navigate to your Erigon directory**
+- **Read Release Notes**: Carefully review the [Release Notes](https://github.com/erigontech/erigon/releases) for breaking changes and new features relevant to your setup.
+- **Terminate your Erigon**: End your current Erigon session by pressing `CTRL+C`.
+- **Backup**: Always back up your `datadir` before performing major upgrades.  
 
-* **Fetch the latest changes from the repository**: You need to make sure your local repository is up-to-date with the main GitHub repository. Run:
+## Snapshots Format
 
-    ```bash
-    git fetch --tags
-    ```
+As of Erigon 3.1 Pebble Paws, the snapshot format has been updated so that you will no longer need to perform data upgrades or re-sync from scratch with future releases.
 
-* **Check out** the [latest version](https://github.com/ledgerwatch/erigon/releases) and switch to it using:
+When upgrading from 3.0.x to 3.1.x, Erigon will automatically update the data format upon launch. To speed up this process, you can also perform the update manually using the flags below:
 
+> This operation is **OPTIONAL**.
 
-    ```bash
-    git checkout <new_version_tag>
-    ```
+1. Backup your datadir.
+2. [Upgrade your Erigon installation](#upgrading-your-erigon-installation) whether from a binary, compiled source code, or Docker.
+3. Upgrade snapshot files:
+    1. Run `erigon snapshots update-to-new-ver-format --datadir /your/datadir`.
+    2. Reset your datadir so that Erigon will sync to a newer snapshot by running command `erigon snapshots reset --datadir /your/datadir`.
+4. Run Erigon.
 
+## Upgrading your Erigon Installation
 
-    Replace `<new_version_tag>` with the version tag of the new release, for example:
+Follow the below instructions depending on your installation method:
 
-    ```bash
-    git checkout v3.0.0
-    ```
+- [Pre-built binaries](#pre-built-binaries)
+- [Docker](#docker)
+- [Compiled source code](#compiled-from-source)
 
-* **Rebuild Erigon**: Since the codebase has changed, you need to compile the new version. Run:
+## Pre-built Binaries
 
-    ```bash
-    make erigon
-    ```
+Download the latest binary file from <https://github.com/erigontech/erigon/releases>, do the [checksum](../installation/prebuilt.md#checksums) and reinstall it, no other operation needed.
 
-This process updates your installation to the latest version you specify, while maintaining your existing data and configuration settings in the Erigon folder. You're essentially just replacing the executable with a newer version.
+## Docker
 
-# Docker
 If you're using Docker to run Erigon, the process to upgrade to a newer version of the software is straightforward and revolves around pulling the latest Docker image and then running it. Here's how you can upgrade Erigon using Docker:
 
-* **Pull the Latest Docker Image**: First, find out the tag of the new release from the Erigon Docker Hub page. Once you know the tag, pull the new image:
+* **Pull the Latest Docker Image**: First, find out the tag of the new release from the [Erigon Docker Hub](https://hub.docker.com/r/erigontech/erigon). Once you know the tag, pull the new image:
 
     ```bash
     docker pull erigontech/erigon:<new_version_tag>
@@ -86,4 +88,38 @@ If you're using Docker to run Erigon, the process to upgrade to a newer version 
 
 * **Verify Operation**: Ensure that Erigon starts correctly and connects to the desired network, verifying the logs for any initial errors.
 
-By following these steps, you'll keep your Docker setup clean and up-to-date with the latest Erigon version without needing to manually clean up or reconfigure your environment. Docker's ability to encapsulate software in containers simplifies upgrades and reduces conflicts with existing software on your machine.
+By following these steps, you'll keep your Docker setup clean and up-to-date with the latest Erigon version without needing to manually clean up or reconfigure your environment.
+
+## Compiled from source
+
+To upgrade Erigon to a newer version when you've originally installed it via Git and manual compilation, you should follow these steps without needing to delete the entire folder:
+
+* **Navigate to your Erigon directory**
+
+* **Fetch the latest changes from the repository**: You need to make sure your local repository is up-to-date with the main GitHub repository. Run:
+
+    ```bash
+    git fetch --tags
+    ```
+
+* **Check out** the [latest version](https://github.com/erigontech/erigon/releases) and switch to it using:
+
+
+    ```bash
+    git checkout <new_version_tag>
+    ```
+
+
+    Replace `<new_version_tag>` with the version tag of the new release, for example:
+
+    ```bash
+    git checkout v3.1.0
+    ```
+
+* **Rebuild Erigon**: Since the codebase has changed, you need to compile the new version. Run:
+
+    ```bash
+    make erigon
+    ```
+
+This process updates your installation to the latest version you specify, while maintaining your existing data and configuration settings in the Erigon folder. You're essentially just replacing the executable with a newer version.
