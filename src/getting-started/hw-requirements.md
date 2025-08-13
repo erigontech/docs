@@ -34,7 +34,7 @@ Minimal nodes are suitable for light operation with pruned state and minimal his
 |-----------|-----------------------|-------------------------|----------------|-------------------|
 | Mainnet   | 370 GB                | 500 GB                  | 16 GB          | 64 GB             |
 | Polygon   | 2 TB                  | 2 TB                    | 32 GB          | 64 GB             |
-| Gnosis    | 250 GB                | 500 GB                  | 8 GB           | 16 GB             |
+| Gnosis    | 135 GB                | 500 GB                  | 8 GB           | 16 GB             |
 
 
 ## Full Node Requirements
@@ -43,7 +43,7 @@ Full nodes maintain full state with standard pruning and all recent data.  (`--p
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|-------------------------|----------------|-------------------|
-| Mainnet   | 1.5 TB               | 2 TB                    | 16 GB          | 64 GB             |
+| Mainnet   | 360 GB               | 1 TB                    | 16 GB          | 64 GB             |
 | Polygon   | 2 TB                 | 4 TB                    | 16 GB          | 32 GB             |
 | Gnosis    | 640 GB               | 1 TB                    | 8 GB           | 16 GB             |
 
@@ -54,9 +54,9 @@ Archive nodes retain **all** historical state and require significantly more dis
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|-------------------------|----------------|-------------------|
-| Mainnet   | 3.2 TB               | 4 TB                    | 32 GB          | 64 GB             |
-| Polygon   | 4.1 TB               | 6 TB                    | 64 GB          | 128 GB            |
-| Gnosis    | 1.2 TB               | 2 TB                    | 16 GB          | 32 GB             |
+| Mainnet   | 1.6 TB               | 4 TB                    | 32 GB          | 64 GB             |
+| Polygon   | 4.6 TB               | 6 TB                    | 64 GB          | 128 GB            |
+| Gnosis    | 550 GB               | 2 TB                    | 16 GB          | 32 GB             |
 
 
 

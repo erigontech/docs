@@ -29,7 +29,7 @@ These flags cover the general behavior and configuration of the Erigon client.
 * `--ethstats value`: The reporting URL for an ethstats service.
 * `--trusted-setup-file value`: Absolute path to a `trusted_setup.json` file.
 * `--persist.receipts, --experiment.persist.receipts.v2`: Downloads historical receipts.
-    * **Default:** `true`
+    * **Default:** `true` for minimal and full nodes, `false` for archive nodes
 
 ### Database and Caching
 

@@ -10,18 +10,16 @@ Updating to the latest version of Erigon gives you access to the latest features
 
 ## Snapshots Format
 
-As of Erigon 3.1 Pebble Paws, the snapshot format has been updated so that you will no longer need to perform data upgrades or re-sync from scratch with future releases.
-
-When upgrading from 3.0.x to 3.1.x, Erigon will automatically update the data format upon launch. To speed up this process, you can also perform the update manually using the flags below:
-
-> This operation is **OPTIONAL**.
+As of Erigon 3.1 Pebble Paws, the snapshot format has been updated. When upgrading from version 3.0.x, you need to manually perform the following steps:
 
 1. Backup your datadir.
 2. [Upgrade your Erigon installation](#upgrading-your-erigon-installation) whether from a binary, compiled source code, or Docker.
 3. Upgrade snapshot files:
-    1. Run `erigon snapshots update-to-new-ver-format --datadir /your/datadir`.
-    2. Reset your datadir so that Erigon will sync to a newer snapshot by running command `erigon snapshots reset --datadir /your/datadir`.
-4. Run Erigon.
+    1. Navigate to the Erigon directory in your terminal
+    2. Reset your datadir so that Erigon will change old data by running command `./build/bin/erigon snapshots reset --datadir /your/datadir`.
+4. Run Erigon, it will reuse existing data and sync only to newer snapshots.
+
+> If you skip these steps, you may need to re-sync from scratch.
 
 ## Upgrading your Erigon Installation
 
@@ -109,7 +107,6 @@ To upgrade Erigon to a newer version when you've originally installed it via Git
     git checkout <new_version_tag>
     ```
 
-
     Replace `<new_version_tag>` with the version tag of the new release, for example:
 
     ```bash
@@ -121,5 +118,5 @@ To upgrade Erigon to a newer version when you've originally installed it via Git
     ```bash
     make erigon
     ```
-
-This process updates your installation to the latest version you specify, while maintaining your existing data and configuration settings in the Erigon folder. You're essentially just replacing the executable with a newer version.
+   
+This process updates your installation to the latest version you specify, while maintaining your existing data. You're essentially just replacing the executable with a newer version.

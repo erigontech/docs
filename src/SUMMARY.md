@@ -42,14 +42,15 @@
     - [TxPool](advanced/txpool.md)
     - [Sentry](advanced/sentry.md)
     - [Downloader](advanced/downloader.md)
-    - [Running an Op-node](advanced/op-node.md)
     - [TLS Authentication](advanced/tls-authentication.md)
+    - [Running an Op-node](advanced/op-node.md)
     - [Otterscan](tools/otterscan.md)
     - [Performance Tricks](advanced/performance.md)
 
 - [Staking](staking.md)
     - [External CL](advanced/bp-ext.md)
     - [Caplin](advanced/bp-caplin.md)
+    - [Shutter Network](advanced/shutter.md)
 
 - [About](about.md)
     - [License](about/license.md)
