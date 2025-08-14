@@ -56,9 +56,11 @@ To participate in the Shutter encrypted transaction pool as a validator using Er
    
    This works with Erigon's internal CL Caplin (enabled by default) or with an external CL client using `--externalcl`.
 
-### Shutter Network Default Port
+### Shutter Network Default Ports
 
-The default peering port for Shutter is `23102` (TCP).
+The default peering port for Shutter is `23102` (TCP), to change it use `--shutter.p2p.listen.port <value>`.
+
+Bootstrap nodes are used to help new nodes discover other nodes in the network. By default, the embedded configuration values are used, but these can be overridden with `--shutter.p2p.bootstrap.nodes <value>`.
 
 **Reference Documentation:**
 - [Gnosis Chain Validator Setup](https://docs.gnosischain.com/node/manual/validator/deposit)
