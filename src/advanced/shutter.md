@@ -9,6 +9,8 @@ The key advantages of Shutter Network are:
 - **Threshold encryption:** Transactions are only decrypted when enough key holders (keypers) participate, ensuring security and decentralization.
 - **Support on Gnosis Chain:** Shutter encrypted transaction pools are currently available on [Gnosis Chain](https://docs.gnosischain.com/shutterized-gc/), with plans for Ethereum support.
 
+> Shutter Network is now available only for Gnosis Network and Chiado.
+
 ### Why Use Shutter?
 
 - **Access to Extra Transactions:** Shutterized validators can include shielded transactions not available in the public transaction pool, leading to potentially higher block rewards.
@@ -20,28 +22,31 @@ To participate in the Shutter encrypted transaction pool as a validator using Er
 
 1. **Set Up Your Validator**
 
-   Deposit your stake and register your validator on Gnosis Chain.  
-   Reference: [Gnosis Chain Validator Setup](https://docs.gnosischain.com/node/manual/validator/deposit)
+   Deposit your stake and register your validator on Gnosis Chain reby following the [Gnosis Chain Validator Setup](https://docs.gnosischain.com/node/manual/validator/deposit).
 
 2. **Register as a Shutterized Validator**
 
-   Complete validator registration for Shutter using the provided tool:  
-   Reference: [Shutter Validator Registration Guide](https://github.com/NethermindEth/shutter-validator-registration)
+   Complete the validator registration for Shutter using the tool provided in the [Shutter Validator Registration Guide](https://github.com/NethermindEth/shutter-validator-registration).
 
 3. **Verify Registration**
 
    Use the Erigon CLI command to verify that your registration was successful:
+   
    ```bash
    erigon shutter-validator-reg-check --chain <CHAIN> --el-url <EL_RPC_URL> --validator-info-file <VALIDATOR_INFO_JSON>
    ```
+   - `--chain` valid values are `gnosis` or `chiado`
+   - `--el-url` 
    - `<VALIDATOR_INFO_JSON>` is the file generated during registration.
 
 4. **Run Erigon with Shutter Support**
 
    Start Erigon as usual, but add the `--shutter` flag to enable Shutterized Validator mode:
+
    ```bash
    erigon --shutter [other options...]
    ```
+   
    This works with Erigon's internal CL Caplin (enabled by default) or with an external CL client using `--externalcl`.
 
 ## Options
@@ -50,9 +55,9 @@ Below are relevant CLI options and configuration settings for Shutter functional
 
 | Option                                        | Description                                                    |
 |-----------------------------------------------|----------------------------------------------------------------|
-| `--shutter`                                   | Enables Shutterized Validator mode.                            |
+| `--shutter`                                   | Enables Shutterized Validator mode in Erigon.                            |
 | `--externalcl`                                | Use an external Consensus Layer client instead of Caplin.      |
-| `shutter-validator-reg-check`                 | Command to verify Shutter validator registration.              |
+| `shutter-validator-reg-check`                 | Erigon command to verify Shutter validator registration.       |
 | `--chain <CHAIN>`                             | Specifies the chain (e.g., Gnosis).                            |
 | `--el-url <EL_RPC_URL>`                       | Sets the execution layer RPC endpoint.                         |
 | `--validator-info-file <VALIDATOR_INFO_JSON>` | Path to validator info JSON file produced during registration. |
