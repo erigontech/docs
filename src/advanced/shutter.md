@@ -9,7 +9,7 @@ The key advantages of Shutter Network are:
 - **Threshold encryption:** Transactions are only decrypted when enough key holders (keypers) participate, ensuring security and decentralization.
 - **Support on Gnosis Chain:** Shutter encrypted transaction pools are currently available on [Gnosis Chain](https://docs.gnosischain.com/shutterized-gc/), with plans for Ethereum support.
 
-> Shutter Network is now available only for Gnosis Network and Chiado.
+> Shutter Network is now available only for Gnosis Network and Chiado testnet.
 
 ### Why Use Shutter?
 
@@ -35,9 +35,16 @@ To participate in the Shutter encrypted transaction pool as a validator using Er
    ```bash
    erigon shutter-validator-reg-check --chain <CHAIN> --el-url <EL_RPC_URL> --validator-info-file <VALIDATOR_INFO_JSON>
    ```
+
    - `--chain` valid values are `gnosis` or `chiado`
-   - `--el-url` 
+   - `--el-url`, in case you are using Erigon default ports is `http://localhost:8545`
    - `<VALIDATOR_INFO_JSON>` is the file generated during registration.
+
+   for example:
+
+   ```bash
+   erigon shutter-validator-reg-check --chain gnosis --el-url http://localhost:8545 --validator-info-file /path/validatorInfo.json
+   ```
 
 4. **Run Erigon with Shutter Support**
 
@@ -49,21 +56,9 @@ To participate in the Shutter encrypted transaction pool as a validator using Er
    
    This works with Erigon's internal CL Caplin (enabled by default) or with an external CL client using `--externalcl`.
 
-## Options
+### Shutter Network Default Port
 
-Below are relevant CLI options and configuration settings for Shutter functionality in Erigon:
-
-| Option                                        | Description                                                    |
-|-----------------------------------------------|----------------------------------------------------------------|
-| `--shutter`                                   | Enables Shutterized Validator mode in Erigon.                            |
-| `--externalcl`                                | Use an external Consensus Layer client instead of Caplin.      |
-| `shutter-validator-reg-check`                 | Erigon command to verify Shutter validator registration.       |
-| `--chain <CHAIN>`                             | Specifies the chain (e.g., Gnosis).                            |
-| `--el-url <EL_RPC_URL>`                       | Sets the execution layer RPC endpoint.                         |
-| `--validator-info-file <VALIDATOR_INFO_JSON>` | Path to validator info JSON file produced during registration. |
-
-**Shutter Network Default Port:**  
-- `23102` (TCP) — Peering port for Shutter.
+The default peering port for Shutter is `23102` (TCP).
 
 **Reference Documentation:**
 - [Gnosis Chain Validator Setup](https://docs.gnosischain.com/node/manual/validator/deposit)
