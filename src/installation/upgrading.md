@@ -14,10 +14,10 @@ As of Erigon 3.1 Pebble Paws, the snapshot format has been updated. When upgradi
 
 1. Backup your datadir.
 2. [Upgrade your Erigon installation](#upgrading-your-erigon-installation) whether from a binary, compiled source code, or Docker.
-3. Upgrade snapshot files:
-    1. Navigate to the Erigon directory in your terminal
-    2. Reset your datadir so that Erigon will change old data by running command `./build/bin/erigon snapshots reset --datadir /your/datadir`.
-4. Run Erigon, it will reuse existing data and sync only to newer snapshots.
+3. Upgrade data (to get data-fixes made by Erigon team):
+    1. Upgrading data is optional - new version of erigon binary will work on old data.
+    2. Command to trigger data upgrade: `./build/bin/erigon snapshots reset --datadir /your/datadir` - after this command Erigon will sync newer snapshots (but keep unchanged files). 
+4. Run Erigon, it will reuse existing data and sync only newer snapshots.
 
 > If you skip these steps, you may need to re-sync from scratch.
 
