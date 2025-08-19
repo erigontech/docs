@@ -36,7 +36,7 @@ Minimal nodes are suitable for light operation with pruned state and minimal his
 | Network   | Disk Size (Required)  | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|-----------------------|-------------------------|----------------|-------------------|
 | Mainnet   | 350 GB                | 1 TB                    | 16 GB          | 64 GB             |
-| Polygon   | 1.1 TB                | 2 TB                    | 32 GB          | 64 GB             |
+| Polygon   | 1.2 TB                | 2 TB                    | 32 GB          | 64 GB             |
 | Gnosis    | 128 GB                | 500 GB                  | 8 GB           | 16 GB             |
 
 
@@ -46,9 +46,9 @@ Full nodes maintain full state with standard pruning and all recent data.  (`--p
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|-------------------------|----------------|-------------------|
-| Mainnet   | 360 GB               | 1 TB                    | 16 GB          | 32 GB             |
+| Mainnet   | 920 GB               | 1 TB                    | 16 GB          | 32 GB             |
 | Polygon   | 3.3 TB               | 4 TB                    | 16 GB          | 32 GB             |
-| Gnosis    | 260 GB               | 1 TB                    | 8 GB           | 16 GB             |
+| Gnosis    | 462 GB               | 1 TB                    | 8 GB           | 16 GB             |
 
 
 ### Archive Node Requirements
