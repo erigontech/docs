@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - Check the [hardware](../getting-started/hw-requirements.md) prerequisites;
-- Check which [type of node](../basic/node.md) you want to run and the [disk space](../basic/disk-space.md) required.
+- Check which [type of node](../basic/node.md) you want to run and the [disk space](../getting-started/hw-requirements.md#minimal-node-requirements) required.
 
 ## Install Erigon​
 

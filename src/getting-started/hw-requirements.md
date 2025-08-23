@@ -6,7 +6,7 @@ A locally mounted **SSD** (Solid-State Drive) or **NVMe** (Non-Volatile Memory E
 
 Additionally, SSDs may experience performance degradation when nearing full capacity.
 
-See here how you can [optimize storage](../basic/optimizing-storage.md).
+See here how you can [optimize storage](../advanced/optimizing-storage.md).
 
 
 Here is the outline of the hardware requirements for running Erigon on the following networks:
@@ -25,46 +25,47 @@ General recommendations for all node types include:
 - **Linux**: kernel version > v4
 - When using multiple disks, consider implementing a **RAID 0** configuration to maximize performance and utilize space efficiently. RAID ZFS is not recommended.
 
+## Disk Size and RAM Requirements
 
-## Minimal Node Requirements
+The amount of disk space recommended and RAM you need depends on the [type of node](../basic/node.md) you want to run. The "Disk Size (Required)" values listed below are obtained using the standard Erigon configuration, with the sole exception of the `--prune.mode` flag.
+
+### Minimal Node Requirements
 
 Minimal nodes are suitable for light operation with pruned state and minimal historical data retention. (`--prune.mode=minimal`)
 
-| Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
-|-----------|----------------------|--------------------------|----------------|-------------------|
-| Mainnet   | 500 GB       | 500 GB        | 16 GB           | 64 GB             |
-| Polygon   | 2 TB  | 2 TB        | 32 GB           | 64 GB             |
-| Gnosis    | 250 GB         | 500 GB      | 8 GB           | 16 GB              |
+| Network   | Disk Size (Required)  | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
+|-----------|-----------------------|-------------------------|----------------|-------------------|
+| Mainnet   | 350 GB                | 1 TB                    | 16 GB          | 64 GB             |
+| Polygon   | 1.2 TB                | 2 TB                    | 32 GB          | 64 GB             |
+| Gnosis    | 128 GB                | 500 GB                  | 8 GB           | 16 GB             |
 
 
-## Full Node Requirements
+### Full Node Requirements
 
 Full nodes maintain full state with standard pruning and all recent data.  (`--prune.mode=full`)
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
-|-----------|----------------------|--------------------------|----------------|-------------------|
-| Mainnet   | 1 TB       | 2 TB    | 16 GB          | 64 GB             |
-| Polygon   | 2 TB   | 4 TB    | 16 GB          | 32 GB             |
-| Gnosis    | 500 GB       | 1 TB          | 8 GB           | 16 GB             |
+|-----------|----------------------|-------------------------|----------------|-------------------|
+| Mainnet   | 920 GB               | 1 TB                    | 16 GB          | 32 GB             |
+| Polygon   | 3.3 TB               | 4 TB                    | 16 GB          | 32 GB             |
+| Gnosis    | 462 GB               | 1 TB                    | 8 GB           | 16 GB             |
 
 
-## Archive Node Requirements
+### Archive Node Requirements
 
 Archive nodes retain **all** historical state and require significantly more disk space. These are typically used for block explorers or deep analytical queries. (`--prune.mode=archive`)
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
-|-----------|----------------------|--------------------------|----------------|-------------------|
-| Mainnet   | 2 TB     | 4 TB       | 32 GB          | 64 GB            |
-| Polygon   | 4.3 TB   | 6 TB        | 64 GB          | 128 GB             |
-| Gnosis    | 1 TB           | 2 TB         | 16 GB          | 32 GB             |
-
-
+|-----------|----------------------|-------------------------|----------------|-------------------|
+| Mainnet   | 1.6 TB               | 4 TB                    | 32 GB          | 64 GB             |
+| Polygon   | 4.6 TB               | 8 TB                    | 64 GB          | 128 GB            |
+| Gnosis    | 550 GB               | 2 TB                    | 16 GB          | 32 GB             |
 
 ## Bandwidth Requirements
 
 Your internet bandwidth is also an important factor, particularly for sync speed and validator performance.
 
-| Node Type     | Bandwidth (Required) | Bandwidth (Recommended) |
-|---------------|----------------------|--------------------------|
-| Staking/Mining       | 10 Mbps              | 50 Mbps                 |
-| Non-Staking   | 5 Mbps               | 25 Mbps                 |
+| Node Type      | Bandwidth (Required) | Bandwidth (Recommended) |
+|----------------|----------------------|-------------------------|
+| Staking/Mining | 10 Mbps              | 50 Mbps                 |
+| Non-Staking    | 5 Mbps               | 25 Mbps                 |
