@@ -24,7 +24,7 @@ Here are the steps to download and start Erigon in Docker:
 1. Download the latest version:
 
 ```bash
-docker pull erigontech/erigon
+docker pull erigontech/erigon:
 ```
 
 2. List the downloaded images to get the IMAGE ID:
