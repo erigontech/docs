@@ -5,16 +5,12 @@
 [Shutter Network](https://www.shutter.network) is a privacy-focused protocol that provides encrypted transaction pools using threshold encryption. The main objective is to protect users from malicious MEV (Miner Extractable Value) attacks such as front-running and sandwich attacks by encrypting transactions until they are included in a block.
 
 The key advantages of Shutter Network are:
-- **Protection against MEV attacks:** By encrypting transactions, the network prevents malicious actors from exploiting transaction ordering.
-- **Threshold encryption:** Transactions are only decrypted when enough key holders (keypers) participate, ensuring security and decentralization.
-- **Support on Gnosis Chain:** Shutter encrypted transaction pools are currently available on [Gnosis Chain](https://docs.gnosischain.com/shutterized-gc/), with plans for Ethereum support.
-
-> Shutter Network is now available only for Gnosis Network and Chiado testnet.
-
-### Why Use Shutter?
-
+- **Protection against MEV attacks**: By encrypting transactions, the network prevents malicious actors from exploiting transaction ordering.
+- **Threshold encryption**: Transactions are only decrypted when enough key holders (keypers) participate, ensuring security and decentralization.
+- **Censorship resistance**: Threshold encryption prevents censorship and manipulation, ensuring fair and transparent transactions in a decentralized system.
 - **Access to Extra Transactions:** Shutterized validators can include shielded transactions not available in the public transaction pool, leading to potentially higher block rewards.
-- **User Protection:** Help protect users against MEV attacks, improving the fairness of the chain.
+
+> Shutter encrypted mempool is currently available on [Gnosis Chain](https://docs.gnosischain.com/shutterized-gc/), with plans for Ethereum support.
 
 ## How to Run Erigon as a Shutterized Validator
 
@@ -22,7 +18,7 @@ To participate in the Shutter encrypted transaction pool as a validator using Er
 
 1. **Set Up Your Validator**
 
-   Deposit your stake and register your validator on Gnosis Chain reby following the [Gnosis Chain Validator Setup](https://docs.gnosischain.com/node/manual/validator/deposit).
+   Deposit your stake and register your validator on Gnosis Chain by following the [Gnosis Chain Validator Setup](https://docs.gnosischain.com/node/manual/validator/deposit).
 
 2. **Register as a Shutterized Validator**
 
