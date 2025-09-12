@@ -9,7 +9,6 @@ These instructions are designed to improve the performance of Erigon 3, particul
 --torrent.download.rate=512mb
 ```
 
-
 ## Lock Latest State in RAM
 
 * Use `vmtouch -vdlw /mnt/erigon/snapshots/domain/*bt` to lock the "latest state indices" in RAM, preventing it from being evicted due to high historical RPC traffic.
