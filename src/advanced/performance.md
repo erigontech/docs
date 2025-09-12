@@ -1,47 +1,30 @@
 # Performance Tricks
 
-
 These instructions are designed to improve the performance of Erigon 3, particularly for synchronization and memory management, on cloud drives and other systems with specific performance characteristics.
-
 
 ## Increase Sync Speed
 
-* Set `--sync.loop.block.limit=10_000` and `--batchSize=2g` to speed up the synchronization process.
-```bash
---sync.loop.block.limit=10_000 --batchSize=2g
-```
 * Increase download speed with flag ```--torrent.download.rate=[value]``` setting your max speed (default value is 128MB). For example:
 ```bash
 --torrent.download.rate=512mb
 ```
 
-## Optimize for Cloud Drives
-
-* Set `SNAPSHOT_MADV_RND=false` to enable the operating system's cache prefetching for better performance on cloud drives with good throughput but bad latency.
-```bash
-SNAPSHOT_MADV_RND=false
-```
-
 ## Lock Latest State in RAM
 
-* Use `vmtouch -vdlw /mnt/erigon/snapshots/domain/*bt` to lock the latest state in RAM, preventing it from being evicted due to high historical RPC traffic.
+* Use `vmtouch -vdlw /mnt/erigon/snapshots/domain/*bt` to lock the "latest state indices" in RAM, preventing it from being evicted due to high historical RPC traffic.
 ```bash
 vmtouch -vdlw /mnt/erigon/snapshots/domain/*bt
 ```
 
-* Run `ls /mnt/erigon/snapshots/domain/*.kv | parallel vmtouch -vdlw` to apply the same locking to all relevant files.
-
-## Handle Memory Allocation Issues
-
-* If you encounter issues with memory allocation, run the following to flush any pending write operations and free up memory: 
+* Or same for "whole latest sate": `ls /mnt/erigon/snapshots/domain/*.kv | parallel vmtouch -vdlw`
+* If you encounter "cannot allocate memory" issues with above commands, then free memory by next command and re-try: 
 ```bash
-sync && sudo sysctl vm.drop_caches=3
+sync && sudo sysctl vm.drop_caches=3 && echo 1 > /proc/sys/vm/compact_memory
 ```
 
-* Alternatively, set:
+## Optimize for Cloud Drives
 
+* Cloud Drives (gp3, pd-ssd) have good throughput but bad latency. So, we don't recommend them to Erigon. But still can set `SNAPSHOT_MADV_RND=false` to enable the operating system's cache prefetching - but it will lead to huge IO if RAM is small. 
 ```bash
-echo 1 > /proc/sys/vm/compact_memory
+SNAPSHOT_MADV_RND=false
 ```
-
-to help with memory allocation.
