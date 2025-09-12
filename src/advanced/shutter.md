@@ -14,7 +14,7 @@ The key advantages of Shutter Network are:
 
 ## How to Run Erigon as a Shutterized Validator
 
-To participate in the Shutter encrypted transaction pool as a validator using Erigon, follow these steps:
+To participate in the Shutter encrypted mempool as a validator using Erigon, follow these steps:
 
 1. **Set Up Your Validator**
 
