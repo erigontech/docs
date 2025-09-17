@@ -7,3 +7,5 @@ Erigon is a comprehensive execution and consensus layer that also supports staki
 - Using a [external consensus client as validator](advanced/bp-ext.md);
 
 - Using [Caplin as validator](advanced/bp-caplin.md).
+
+Additionally, you can configure Erigon to work with [Shutter Network](../advanced/shutter.md).i

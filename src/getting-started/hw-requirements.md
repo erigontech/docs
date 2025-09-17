@@ -46,7 +46,7 @@ Full nodes maintain full state with standard pruning and all recent data.  (`--p
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|-------------------------|----------------|-------------------|
-| Mainnet   | 920 GB               | 1 TB                    | 16 GB          | 32 GB             |
+| Mainnet   | 920 GB               | 2 TB                    | 16 GB          | 32 GB             |
 | Polygon   | 3.3 TB               | 4 TB                    | 16 GB          | 32 GB             |
 | Gnosis    | 462 GB               | 1 TB                    | 8 GB           | 16 GB             |
 
@@ -57,9 +57,9 @@ Archive nodes retain **all** historical state and require significantly more dis
 
 | Network   | Disk Size (Required) | Disk Size (Recommended) | RAM (Required) | RAM (Recommended) |
 |-----------|----------------------|-------------------------|----------------|-------------------|
-| Mainnet   | 1.6 TB               | 4 TB                    | 32 GB          | 64 GB             |
-| Polygon   | 4.6 TB               | 8 TB                    | 64 GB          | 128 GB            |
-| Gnosis    | 550 GB               | 2 TB                    | 16 GB          | 32 GB             |
+| Mainnet   | 1.77 TB              | 4 TB                    | 32 GB          | 64 GB             |
+| Polygon   | 4.85 TB              | 8 TB                    | 64 GB          | 128 GB            |
+| Gnosis    | 539 GB               | 1 TB                    | 16 GB          | 32 GB             |
 
 ## Bandwidth Requirements
 
