@@ -22,7 +22,7 @@ To participate in the Shutter encrypted mempool as a validator using Erigon, fol
 
 2. **Register as a Shutterized Validator**
 
-   Complete the validator registration for Shutter using the tool provided in the [Shutter Validator Registration Guide](https://github.com/NethermindEth/shutter-validator-registration).
+   Complete the validator registration for Shutter using the tool provided in the [Shutter Validator Registration Guide](https://github.com/shutter-network/shutter-validator-registration).
 
 3. **Verify Registration**
 
