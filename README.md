@@ -1,6 +1,6 @@
 # Erigon 3 Docs
 
-This is the official Erigon 3 documentation, hosted at <https://docs.erigon.tech/>.
+Warning: This repository holds the documentation for Erigon 3.0.x and is not actively maintained. It may be outdated. Please use <https://docs.erigon.tech/> for the most current information.
 
 
 # Contributing to this documentation
